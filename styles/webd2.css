@@ -118,11 +118,11 @@ legend {
 /* Banner */
 #banner {
 	/* background: #226f83 url('../images/border_back.jpg') top left repeat-y; */
-	background: #226f83;
+	background: #42D35F;
 }
 #studentPage #banner {
   /* background: #c00 url('../images/border_back_student.jpg') top left repeat-y; */
-  background: #cc0000;
+  background: #42D35F;
 }
 #siteTitle {
 	font-family: Cambria, Trajan, serif; /* good fonts for Roman numerals */
