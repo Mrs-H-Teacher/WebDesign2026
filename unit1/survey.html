@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>WebD2: Survey of Web Design Skills</title>
+<!-- Hack to get IE to recognize  HTML5 elements-->
+<!-- See http://remysharp.com/2009/01/07/html5-enabling-script/comment-page-3/#allcomments-->
+<!--[if IE]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<link type="text/css" rel="stylesheet" href="../../styles/webd2.css" media="screen">
+<link type="text/css" rel="stylesheet" href="../../styles/webd2_print.css" media="print">
+</head>
+<body id="studentPage">
+<div id="wrapper">
+<div id="banner" role="banner">
+<div id="siteTitle">Web Design &amp; Development I</div>
+<div id="version">Version 2.0</div>
+<div id="subTitle">Student Version</div>
+</div>
+<nav role="navigation" aria-label="Main menu">
+<ul>
+<li><a href="../../student/index.html">Home</a></li>
+<li><a href="../../student/lessons.html">Lessons</a></li>
+<li><a href="../../student/resources.html">Resources</a></li>
+<li id="btnNext"><a href="../../student/unit1/module1/index.html">Next</a></li>
+</ul>
+</nav>
+<div id="main" role="main">
+<h1>Unit 1: Survey of Web Design Skills</h1>
+
+
+<p>Please answer the following questions honestly. How you respond will <strong>not</strong> affect your grade, but might affect how this course is taught.</p>
+
+<!--To use this as an online form, simply change the action attribute on the following line to point to your results script-->
+<form id="survey" action="" method="post">
+
+<div>
+	<label for="Name">Name:</label> 
+	<input type="text" name="Name" id="Name">
+</div>
+
+<div>
+	<label for="FavSubject">Favorite school subject:</label> 
+	<input type="text" name="FavSubject" id="FavSubject" />
+</div>
+
+<div>
+	<label for="Plans">Briefly describe your post-high school plans:</label>
+	<textarea name="Plans" id="Plans" rows="5"></textarea>
+</div>
+
+<div>
+<label for="Goals">Briefly describe your goals and expectations for this course:</label>
+<textarea name="Goals" id="Goals" rows="5"></textarea>
+</div>
+
+<fieldset>
+	<legend>My background designing web pages is best described by the following statement:</legend>
+	<div>
+	  <input type="radio" name="1a" id="1a" />
+  	<label for="1a">I create web pages for myself and others (either for profit or as a hobby).</label>
+  </div>
+  <div>
+	  <input type="radio" name="1b" id="1b" />
+  	<label for="1b">I have created one or more web pages for myself on my own time.</label>
+  </div>
+  <div>
+		<input type="radio" name="1c" id="1c" />
+  	<label for="1c">I have created web pages as a school project.</label>
+	</div>
+	<div>
+	  <input type="radio" name="1d" id="1d" />
+  	<label for="1d">I have never created a web page.</label>
+  </div>
+</fieldset>
+
+<fieldset>
+	<legend>My experience with social networks such as Facebook, MySpace, etc. is...</legend>
+	<div>
+	  <input type="radio" name="1a" id="1a" />
+  	<label for="1a">I have never used them.</label>
+  </div>
+  <div>
+	  <input type="radio" name="1b" id="1b" />
+  	<label for="1b">I have set up accounts and used these sites but never messed with the code.</label>
+  </div>
+  <div>
+		<input type="radio" name="1c" id="1c" />
+  	<label for="1c">I have set up accounts and modified pages by adding scripts or modifying the code.</label>
+	</div>
+</fieldset>
+
+<fieldset>
+	<legend>To what extent have you already located web design resources (e.g., online tutorials, sites with collections of graphics or code snippets)?</legend>
+	<div>
+	  <input type="radio" name="1a" id="1a" />
+  	<label for="1a">I have used sites like these extensively.</label>
+  </div>
+  <div>
+	  <input type="radio" name="1b" id="1b" />
+  	<label for="1b">If I need something I can find it on the Web.</label>
+  </div>
+  <div>
+		<input type="radio" name="1c" id="1c" />
+  	<label for="1c">I can probably find web design resources but have never tried.</label>
+	</div>
+	<div>
+	  <input type="radio" name="1d" id="1d" />
+  	<label for="1d">I'm not sure what you're talking about.</label>
+  </div>
+</fieldset>
+
+<p>Designing and developing websites requires a diverse set of skills and characteristics. Few individuals have all of these skills, so websites are typically created by one or more teams, comprised of highly diverse people who bring various skills, characteristics, and backgrounds to the project. Please rate yourself on the following characteristics:</p>
+
+<table> 
+	<tr>
+		<th scope="col">
+			Characteristic
+		</th>
+		<th scope="col">
+			Yes, that's me
+		</th>
+		<th scope="col">
+			Hmmm, not sure
+		</th>
+		<th scope="col">
+			No, that's not me
+		</th>		
+	</tr>
+	<tr>
+		<th scope="row">Artistic</th>
+		<td><input type="radio" name="artistic" value="yes" title="Yes, I'm artistic"></td>
+		<td><input type="radio" name="artistic" value="neutral" title="Not sure if I'm artistic"></td>
+		<td><input type="radio" name="artistic" value="no" title="No, I'm not artistic"></td>
+	</tr>
+	<tr>
+		<th scope="row">Detail-oriented</th>
+		<td><input type="radio" name="detail-oriented" value="yes" title="Yes, I'm detail-oriented"></td>
+		<td><input type="radio" name="detail-oriented" value="neutral" title="Not sure if I'm detail-oriented"></td>
+		<td><input type="radio" name="detail-oriented" value="no" title="No, I'm not detail-oriented"></td>
+	</tr>
+	<tr>
+		<th scope="row">Orderly, consistent</th>
+		<td><input type="radio" name="orderly" value="yes" title="Yes, I'm orderly"></td>
+		<td><input type="radio" name="orderly" value="neutral" title="Not sure if I'm orderly"></td>
+		<td><input type="radio" name="orderly" value="no" title="No, I'm not orderly"></td>
+	</tr>
+	<tr>
+		<th scope="row">Creative, thinking "outside the box"</th>
+		<td><input type="radio" name="creative" value="yes" title="Yes, I'm creative"></td>
+		<td><input type="radio" name="creative" value="neutral" title="Not sure if I'm creative"></td>
+		<td><input type="radio" name="creative" value="no" title="No, I'm not creative"></td>
+	</tr>
+	<tr>
+		<th scope="row">Team-oriented, enjoy working with others</th>
+		<td><input type="radio" name="team-oriented" value="yes" title="Yes, I'm team-oriented"></td>
+		<td><input type="radio" name="team-oriented" value="neutral" title="Not sure if I'm team-oriented"></td>
+		<td><input type="radio" name="team-oriented" value="no" title="No, I'm not team-oriented"></td>
+	</tr>
+	<tr>
+		<th scope="row">Good design sense, i.e., a sense for which colors, textures, lines and shapes work well together</th>
+		<td><input type="radio" name="design" value="yes" title="Yes, I have design sense"></td>
+		<td><input type="radio" name="design" value="neutral" title="Not sure if I have design sense"></td>
+		<td><input type="radio" name="design" value="no" title="No, I don't have design sense"></td>
+	</tr>
+	<tr>
+		<th scope="row">Good at spelling, grammar, and punctuation</th>
+		<td><input type="radio" name="spelling" value="yes" title="Yes, I'm good at spelling, grammar, and punctuation"></td>
+		<td><input type="radio" name="spelling" value="neutral" title="Not sure if I'm good at spelling, grammar and punctuation"></td>
+		<td><input type="radio" name="spelling" value="no" title="No, I'm not good at spelling, grammar and punctuation"></td>
+	</tr>
+	<tr>
+		<th scope="row">Able to quickly spot the errors when proof-reading written text</th>
+		<td><input type="radio" name="proofreading" value="yes" title="Yes, I'm good at proof-reading"></td>
+		<td><input type="radio" name="proofreading" value="neutral" title="Not sure if I'm good at proof-reading"></td>
+		<td><input type="radio" name="proofreading" value="no" title="No, I'm not good at proof-reading"></td>
+	</tr>
+	<tr>
+		<th scope="row">Good at troubleshooting or problem-solving</th>
+		<td><input type="radio" name="troubleshooting" value="yes" title="Yes, I'm good at troubleshooting"></td>
+		<td><input type="radio" name="troubleshooting" value="neutral" title="Not sure if I'm good at troubleshooting"></td>
+		<td><input type="radio" name="troubleshooting" value="no" title="No, I'm not good at troubleshooting"></td>
+	</tr>
+</table>
+
+<!-- Uncomment this submit button if using an interactive form --> 
+<!--
+<input type="submit" name="submit" value="Submit"> 
+-->
+<p><strong>When complete, please print this form and turn it in to your instructor.</strong></p>
+</form>
+
+<footer role="contentinfo">
+Copyright &copy; 2005-2014 by University of Washington. Permission is granted to use these materials in whole or in part for educational, noncommercial purposes provided the source is acknowledged. This product was created with support from the National Institute on Disability and Rehabilitation Research of the U.S. Department of Education (grant #H133D010306), and is maintained with support from the National Science Foundation (grant #CNS-0540615). The contents do not necessarily represent the policies of the U.S. federal government, and you should not assume their endorsement.</footer>
+</div>
+</div>
+</body>
+</html>
