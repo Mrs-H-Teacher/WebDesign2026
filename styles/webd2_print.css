@@ -1,0 +1,217 @@
+/* HTML ELEMENTS */
+
+body { 
+  background: #ffffff;
+  color: #000000;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1em;
+}
+h1,h2,h3,h4 { 
+  font-weight: bold;
+}
+h1 { 
+  font-size: 1.4em;
+  color: #000000;
+}
+h2 {
+  margin-left: 0;
+  font-size: 1.4em;
+  color: #000000;
+}
+h3 { 
+  font-size: 1.2em;
+  color: #000000;
+}
+h4 { 
+  font-size: 1em;
+  font-style: italic;
+  margin-left: 1em;
+  margin-bottom: 0.25em;
+  padding-bottom: 0;
+  color: #000000;
+}
+p { 
+  margin-top: 0.25em;
+  margin-bottom: 0.25em;
+  margin-left: 1em;
+}
+li {
+  padding-bottom: .75em;
+}
+
+a {
+  border-bottom: 1px dashed #000000;
+  text-decoration: none;
+  color: #000000;
+}
+
+/* LAYOUT DIV'S */
+#wrapper {
+  width: 90%;
+}
+nav {
+	color: red;
+  display: none;
+}
+footer {
+  margin-top: 1em;
+  font-size: 75%;
+  border-top: solid thin #666666;
+  padding: 0.5em 0 1em 0;
+}
+#banner #siteTitle {
+  font-size: 1.4em;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+#banner #version {
+ font-size: 1em;
+ margin-left: 0;
+ margin-top: 0;
+ padding-top: 0;
+ padding-bottom: 0.5em;
+ border-bottom: 1px solid black;
+}
+
+#banner #subTitle { 
+	font-size: 1.2em;
+}
+
+#main {
+  width: 100%;
+  background-color: #ffffff;
+}
+
+/* CUSTOM ID'S */
+
+#logo {
+  display: none;
+}
+
+#example {
+  border: solid thin #666666; padding:1em
+}
+
+/* STUDENT ASSIGNMENT CHECKLIST */
+
+table#checklist { 
+  margin-left: 0;
+  padding-left: 0;
+  width: 100% !important;
+  font-size: 0.85em;
+  background-color: black;
+}
+#checklist th, #checklist td { 
+	background-color: white;
+	margin: 1px;
+	padding: 0.25em;
+}
+table#checklist td > a { 
+	color: black;
+	border-bottom: none;
+}
+#checklist th[scope="col"] {
+  font-weight: bold;
+  text-align: center;
+}
+#checklist th[scope="row"] {
+  font-weight: normal;
+  text-align: left;
+}
+#checklist tr th[scope="row"] { 
+	vertical-align: top;
+}
+th#unit1, th#unit2, th#unit3, th#unit4,
+th#unit5, th#unit6, th#unit7, th#unit8 { 
+	font-weight: bold;
+}
+
+
+
+/* CUSTOM CLASSES */
+
+.breakbefore { 
+  page-break-before: always;
+}
+.breakafter {
+  page-break-after: always;
+}
+
+.doublecheck {
+  background: yellow;
+}
+
+.highlight {
+  background: #eeeeee;
+}
+
+.indent1{ 
+  padding-left: 2em
+}
+
+.indent2{ 
+  padding-left: 4em
+}
+
+.indent3{ 
+  padding-left: 6em
+}
+
+.ealr1 {
+  color: #227;
+  font-weight: bold;
+  font-size: 1em;
+  margin-left: 1em;
+  padding: .5em 0;
+} 
+
+.ealr2 {
+  font-weight: bold;
+  font-size: 1em;
+  margin-left: 2em;
+  padding-bottom: 0;
+}
+
+.ealrlist {
+  font-size: 1em;
+  margin: 0 0 0 2em;
+  padding: 0 0 0 2em;
+}
+
+.ealrlist1 {
+  list-style: none;
+  color: #000000;
+  font-weight: bold;
+  margin: 0 0 0 1em;
+  padding: 0;
+}
+
+.ealrlist2 {
+  color: #000000;
+  font-weight: normal;
+  list-style-type: disc;
+}
+.noprint { 
+	display: none;
+}
+
+.sample_h2 {
+  margin-left: 1em;
+}
+
+.sample_ul1 {
+  margin-left: 2em;
+}
+
+.sample_li1 {
+  margin-left: 3em;
+}
+
+.sample_ul2 {
+  margin-left: 4em;
+}
+
+.sample_li2 {
+  margin-left: 5em;
+}

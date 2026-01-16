@@ -1,0 +1,58 @@
+/*
+Unit 3 > Module 2 > Lesson 2
+
+Color scheme for this website:
+	#4312AI
+	#472B83
+	#280671
+	#7446D7
+	#8E6DD7
+
+At this point students will be applying their color scheme, but until they learn about
+class and id (in Unit 3 Module 5) they will be a bit limited in how visually appealing
+their sites can be.
+The goals here are to:
+a) find ways to unitize and balance the various colors using the skills and HTML
+they currently have
+b) Pay attention to color contrast between foreground and background
+*/
+
+	body {
+		font-size: 1em;
+		font-weight: normal;
+		font-family: Arial, Sans-serif;
+		text-align: left;
+		background-color: #8E6DD7;
+		color: #FFFFFF;
+		margin-left: 10%;
+		margin-right: 10%
+		}
+
+	h1 {
+		font-size: 1.8em;
+		font-weight: bold;
+		text-align: center;
+		}
+			
+	h2 {
+		font-size: 1.4em;
+		color: #CCCCCC
+		}
+
+	div {
+		border: 1px solid black;
+		padding: 1em;
+		margin: 1em;
+		background-color: #4312AE;
+		}
+		
+	p {
+		font-style: italic;
+		background-color: #7446D7;
+		margin: 1em;
+		padding: 1em;
+		}
+
+	a {
+		color: #FFFFFF;
+	}
