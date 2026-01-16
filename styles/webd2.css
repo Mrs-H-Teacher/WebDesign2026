@@ -118,11 +118,11 @@ legend {
 /* Banner */
 #banner {
 	/* background: #226f83 url('../images/border_back.jpg') top left repeat-y; */
-	background: #42D35F;
+	background: #193CB8;
 }
 #studentPage #banner {
   /* background: #c00 url('../images/border_back_student.jpg') top left repeat-y; */
-  background: #42D35F;
+  background: #193CB8;
 }
 #siteTitle {
 	font-family: Cambria, Trajan, serif; /* good fonts for Roman numerals */
@@ -155,11 +155,11 @@ legend {
 
 /* Navigation */
 nav { 
-	background-color: #42D35F;
+	background-color: #193CB8;
   border-bottom: 1px solid #227;
 }
 #studentPage nav {
-  background: #42D3F2;
+  background: #193CB8;
 }
 nav ul {
   margin: 0;
