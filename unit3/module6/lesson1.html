@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>WebD2: Page Layout with CSS</title>
+<!-- Hack to get IE to recognize  HTML5 elements-->
+<!-- See http://remysharp.com/2009/01/07/html5-enabling-script/comment-page-3/#allcomments-->
+<!--[if IE]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<link type="text/css" rel="stylesheet" href="../../../styles/webd2.css" media="screen">
+<link type="text/css" rel="stylesheet" href="../../../styles/webd2_print.css" media="print">
+</head>
+<body id="studentPage">
+<div id="wrapper">
+<div id="banner" role="banner">
+<div id="siteTitle">Web Design &amp; Development I</div>
+<div id="version">Version 2.0</div>
+<div id="subTitle">Student Version</div>
+</div>
+<nav role="navigation" aria-label="Main menu">
+<ul>
+<li><a href="../../../student/index.html">Home</a></li>
+<li><a href="../../../student/lessons.html">Lessons</a></li>
+<li><a href="../../../student/resources.html">Resources</a></li>
+<li id="btnPrev"><a href="../../../student/unit3/module6/index.html">Previous</a></li>
+<li id="btnNext"><a href="../../../student/unit3/module6/lesson2.html">Next</a></li>
+</ul>
+</nav>
+<div id="main" role="main">
+<div class="breadCrumbs" role="navigation" aria-label="Bread Crumbs"><a href="../index.html">UNIT 3</a> > <a href="index.html">MODULE 6</a></div>
+<h1>Lesson 1: Page Layout with CSS</h1>
+
+
+<h2>Overview</h2>  
+
+<p>In this module, you will learn to use CSS to control the layout of content on your web page. With CSS, we have total control of where items are positioned the page, although it can sometimes be challenging figuring out exactly how to attain that. In the current lesson, we will explore basic techniques for controlling the position of page content using CSS.</p>
+
+<h2>Learner Outcomes</h2>  
+
+<p>At the completion of this exercise:</p>
+<ul>
+	<li>you will be able to demonstrate a basic understanding of CSS positioning principles.</li>
+	<li>you will be able to identify whether a web page uses fixed or liquid layout</li>
+  <li>you will be able to apply CSS positioning to align elements into two columns on your web page.</li>
+  <li>you will be able to position elements using both relative and absolute positioning</li>
+</ul>
+
+<h2>Activities</h2>
+
+<h3>Part 1: Overall Page Layout</h3>
+<ol>    
+	<li>Read the page <a href="csslayout.html">Page Layout: Overall Design Strategies</a>.</li>
+	<li>Open your portfolio's external style sheet in a text editor, and your portfolio home page in a browser.</li>
+	<li>Apply a fixed width design to your site by adding the following property to your CSS declaration for the <span class="element">body</span> tag:
+	<div class="example">width: 1000px;</div>
+	Save your CSS file, refresh the browser, and try resizing your browser window to see what effect this CSS has. Experiment by changing the width. Trying using smaller values and larger values. 
+	</li>
+	<li>Now changed your fixed width design to a fluid design by changing the width to a percentage. Try various percentage values until you find one that works well for your design.</li>
+	<li>A fluid design will probably work well for your portfolio, but later in this course (in Unit 4) you'll be adding a banner image to your site, so you need to do something to accommodate that image. The image will be 720 pixels wide, so add the following property beneath the <span class="property">width</span> property in your CSS:
+	<div class="example">min-width: 720px;</div>
+	Now your body content will flow to match users' screen resolution, but it's guaranteed to be at least wide enough to hold your banner image. 
+	</li>
+	<li>If you'd like your page to be centered horizontally, add the following property beneath the other properties you just added:
+	<div class="example">margin: 0 auto;</div>	
+	</li>
+</ol>
+
+<h3>Part 2: Positioning Other Elements</h3>	
+<ol>
+	<li>Read the article <a href="http://www.alistapart.com/articles/css-positioning-101">CSS Positioning 101</a> from A List Apart. Be sure to click on and look at the examples.</li>
+	<li>Record your answers to the following questions, and share them with your instructor:
+		<ul>
+			<li>What are the five possible values of the CSS <span class="property">position</span> property?</li>
+			<li>If you don't specify a <span class="property">position</span> property for an element in your CSS, what is its default value? Where will it be positioned on the page?</li>
+			<li>Consider this element:
+<pre class="example">
+  div#omnibox {
+    position: fixed; 
+    top: 5px; 
+    right: 5px; 
+  }
+</pre>			
+			Where will this element be positioned on the screen?			
+			</li>			
+		</ul>	
+	</li>
+	<li>Open your portfolio's external style sheet in a text editor, and your portfolio home page in a browser.</li>
+	<li>Let's start with the &quot;skip to main content&quot; link. It's positioned at the top of the document, but since we added a left margin to the style sheet in the lesson on <a href="../module4/lesson2.html">Applying the Box Model in CSS</a>, that link is no longer positioned in the extreme upper left corner of the page. Users with low vision using screen magnification software would benefit from having it positioned there. Otherwise they might not see it. To return that link to the top left corner, add this CSS to your style sheet:
+<pre class="example">
+  div#skipnav {
+    top: 5px; 
+    left: 5px;  
+  }
+</pre>
+			Save your style sheet, and refresh your home page in the browser. Did this have the result you expected? If you expected <span class="example">top:5px</span> and <span class="example">left:5px</span> to position the #skipnav div in the top left corner of the screen, that would be a reasonable expectation. That won't work though because the default <span class="example">position</span> property for all elements, including this one, is <span class="example">static</span>, and when elements have <span class="example">position:static</span> we have no control over their top, bottom, left, or right coordinates on the page.
+		</li> 
+		<li>Let's try a different approach. Keep the style definition you used in the previous step, but now add this property: 
+<div class="example">
+	position: absolute;
+</div>
+		Save and refresh. Did that have the result you expected? If everything worked, you should have seen the #skipnav div move to the top left corner which was the intent, but by using <span class="example">position:absolute</span> we completely removed the #skipnav div from the flow of the document. This means it no longer occupies space that was otherwise keeping the content that follows it down a bit on the screen. Consequently, the rest of the page moved up to fill in the vacancy. This may or may not be a desirable result. If it's not desirable, there's another way: 
+		</li>
+		<li>Try replacing the #skipnav style definition with this: 
+<pre class="example">
+  div#skipnav {
+    position: relative;
+    right: 12.5%; 
+  }
+</pre>
+    Save and refresh. Is that a better result? By using <span class="example">position:relative</span>, the #skipnav element remains in the flow of the document, so all the content that follows has returned to its original position. However, now the top, bottom, left, and right properties can be used to position it <em>relative</em> to its default position.	So, <span class="example">right:12.5%</span> pushes it 12.5% <em>from</em> the right (which pushes it <em>toward</em> the left). Confused? That's ok - even professional web developers with many years of experience still struggle with all the nuances of CSS positioning.
+    </li> 	
+    <li>Continue playing with various strategies for positioning the #skipnav div until you're satisfied with its position. </li>
+		<li>Now let's try positioning the two .info divs so they're positioned side by side, rather than stacked on top of each other. One technique for positioning elements side-by-side is to use the CSS <span class="example">float</span> property. Elements can be floated to the left or right of content that's adjacent to them. We can float both of the .info div's left. The first one will float left, and the second one will float left right next to the first one. One advantage of using floating content is that it's able to transform itself to best fit the users's display. if a user's browser window size or screen resolution is too small to hold the two div's side by side, the second one will fall back down to its original position beneath the first one. To float all instances of <span class="example">div.info</span>, simply add <span class="example">float:left</span> to your existing CSS code for <span class="example">div.info</span>. Your code might look something like this:
+<pre class="example">
+  div.info { 
+    width: 40%;
+    font-size: 1.2em;
+    float: left;
+  }
+</pre>		
+		<strong>Note:</strong> You should already have created a style definition for <span class="example">div.info</span>. If you did, don't create a new one - simply add <span class="example">float:left</span> to the existing definition.
+		</li>
+		<li>One final step is necessary before this is complete. Since the code we just added is making the .info divs float to the left of the content that follows them, that means the <span class="element">nav</span> element will drift up to fill the gap to the right of the second .info div. We don't want this, so we also have to add the following style definition: 
+<pre class="example">
+  nav { 
+    clear: left;
+  }
+</pre>
+					The <span class="property">clear</span> property clears floats. The value can be <em>left</em>, <em>right</em>, or <em>both</em>, indicating which floats you want to clear. In this case, the .info divs were floated left, so we want to clear these left floats so they don't affect the #navigation div.  
+		</li>
+	</ol>		
+
+<h2>Handouts/Online documents</h2>  
+<ul> 
+	<li><a href="http://www.alistapart.com/articles/css-positioning-101">CSS Positioning 101</a> from A List Apart.</li>
+</ul>
+
+<h2>All done?</h2>
+
+<p>Show your instructor your results before starting the <a href="lesson2.html">next lesson</a>.</p>
+
+<footer role="contentinfo">
+Copyright &copy; 2005-2014 by University of Washington. Permission is granted to use these materials in whole or in part for educational, noncommercial purposes provided the source is acknowledged. This product was created with support from the National Institute on Disability and Rehabilitation Research of the U.S. Department of Education (grant #H133D010306), and is maintained with support from the National Science Foundation (grant #CNS-0540615). The contents do not necessarily represent the policies of the U.S. federal government, and you should not assume their endorsement.</footer>
+</div>
+</div>
+</body>
+</html>

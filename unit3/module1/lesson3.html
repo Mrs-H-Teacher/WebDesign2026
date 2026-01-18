@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>WebD2: Linking to an External Style Sheet</title>
+<!-- Hack to get IE to recognize  HTML5 elements-->
+<!-- See http://remysharp.com/2009/01/07/html5-enabling-script/comment-page-3/#allcomments-->
+<!--[if IE]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<link type="text/css" rel="stylesheet" href="../../../styles/webd2.css" media="screen">
+<link type="text/css" rel="stylesheet" href="../../../styles/webd2_print.css" media="print">
+</head>
+<body id="studentPage">
+<div id="wrapper">
+<div id="banner" role="banner">
+<div id="siteTitle">Web Design &amp; Development I</div>
+<div id="version">Version 2.0</div>
+<div id="subTitle">Student Version</div>
+</div>
+<nav role="navigation" aria-label="Main menu">
+<ul>
+<li><a href="../../../student/index.html">Home</a></li>
+<li><a href="../../../student/lessons.html">Lessons</a></li>
+<li><a href="../../../student/resources.html">Resources</a></li>
+<li id="btnPrev"><a href="../../../student/unit3/module1/lesson2.html">Previous</a></li>
+<li id="btnNext"><a href="../../../student/unit3/module2/index.html">Next</a></li>
+</ul>
+</nav>
+<div id="main" role="main">
+<div class="breadCrumbs" role="navigation" aria-label="Bread Crumbs"><a href="../index.html">UNIT 3</a> > <a href="index.html">MODULE 1</a></div>
+<h1>Lesson 3: Linking to an External Style Sheet</h1>
+
+
+<h2>Overview</h2>
+<p>Up to this point in the course you have learned how to add style to your web pages by inserting a style section using the <span class="element">&lt;style&gt;</span> element. But what if you want to change the look of the entire website? If your entire website was built with style definitions inside each page, that would mean going back into each page individually and changing the style. Fortunately, CSS provides a means of using an external style sheet to control the presentation of a large set of web pages. With an external style sheet, if you want to change the font style (or any other style definition) across an entire site, you only have to change it in one place.</p>
+
+<h2>Learner Outcomes</h2>
+<p>At the completion of this exercise:</p>
+<ul>
+	<li>you will have created an external style sheet, and linked to it from within your web pages.</li>
+</ul>
+
+<h2>Activities</h2>
+<ol>
+	<li>Create an external style sheet file. This file should consist of all styles
+    that you want to apply across your entire website. The contents of the
+    file is the same as the contents of the <span class="element">&lt;style&gt;</span> section you've created
+    within your web pages. The only difference is that the opening and closing <span class="element">&lt;style&gt;</span> tags are omitted. </li>
+  <li>Save your style sheet file in the <span class="filename">styles</span> subfolder 
+    that you created in <a href="../../unit2/module1/lesson1.html">the 
+      Pre-Coding lesson</a>. Name the file anything you like, but give it a 
+    <span class="filename">.css</span> extension (for example, <span class="filename">mystyle.css</span>)</li>
+  <li>Within the <span class="element">head</span> section of each of the web pages in your website,
+    add a link to the external style sheet. Here's how, assuming
+    your style sheet is named <span class="filename">mystyle.css</span>
+ 		<div class="example">
+    &lt;link type=&quot;text/css&quot; rel=&quot;stylesheet&quot; href=&quot;styles/mystyle.css&quot; media=&quot;screen&quot;&gt;
+		</div>
+  </li>
+  <li>While adding the above tag to each of your files, you can delete the <span class="element">&lt;style&gt;</span> section from <span class="filename">index.html</span> and any other page that has one. Since styles are now contained in an external css file, the <span class="element">&lt;style&gt;</span> section is no longer needed. It's still ok to have these sections though, as you might occasionally use them to define styles that only apply to the elements on a particular page.</li>
+  <li>Also, while you're updating each of the files in your portfolio, you should also seize the opportunity to copy and paste any other content that so far you've added only to the home page, but should appear on <em>every</em> page throughout your site. Specifically, copy and paste the following content:
+  	<ul>
+  		<li>The "skip to main content" link</li>
+  		<li>The main heading (<span class="element">&lt;h1&gt;</span>) - but change the text so it reflects the content of the page you're copying it to</li>
+  		<li>The navigation menu</li>
+  		<li>The <span class="element">&lt;main id="main"&gt;</span> tag that marks the start of the main content</li>
+  		<li>The closing <span class="element">&lt;/main&gt;</span> that marks the end of the main content.</li>
+  		<li>Be very careful to paste each of these items in their appropriate places within the HTML code.</li>
+  	</ul>
+  </li>
+  <li>Play around with your external style sheet to see how your changes affect the look of your home page. Also, use your navigation menu to check how your external style sheet affects other pages on your site in addition to your home page. </li>
+</ol>
+
+<h2>Resources/Online documents</h2>
+<ul>
+  <li>Web Design Group (WDG): <a href="http://www.htmlhelp.com/reference/css/style-html.html">Linking Style Sheets to HTML</a></li>
+</ul>
+<h2>All done?</h2>
+<p>Show your instructor your completed website, showing how you're controlling
+  the site's presentation with your external style sheet. Then proceed to <a href="../module2/index.html">the next module.</p>
+
+<footer role="contentinfo">
+Copyright &copy; 2005-2014 by University of Washington. Permission is granted to use these materials in whole or in part for educational, noncommercial purposes provided the source is acknowledged. This product was created with support from the National Institute on Disability and Rehabilitation Research of the U.S. Department of Education (grant #H133D010306), and is maintained with support from the National Science Foundation (grant #CNS-0540615). The contents do not necessarily represent the policies of the U.S. federal government, and you should not assume their endorsement.</footer>
+</div>
+</div>
+</body>
+</html>

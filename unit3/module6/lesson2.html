@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>WebD2: Stylizing a Navigation Menu with CSS</title>
+<!-- Hack to get IE to recognize  HTML5 elements-->
+<!-- See http://remysharp.com/2009/01/07/html5-enabling-script/comment-page-3/#allcomments-->
+<!--[if IE]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<link type="text/css" rel="stylesheet" href="../../../styles/webd2.css" media="screen">
+<link type="text/css" rel="stylesheet" href="../../../styles/webd2_print.css" media="print">
+</head>
+<body id="studentPage">
+<div id="wrapper">
+<div id="banner" role="banner">
+<div id="siteTitle">Web Design &amp; Development I</div>
+<div id="version">Version 2.0</div>
+<div id="subTitle">Student Version</div>
+</div>
+<nav role="navigation" aria-label="Main menu">
+<ul>
+<li><a href="../../../student/index.html">Home</a></li>
+<li><a href="../../../student/lessons.html">Lessons</a></li>
+<li><a href="../../../student/resources.html">Resources</a></li>
+<li id="btnPrev"><a href="../../../student/unit3/module6/lesson1.html">Previous</a></li>
+<li id="btnNext"><a href="../../../student/unit3/module7/index.html">Next</a></li>
+</ul>
+</nav>
+<div id="main" role="main">
+<div class="breadCrumbs" role="navigation" aria-label="Bread Crumbs"><a href="../index.html">UNIT 3</a> > <a href="index.html">MODULE 6</a></div>
+<h1>Lesson 2: Stylizing a Navigation Menu with CSS</h1>
+
+
+<h2>Overview</h2>
+<p>In the previous lesson, you learned about controlling the layout of a web page using CSS. One of the techniques you learned was floating content so that elements appear beside one another. In the current lesson you will apply these techniques to stylizing your navigation menu.</p>
+
+<h2>Learner Outcomes</h2>
+<p>At the completion of this exercise:</p>
+<ul>
+	<li>you  will be able to use a variety of CSS properties to make an unordered list look like a navigation menu.</li>
+</ul>
+
+<h2>Activities</h2>  
+<ol>
+	<li>Open your portfolio's external style sheet in a text editor, and your portfolio home page in a browser. <strong>After each step listed below, save your style sheet, then refresh your page in the browser to see what effect the change has had.</strong></li>
+	<li>In your external style sheet, create a new section at the end of your CSS file to keep all the styles related to the navigation menu together. You can do this by adding a comment to the end of the file, like this:
+<pre class="example">
+  /* navigation menu styles */
+</pre>
+	Then, all styles related to the navigation menu will go after this comment. <strong>NOTE: </strong> Each of the style definitions that follow is unique. The <span class="term">selectors</span> are similar, but if you look closely at them you'll see that they actually refer to distinct elements. So be sure to include each of these definitions in your style sheet.
+	</li>
+	<li>The navigation menu is contained within the <span class="selector">nav</span> element, but that's just a container. Most of the elements we need to stylize are actually contained <em>inside</em> the <span class="selector">nav</span> element. To stylize them, we can use <span class="term">descendant selectors</span>, which were defined in <a href="../module5/lesson1.html">the lesson on id and class</a>. To start with, we can remove the bullets from the unordered list, like this:
+<pre class="example">
+nav ul { 
+  list-style-type: none;
+}
+</pre>	
+	</li>
+	<li>Next, float all list items to the left, just like you did with the <span class="selector">.info</span> divs in the previous lesson. While you're at it, you might want to add a margin to the right of each list item so they're not all squished together:
+<pre class="example">
+nav ul li { 
+  float: left;
+  margin-right: 0.5em;
+}
+</pre>	
+	</li>
+	<li>Next stylize the anchors (links) that are nested inside the list items. The style you add here makes the list items look like menu buttons. The following styles are an example, but feel free to tweak these styles and come up with your own unique menu style:
+<pre class="example">
+nav ul li a { 
+  padding: 0.25em 1em;
+  text-decoration: none; /* no underline */
+  background-color: #EBF5FF; /* pale bluish white */
+  color: #4312AE; /* dark blue */
+  border: 2px solid black;
+  border-top-left-radius: 1em 1em; /* rounded corner! */
+  border-top-right-radius: 1em 1em; /* another rounded corner! */	 
+}	
+</pre>
+	</li>
+	<li>Now add :hover and :focus pseudo-classes so the menu items change color when users point or tab to them:
+<pre class="example">
+nav ul li a:hover, nav ul li a:focus { 
+  color: black; 
+  background-color: white; 
+  font-weight: bold;
+}
+</pre>	
+	</li>
+	<li>You might also need to adjust the style of the <span class="code">nav</span> itself to make the menu fit better, but that's up to you.</li>
+	<li>Finally, to prevent side effects from all those floated elements, add <span class="code">clear:left</span> to the style definition for <span class="selector">main</span>, since that's the content that immediately follows the navigation menu.</li>
+	</ol>
+	
+<h2>Handouts/Online Documents</h2>
+<ul>  
+	<li><a href="http://www.w3schools.com/cssref/default.asp">CSS Reference</a> from W3Schools</li>
+	<li><a href="http://meyerweb.com/eric/css/references/css2ref.html">CSS2 Specification via Eric Meyer</a></li>
+	<li><a href="http://www.htmlhelp.com/reference/css/properties.html">CSS Properties</a> from Web Design Group</li>
+</ul>
+
+<h2>All done?</h2>
+<p>Save your changes, and show your final navigation menu to your instructor before starting <a href="../module7/index.html">the next module</a>.</p>
+
+<footer role="contentinfo">
+Copyright &copy; 2005-2014 by University of Washington. Permission is granted to use these materials in whole or in part for educational, noncommercial purposes provided the source is acknowledged. This product was created with support from the National Institute on Disability and Rehabilitation Research of the U.S. Department of Education (grant #H133D010306), and is maintained with support from the National Science Foundation (grant #CNS-0540615). The contents do not necessarily represent the policies of the U.S. federal government, and you should not assume their endorsement.</footer>
+</div>
+</div>
+</body>
+</html>

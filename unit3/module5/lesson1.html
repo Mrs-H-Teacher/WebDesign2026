@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>WebD2: Understanding ID and Class in CSS</title>
+<!-- Hack to get IE to recognize  HTML5 elements-->
+<!-- See http://remysharp.com/2009/01/07/html5-enabling-script/comment-page-3/#allcomments-->
+<!--[if IE]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<link type="text/css" rel="stylesheet" href="../../../styles/webd2.css" media="screen">
+<link type="text/css" rel="stylesheet" href="../../../styles/webd2_print.css" media="print">
+</head>
+<body id="studentPage">
+<div id="wrapper">
+<div id="banner" role="banner">
+<div id="siteTitle">Web Design &amp; Development I</div>
+<div id="version">Version 2.0</div>
+<div id="subTitle">Student Version</div>
+</div>
+<nav role="navigation" aria-label="Main menu">
+<ul>
+<li><a href="../../../student/index.html">Home</a></li>
+<li><a href="../../../student/lessons.html">Lessons</a></li>
+<li><a href="../../../student/resources.html">Resources</a></li>
+<li id="btnPrev"><a href="../../../student/unit3/module5/index.html">Previous</a></li>
+<li id="btnNext"><a href="../../../student/unit3/module5/lesson2.html">Next</a></li>
+</ul>
+</nav>
+<div id="main" role="main">
+<div class="breadCrumbs" role="navigation" aria-label="Bread Crumbs"><a href="../index.html">UNIT 3</a> > <a href="index.html">MODULE 5</a></div>
+<h1>Lesson 1: Understanding ID and Class in CSS</h1>
+
+
+<h2>Overview</h2>
+<p>So far you have added style to various elements in your portfolio page, but the styles you've added have affected <em>all</em> elements of a particular type. For example, when you added style to the <span class="element">div</span> element that affected all <span class="element">div</span> elements equally. What if you want to stylize some <span class="element">div</span> elements one way, and other <span class="element">div</span> elements a different way? That's where <span class="term">id</span> and <span class="term">class</span> come in. In this lesson you will learn how ID and Class attributes can be used to stylize individual elements (<span class="term">id</span>) or groups of elements (<span class="term">class</span>).</p>
+
+<h2>Learner Outcomes</h2>
+<p>At the completion of this exercise:</p>
+<ul>
+	<li>you will be able to identify how ID attributes are used in CSS to enable styling of individual elements.</li>
+	<li>you will be able to identify how Class attributes are used in CSS to enable styling of groups of elements.</li>
+	<li>you will have added ID and Class attributes to certain elements within a web page.</li>
+</ul>
+
+<h2>What is <span class="term">id</span>?</h2>
+<p>In HTML, every element on your web page can be assigned a unique <span class="attribute">id</span> attribute. This can be any text you like, but it has to be unique (only one item can have this label). It's a good practice to assign labels that describe the function of the element. For example, a <span class="element">&lt;ul&gt;</span> that's used to markup a navigation menu might have <span class="code">id=&quot;navigation&quot;</span> or <span class="code">id=&quot;menu&quot;</span></p>
+
+<p>You assign an <span class="attribute">id</span> attribute to an HTML element when:</p>
+
+<ol>
+	<li>You want to stylize that element differently than other elements of the same type.</li>
+	<li>You want to be able to link to a particular element within a web page. In fact, you already added <span class="code">id=&quot;main&quot;</span> to one of the div elements on your portfolio page when you created a &quot;skip to main content&quot; link in the lesson on <a href="../../unit2/module4/lesson3.html">Special Types of Links</a>.</li>
+	<li>You want to be able to directly access that element using Javascript. You'll learn more about that in <a href="../../unit5/module2/index.html">the module on Javascript</a>.</li>
+</ol> 
+
+<p>In this unit, we're just interested in the first reason to add an ID. We want to be able to stylize specific elements using CSS. For example, let's say you have a paragraph that serves as an alert on a page. You don't want it to look like all the other paragraphs on the page. You want it to stand out so people are sure to notice it. You could add <span class="code">id=&quot;alert&quot;</span> to that paragraph, like this:
+</p>
+
+<pre class="example">
+  &lt;p id=&quot;alert&quot;&gt;Important! All classes are cancelled today.&lt;/p&gt;
+</pre>
+
+<p>To add style to an element with an id, you preface the id with a <strong>#</strong> symbol in your CSS. For example, here's how we could make our alert paragraph appear in a big yellow box with a black border and big black text:
+</p>
+
+<pre class="example">
+  p#alert { 
+    color: black;
+    font-weight: bold;
+    background: #FFFF66; /* yellow */
+    border: 2px solid black;
+    padding: 1em;
+  }
+</pre>
+
+<p>Note that specifying the element type in CSS is optional when the element has an id. In the above example, we use &quot;p#alert&quot; as the selector, which tells the browser that the following style applies to the paragraph with id &quot;alert&quot;. However, since there's no other element - paragraph or otherwise - that has that same id, we could just as easily have used &quot;#alert&quot; as our selector, without the &quot;p&quot;, like this:</p>
+
+<pre class="example">
+  #alert { 
+    color: black;
+    font-weight: bold;
+    background: #FFFF66; /* yellow */
+    border: 2px solid black;
+    padding: 1em;
+  }
+</pre>
+
+<p>It's generally a good practice though to include the element because it helps you to remember which elements had certain id's. Sometimes you'll want to know that just by looking at the CSS file, without having to refer back to the original HTML file. 
+</p>
+
+<h2>What is <span class="term">class</span>?</h2>
+
+<p>Sometimes there might be a <em>group</em> of elements that you want to stylize in a certain way. For example, let's say you're creating an entertainment web page that includes several movie reviews, in addition to other content. The entire content of each review (a heading with the movie title, plus several paragraphs) is wrapped in a <span class="element">&lt;div&gt;</span> in order to keep it all together in one box. The first paragraph of each review is a short summary describing the movie, then all remaining paragraphs contain the content of your critique of the movie. You may want to stylize the <span class="element">&lt;div&gt;</span> elements that contain each review differently than other <span class="element">&lt;div&gt;</span> elements on the page, so reviews all have a distinct look, but consistent with one another. You could accomplish this by assigning <span class="code">class=&quot;review&quot;</span> to each of these reviews. Also, you might want the summary paragraph to have a distinctive look, different from all other paragraphs. You could accomplish this by assigning <span class="code">class=&quot;summary&quot;</span> to each summary paragraph. Your code might look something like this:
+</p>
+
+<pre class="example">
+  &lt;div class=&quot;review&quot;&gt;
+    &lt;h2&gt;The Godfather&lt;/h2&gt;
+    &lt;p class=&quot;summary&quot;&gt;The Godfather (1972) is the greatest movie of all time, 
+      according to numerous surveys of movie critics and audiences alike.&lt;/p&gt;
+    &lt;p&gt;The Godfather is... (your review here)&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;review&quot;&gt;
+    &lt;h2&gt;Avatar&lt;/h2&gt;
+    &lt;p class=&quot;summary&quot;&gt;Avatar (2009) is the highest grossing film of all time, 
+      earning approximately $2.8 billion.&lt;/p&gt;
+    &lt;p&gt;Avatar is... (your review here)&lt;/p&gt;
+  &lt;/div&gt;
+</pre>
+
+<p>To add style to all elements that are part of a particular class, you preface the class name with a <strong>period (.)</strong> in your CSS. For example, here's how we could add a pale blue background and dark blue border to all movie reviews, and add italics to all summary paragraphs:</p>
+
+<pre class="example">
+  div.review { 
+    background-color: #E6EBF5; /* pale blue */
+    border: 1px solid #003399; /* dark blue */
+  }
+  p.summary { 
+  	font-style: italic;
+  }
+</pre>
+
+<h2>Descendant Selectors</h2>
+
+<p>In addition to assigning styles to a <em>class</em> of elements, you can also assign styles to <span class="term">descendants</span> of those elements. A descendant is an element that is nested <em>inside</em> another element.</p>
+<p>As an example, let's say you wanted all &lt;a&gt; elements (links) on a page to be red and underlined. Here's how you could accomplish that in CSS:</p>
+<pre class="example">
+  a { 
+	  color: red;
+	  text-decoration: underline;  
+  }
+</pre>
+<p>However, let's also say you wanted a different style for links that are part of your navigation menu. You want them to be white text on a dark blue background, with no underline. Assuming these links are contained within a <span class="element">&lt;nav&gt;</span> element, you could stylize those using descendant selectors in CSS, like so:</p>
+
+<pre class="example">
+  nav a { 
+	  color: white;
+	  background-color: #003399; /* dark blue */
+	  text-decoration: none;  
+  }
+</pre>
+
+<p>In the above example, the selector <span class="code">nav</span> tells the browser to apply the style definition to every <span class="element">&lt;a&gt;</span> element that's inside of a <span class="element">&lt;nav&gt;</span> element. In other words, if there's a link inside the navigation menu, apply this style to it.</p>
+
+<p>In the movie review example, let's say that most paragraphs on your entertainment page have padding set to 1em. However, you want to reduce that padding to 0.75em for all paragraphs that make up the movie reviews, to make the reviews look a little tighter. Since the movie reviews are each wrapped inside of a <span class="element">&lt;div&gt;</span> element with <span class="code">class=&quot;review&quot;</span>, you can easily stylize them all using descendant selectors, like this:</p>
+
+<pre class="example">
+  div#review p { 
+	  padding: 0.75em;
+  }
+</pre>
+
+<h2>Activities</h2>
+	<ol>
+		<li>Open your portfolio's <span class="filename">index.html</span> file with your text editor.</li>
+		<li>Review the content of your page. It should contain one or more of the following elements: 
+			<ul style="list-style-type:none">
+				<li>&lt;div&gt;</li>
+				<li>&lt;a&gt;</li>
+				<li>&lt;nav&gt;</li>
+				<li>&lt;ul&gt;</li>
+				<li>&lt;li&gt;</li>
+				<li>&lt;main&gt;</li>
+				<li>&lt;h1&gt;</li>
+				<li>&lt;h2&gt;</li>
+				<li>&lt;p&gt;</li>
+			</ul>
+		</li>
+		<li>Notice how many <span class="element">&lt;div&gt;</span> elements there are. Each of these currently has the same style. Which of these might you want to style differently? As you think about this, consider the function of each div:
+			<ul>
+				<li>The first div is a container for the <em>skip to main content</em> link.</li>
+				<li>The second div is a container for your contact information.</li>
+				<li>The third div is a container for information about your course and school.</li>
+			</ul>
+			The second and third div are similar in function, but the first one is very distinct.
+		</li>		
+		<li>The first div is unique. It's functionally different than all other divs and you will likely want it to be stylized differently. Therefore, is should have a unique id. Assign <span class="code">id=&quot;skipnav&quot;</span> to the first div. <strong>NOTE:</strong> This div appear in the other pages in your portfolio too, so you'll need to open each of the other HTML files and add this same id attribute there.</p>
+		</li>
+		<li>Since the second and third divs are similar to one another, they could be assigned a class. Then, whatever style you apply to that class will apply to both of these divs. Since both contain info about something, add an attribute  <span class="code">class=&quot;info&quot;</span> to each of these divs.</li>
+		<li>Now look over the paragraphs inside the <span class="element">&lt;main&gt;</span> element. There should be an overview paragraph at the top. Add <span class="code">id=&quot;overview&quot;</span> to this paragraph so it be can stylized differently than the other paragraphs.</li>
+		<li>Currently, you have several paragraphs that contain placeholder content such as &quot;This section will be completed soon.&quot; For each of these paragraphs, add <span class="code">class=&quot;temp&quot;</span>. This will allow the placeholder content to be stylized differently than completed content. As you add content to these sections in the future, you'll need to remember to remove that class.</li>
+	</ol>
+
+<h2>Handouts/Online Documents</h2>
+<ul>
+	<li><a href="http://www.w3schools.com/css/css_id_class.asp">CSS ID and Class</a> - from W3schools</li>
+</ul>
+
+<h2>All done?</h2>
+<p>After you added <span class="attribute">id</span> and <span class="attribute">class</span> elements to each of the divs on your portfolio home page, you now have the framework in place to add much more variety to the style on your page. Show your page to your instructor before continuing on to <a href="lesson2.html">Lesson 2</a>.</p>
+
+<footer role="contentinfo">
+Copyright &copy; 2005-2014 by University of Washington. Permission is granted to use these materials in whole or in part for educational, noncommercial purposes provided the source is acknowledged. This product was created with support from the National Institute on Disability and Rehabilitation Research of the U.S. Department of Education (grant #H133D010306), and is maintained with support from the National Science Foundation (grant #CNS-0540615). The contents do not necessarily represent the policies of the U.S. federal government, and you should not assume their endorsement.</footer>
+</div>
+</div>
+</body>
+</html>

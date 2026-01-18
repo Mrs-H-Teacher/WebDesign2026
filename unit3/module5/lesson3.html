@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>WebD2: Pseudo-class Selectors in CSS</title>
+<!-- Hack to get IE to recognize  HTML5 elements-->
+<!-- See http://remysharp.com/2009/01/07/html5-enabling-script/comment-page-3/#allcomments-->
+<!--[if IE]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<link type="text/css" rel="stylesheet" href="../../../styles/webd2.css" media="screen">
+<link type="text/css" rel="stylesheet" href="../../../styles/webd2_print.css" media="print">
+</head>
+<body id="studentPage">
+<div id="wrapper">
+<div id="banner" role="banner">
+<div id="siteTitle">Web Design &amp; Development I</div>
+<div id="version">Version 2.0</div>
+<div id="subTitle">Student Version</div>
+</div>
+<nav role="navigation" aria-label="Main menu">
+<ul>
+<li><a href="../../../student/index.html">Home</a></li>
+<li><a href="../../../student/lessons.html">Lessons</a></li>
+<li><a href="../../../student/resources.html">Resources</a></li>
+<li id="btnPrev"><a href="../../../student/unit3/module5/lesson2.html">Previous</a></li>
+<li id="btnNext"><a href="../../../student/unit3/module6/index.html">Next</a></li>
+</ul>
+</nav>
+<div id="main" role="main">
+<div class="breadCrumbs" role="navigation" aria-label="Bread Crumbs"><a href="../index.html">UNIT 3</a> > <a href="index.html">MODULE 5</a></div>
+<h1>Lesson 3: Pseudo-class Selectors in CSS</h1>
+
+
+<h2>Overview</h2>
+<p>CSS pseudo-classes are used to add styles to selectors, but only when those selectors meet certain conditions. A pseudo class is expressed by adding a colon (:) after a selector in CSS, followed by a pseudo-class such as &quot;hover&quot;,  &quot;focus&quot;, or &quot;active&quot;, like this:</p>
+
+<pre class="example">
+  a:hover { 
+    /* your style here */    
+  }
+</pre>
+
+<p>The idea with pseudo-classes is that you can stylize elements differently when users are hovering over them (:hover) or tabbing to them with the keyboard (:focus) or at that exact moment when users are selecting a link (:active). You can also stylize links differently after users have visited them (:visited). There are many other pseudo-classes available. See the <a href="http://www.w3schools.com/css/css_pseudo_classes.asp">W3Schools CSS Pseudo-classes page</a> for more information.</p>
+
+<h2>Learner Outcomes</h2>
+<p>At the completion of this exercise:</p>
+<ul>
+  <li>you will be able to use the :hover, :focus, and :active CSS pseudo-classes to a web page to help the user track their current position on the page.</li>
+  <li>you will be able to use the :first-letter pseudo-class to distinctly stylize the first letter of a block of text.</li>    
+</ul>
+
+<h2>Use CSS Pseudo-classes to Highlight User's Position</h2>
+
+<p>When a user points to an object on a web page with a mouse, it's helpful if that object responds in some way. For example, when a user hovers over a link, the color and background-color of that link could be reversed. In the following example CSS, all links on a page are stylized as black on a white background, but when a user hovers over the colors are reversed.</p>
+
+<pre class="example">
+  a { 
+    color: black;
+    background-color: white;
+  }
+  a:hover { 
+    color: white;
+    background-color: black;
+  }
+</pre>
+
+<p>This functionality makes pages come to life, responding as the user moves their mouse around the page. For people who are navigating by keyboard (for example, by pressing tab to move through links on the page), this functionality is even more critical, because it's often very difficult for keyboard users to keep track of their location on the page. Most web browsers provide some visual indication of which element currently has focus, but in some of the leading browsers this is simply a thin dotted line that is very difficult, if not impossible, to see, especially against certain backgrounds. To add the same functionality for both keyboard and mouse users, we simply add the :focus pseudo-class to our earlier definition, like this:</p>
+
+<pre class="example">
+  a { 
+    color: black;
+    background-color: white;
+  }
+  a:hover, a:focus { 
+    color: white;
+    background-color: black;
+  }
+</pre>
+
+<p>Now, every time a user navigates to a link on the gather, whether they do so by pointing with a mouse or by tabbing with the keyboard, that link will reverse colors.</p>
+
+<h2>Activities</h2>
+<ol>
+	<li>Open your portfolio's external style sheet in a text editor, and your portfolio home page in a browser.</li>
+	<li>Refer to the CSS code in the above example and add a style definition to your own style sheet that will reverse the color and background-color of link text on your page.</li>
+	<li>When finished, save the file and refresh your home page in the browser, then test it. Test it by pointing to links with the mouse, and by navigating through the links on the page using the tab key.</li>
+	<li>CSS pseudo-classes can produce interesting typographic effects too. Use the <span class="code">:first-letter</span> pseudo-class to stylize the first letter of <span class="code">p#overview</span> so that it appears larger, and using a fancier font. For help selecting a font refer to the font references in the Resources section below.</li>
+</ol>
+  
+<h2>Handouts/Online Documents</h2>
+<ul>
+	<li><a href="http://www.w3schools.com/css/css_pseudo_classes.asp">W3Schools CSS Pseudo-classes page</a></li>
+	<li><a href="http://www.w3.org/Style/Examples/007/fonts.en.html">W3C CSS Fonts page</a></li>
+	<li><a href="http://www.inspirationbit.com/16-best-loved-font-bits-in-web-design/">16 best loved Font Bits in Web Design</a> by Vivian of Inspiration Bit</li>
+	<li><a href="http://www.codestyle.org/css/font-family/sampler-Cursive.shtml">Survey results: The Most Common Cursive Fonts</a></li>
+	<li><a href="http://www.codestyle.org/css/font-family/sampler-Fantasy.shtml">Survey results: The Most Common Fantasy Fonts</a></li>
+</ul>
+
+<h2>All done?</h2>
+<p>Show your instructor your results before continuing on to <a href="../module6/">Module 6</a>.</p>
+
+<footer role="contentinfo">
+Copyright &copy; 2005-2014 by University of Washington. Permission is granted to use these materials in whole or in part for educational, noncommercial purposes provided the source is acknowledged. This product was created with support from the National Institute on Disability and Rehabilitation Research of the U.S. Department of Education (grant #H133D010306), and is maintained with support from the National Science Foundation (grant #CNS-0540615). The contents do not necessarily represent the policies of the U.S. federal government, and you should not assume their endorsement.</footer>
+</div>
+</div>
+</body>
+</html>

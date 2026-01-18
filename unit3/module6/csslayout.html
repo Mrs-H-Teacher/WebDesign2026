@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>WebD2: Page Layout: Overall Design Strategies</title>
+<!-- Hack to get IE to recognize  HTML5 elements-->
+<!-- See http://remysharp.com/2009/01/07/html5-enabling-script/comment-page-3/#allcomments-->
+<!--[if IE]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<link type="text/css" rel="stylesheet" href="../../../styles/webd2.css" media="screen">
+<link type="text/css" rel="stylesheet" href="../../../styles/webd2_print.css" media="print">
+</head>
+<body id="studentPage">
+<div id="wrapper">
+<div id="banner" role="banner">
+<div id="siteTitle">Web Design &amp; Development I</div>
+<div id="version">Version 2.0</div>
+<div id="subTitle">Student Version</div>
+</div>
+<nav role="navigation" aria-label="Main menu">
+<ul>
+<li><a href="../../../student/index.html">Home</a></li>
+<li><a href="../../../student/lessons.html">Lessons</a></li>
+<li><a href="../../../student/resources.html">Resources</a></li>
+</ul>
+</nav>
+<div id="main" role="main">
+<h1>Page Layout: Overall Design Strategies</h1>
+
+<h2>Overview</h2>
+<p>In the early days of the Web, pages were displayed in a single column. However, designers quickly started looking for ways to make web pages look more like print media such as newspapers and magazines. One of these designers discovered that the &lt;table&gt; element could be used to display content in multiple columns. This was not what tables were designed for: They were designed specifically for displaying rows and columns of data (as you learned in <a href="../../unit2/module5/lesson1.html">the earlier lesson on Data Tables</a>). However, the idea quickly took off and most web pages throughout the late 1990's used tables for layout.</p>
+<p>Cascading style sheets (CSS) had been around since 1996, when the first CSS specification was published. However, it took a while for browsers to support CSS. The CSS 2 specification was published in 1998, more browsers began to support it, and more web designers began using it. Nowadays virtually all web designers use CSS for page layout.</p>
+<p>CSS layout has important advantages over table-based layout. It requires relatively little code, which translates to smaller file sizes and faster downloads. Less code also makes the page easier to update and maintain. Also, pages that use CSS for layout can adjust better to the size of the user's display; tables don't wrap, so viewing a table-based layout on a small screen can require lots of horizontal scrolling: Not good.</p>
+<p>So the decision of whether to use tables or CSS for layout is an easy one. But a more difficult decision is: Do I use a <span class="term">fixed width design</span> or a <span class="term">fluid design</span>?</p>
+
+<h2>Fixed Width Design</h2>
+<p>One approach to designing a web page is to define a specific page width in pixels. For example, the following code would force the body of your web page to be 1000 pixels wide, and would center it horizontally in the browser window:</p>
+<pre class="example">
+body { 
+  width: 1000px;
+  margin: 0 auto; /* this margin property causes the content to be centered */
+  border: thick solid black; 
+  padding: 1em;
+}
+</pre>
+<p>You can recognize fixed width designs on the web by resizing your browser window when viewing a web page. If the content remains the same width when you resize your window, it's a fixed width design. The problem with having a fixed width is that there a wide variety of screen resolutions in use today. If the body of your web page is fixed at 1000 pixels wide,    it won't all fit if someone is viewing the page at a lower resolution. These users will have to scroll horizontally to access hidden page content, and nobody wants to do that. One solution is to set the width to a value that is likely to fit for most users. If you have a website that's designed for web designers and programmers, that audience is likely to have higher resolution screens (1024 pixels or higher), so you'd be relatively safe designing a site that's 1000 pixels wide. However, if your audience might include people who don't upgrade their technology on a regular basis, you should design a site that will fit on lower resolution screens. A design that's 720 pixels wide will fit comfortably within an 800-pixel wide screen, which is a common default resolution on older desktop monitors and is still highly common on projectors.</p>       
+<p>The problem with a fixed width design is that one size really doesn't fit all. A fixed design may be perfect for a few users, but for many user's it's either too wide or too narrow, depending on their screen resolution. However, a fixed width design may still be the best choice if your design includes graphics. Since graphics are a fixed size, you know exactly how wide you need your page to be in order to hold those graphics. If the width is too small, the graphics will overflow the boundaries of their containers.</p>
+
+<h2>Fluid Design</h2>  
+
+<p>A <span class="term">fluid</span> design, also known as a <span class="term">liquid</span> design, is a design in which the width is defined using percentages or em's, or not defined at all. With this type of design, the content automatically flows and repositions itself to fit the user's browser window. This type of design forces designers to be more flexible, and not be attached to their page having the same exact layout for all users. It acknowledges the differences between users' technologies, and tries to deliver content in a way that works best for that user's settings. For example, the following code defines the width of your body to be 70% of the browser window. If you expand or contract the size of your browser window, the size of your body changes accordingly:</p>
+<pre class="example">
+body { 
+  width: 70%;
+  margin: 0 auto; /* horizontal center */
+  border: thick solid black; 
+  padding: 1em;
+}
+</pre>
+<p>As noted above, the problem with a fluid design is if you have images that are say, 800 pixels wide, and those are inside a container that's only 720 pixels wide, the images will overflow their container. That isn't necessarily a problem though, because images can be fluid too. The following code will prevent images from exceeding their boundaries&mdash;if a container is too small to hold an image, the image will be resized to fit:</p>
+<pre class="example">
+img { 
+  max-width: 100%;
+}
+</pre>
+<p>This isn't a perfect solution, because historically this technique has resulted in a reduction of image quality in browsers on the Windows operating system. There are technical solutions for this too, but they're beyond the scope of what we'll be covering in this course.</p>
+
+<h2>Hybrid Fixed/Fluid Design</h2>
+
+<p>One strategy that captures the strengths of both fixed and fluid design is to use a fluid design, but if there's a width below which your design starts to fall apart, you can set a <span class="property">min-width</span> property that requires the width to be <em>at least</em> a fixed number of pixels. For example, the following code is the same as the fluid design example above, but the design stops flowing at 720 pixels&mdash;it won't get any more narrow than that.</p>
+<pre class="example">
+body { 
+  width: 70%;
+  min-width: 720px;
+  margin: 0 auto; /* horizontal center */
+  border: thick solid black; 
+  padding: 1em;
+}
+</pre>
+
+<h2>Mobile First and Responsive Design</h2>
+
+<p>These days, the problem of developing content that fits all screen resolutions is compounded by the fact that so many people are now accessing the Web on a wide variety of mobile devices, including cell phones and tablets. The idea that one size does <strong>not</strong> fit all is more true today than ever before when it comes to web design.</p>
+<p>A new design philosophy called <span class="term">responsive design</span> has emerged to address this problem. The idea is to create multiple designs for users on various devices. CSS3 provides a means of detecting characteristics of the user's device, so different styles can be applied based on those characteristics. A companion approach to this philosophy is <span class="term">mobile first</span>, in which the designer starts with a simple design that works well on mobile devices, then expands upon that to build progressively more complex designs for higher resolution devices and displays. Responsive design techniques are beyond the scope of this course, but if you'd like to learn more Kayla Knight's article <a hef="http://coding.smashingmagazine.com/2011/01/12/guidelines-for-responsive-web-design/">Responsive Web Design: What It Is and How To Use It</a> in Smashing Magazine is extremely comprehensive.</p>
+
+<h2>The Boston Globe: The Evolution of the Web</h2>
+<p>The <a href="http://archive.org/">Internet Archive</a> is a non-profit organization dedicated to preserving the history of the Web. Their <a href="http://archive.org/web/web.php">Wayback Machine</a> enables us to search the archives for historic versions of web pages dating back to 1996.</p>
+<p>The Boston Globe website provides a good example of how web page layouts have evolved over the years. As you look at these examples, try resizing your browser window to see what happens. Check out the source code on these pages to see what's under the hood:</p>
+<ul>
+	<li><a href="http://web.archive.org/web/19990125084913id_/http://boston.com/">January 25, 1999</a> - A table-based layout, 600 pixels wide, with a 1000 pixel background image for people with <em>really</em> wide monitors</li>
+	<li><a href="http://web.archive.org/web/20000229083416id_/http://boston.com/">February 22, 2000</a> - expanded the main content table to 745 pixels in order to add a right sidebar</li>
+	<li><a href="http://web.archive.org/web/20040412023516id_/http://boston.com/">April 12, 2004</a> - Still using a table-based layout, but it's slightly larger (778 pixels) and centered so it doesn't look so odd on wide screens. They also have starting using CSS for fonts, margins, and background colors, but not for layout.</li>	
+	<li><a href="http://web.archive.org/web/20080426112651id_/http://www.boston.com/">April 26, 2008</a> - No more tables! Layout uses CSS, fixed width (959 pixels)</li>
+	<li><a href="http://www.bostonglobe.com/">BostonGlobe Today</a> - responsive design, detects user's display settings and delivers a design that works for those settings</li>	
+</ul>
+
+<footer role="contentinfo">
+Copyright &copy; 2005-2014 by University of Washington. Permission is granted to use these materials in whole or in part for educational, noncommercial purposes provided the source is acknowledged. This product was created with support from the National Institute on Disability and Rehabilitation Research of the U.S. Department of Education (grant #H133D010306), and is maintained with support from the National Science Foundation (grant #CNS-0540615). The contents do not necessarily represent the policies of the U.S. federal government, and you should not assume their endorsement.</footer>
+</div>
+</div>
+</body>
+</html>

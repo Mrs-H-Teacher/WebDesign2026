@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>WebD2: Understanding the Box Model in CSS</title>
+<!-- Hack to get IE to recognize  HTML5 elements-->
+<!-- See http://remysharp.com/2009/01/07/html5-enabling-script/comment-page-3/#allcomments-->
+<!--[if IE]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<link type="text/css" rel="stylesheet" href="../../../styles/webd2.css" media="screen">
+<link type="text/css" rel="stylesheet" href="../../../styles/webd2_print.css" media="print">
+</head>
+<body id="studentPage">
+<div id="wrapper">
+<div id="banner" role="banner">
+<div id="siteTitle">Web Design &amp; Development I</div>
+<div id="version">Version 2.0</div>
+<div id="subTitle">Student Version</div>
+</div>
+<nav role="navigation" aria-label="Main menu">
+<ul>
+<li><a href="../../../student/index.html">Home</a></li>
+<li><a href="../../../student/lessons.html">Lessons</a></li>
+<li><a href="../../../student/resources.html">Resources</a></li>
+<li id="btnPrev"><a href="../../../student/unit3/module4/index.html">Previous</a></li>
+<li id="btnNext"><a href="../../../student/unit3/module4/lesson2.html">Next</a></li>
+</ul>
+</nav>
+<div id="main" role="main">
+<div class="breadCrumbs" role="navigation" aria-label="Bread Crumbs"><a href="../index.html">UNIT 3</a> > <a href="index.html">MODULE 4</a></div>
+<h1>Lesson 1: Understanding the Box Model in CSS</h1>
+
+          
+<h2>Overview</h2>
+  <p>Most HTML elements are containers. Consider some of the HTML elements we've used so far: <span class="element">body</span>, <span class="element">p</span>, <span class="element">h1</span>, <span class="element">h2</span>, <span class="element">div</span>, <span class="element">ul</span>, <span class="element">ol</span>, <span class="element">li</span>, <span class="element">table</span>, <span class="element">th</span>, <span class="element">td</span>. Each of these is a container, or box. Each box has three layers that surround its content. The layers are, in order from inside to outside:</p>
+  <ul>
+  	<li>Padding</li>
+  	<li>Border</li>
+  	<li>Margin</li>
+  </ul>
+  
+  <p>In this lesson you will learn more about the box model, and how to work with it when applying styles to content using CSS.</p>
+
+<h2>Learner Outcomes</h2>
+<p>At the completion of this exercise:</p>
+<ul>
+	<li>you will be able to identify the difference between margin, border, and padding in CSS.</li>
+</ul>
+
+<h2>More on the Box Model</h2>  
+  
+  <p>The following illustration shows the various layers in the box model:</p>
+  
+  <div>
+  	<img src="../images/boxmodel.gif" alt="Illustration of the box model, showing (from inside to out) content, padding, border, and margin" width="402" height="294">
+  </div>
+
+	<p>The size of each of the layers in the box model can be specified using the usual CSS units of measure (em, %, and px). </p>  
+
+	<p>For example, consider the following &lt;p&gt;, which is wrapped inside a &lt;div&gt;:</p>
+<pre class="example">
+  &lt;div&gt;
+    &lt;p&gt;This is a paragraph. It is a very short paragraph.&lt;/p&gt;
+  &lt;/div&gt;
+</pre>
+
+	<p>We can apply the following CSS to the paragraph tag in order to control the size of the padding, border, and margin of the paragraph:</p>
+<pre class="example">
+  div { 
+    background-color: red;
+    padding: 0;
+    border: 1px solid black;
+    margin: 0;
+  }
+  p { 
+    background-color: white;
+    padding: 1em;
+    border-width: 10px; 
+    border-style: solid;
+    border-color: blue;
+    margin: 10px !important;
+   }   
+</pre>
+
+	<p>Here's what it looks like:</p>	
+<style>
+	#sampleDiv { 
+		background-color: red;
+		padding: 0;
+		border: 1px solid black;
+		margin: 1em;
+	}
+  #sampleP { 
+  	background-color: white;
+    padding: 1em;
+    border-width: 10px; 
+    border-style: solid;
+    border-color: blue;
+    margin: 10px !important;
+   }   
+</style>	
+
+<div id="sampleDiv">
+	<div id="sampleP">This is a paragraph. It is a very short paragraph.</div>
+</div>	
+
+<style>
+	ul#borderStyles li { 
+		margin: 1em;
+		border: 2px black;
+		list-style-type: none;
+		width: 5em;
+		padding: 0.25em;
+		text-align: center;
+	}
+</style>
+
+<p>Here are a few tips:</p>
+<ul>
+	<li>You can specify one value for padding, border, or margin (for example, <strong>padding:5px</strong>), and that value will apply to all sides of the box.</li>
+	<li>Alternatively, you specify a unique value for each side, such as <span class="property">padding-left</span>, <span class="property">border-right</span>, and <span class="property">margin-right</span>.</li>
+	<li>For padding and margin, you can use shorthand by specifying each of the four sides in a single style declaration, like this: 
+		<div class="example">
+			padding: 1em 1.5em 5% 10px;
+		</div>
+		The four values are for the top, right, bottom, and left (clockwise around the box, starting at the top)
+	</li>
+	<li>Borders can also be specified using shorthand, like this:
+		<div class="example">
+			border: 1px solid black;
+		</div>
+		These three values represent the border-width, border-style, and border-color. 
+	</li>
+	<li>The <span class="property">border-style</span> property can have any of the following values: 
+		<ul id="borderStyles">
+			<li style="border-style:dotted">dotted</li>
+			<li style="border-style:dashed">dashed</li>
+			<li style="border-style:solid">solid</li>
+			<li style="border-style:double">double</li>
+			<li style="border-style:groove">groove</li>
+			<li style="border-style:ridge">ridge</li>
+			<li style="border-style:inset">inset</li>
+			<li style="border-style:outset">outset</li>		
+		</ul>
+	</li>
+</ul>
+
+<h2>Activities</h2>
+<ul>
+	<li>Be sure you understand the box model as described above. If anything's confusing, ask your instructor for help.</li>
+	<li>Study the <a href="http://www.w3schools.com/cssref/default.asp">W3School CSS Reference</a>. Particularly explore the Border and Outline Properties, Margin Properties, and Padding Properties. These are all properties that you can experiment with when working with your web portfolio in the next lesson. Note that each of the properties in the Reference tables includes a CSS version number, 1, 2, or 3. CSS 3 is the latest version of CSS, and has some of the coolest features, but these won't work in older browsers (in fact, some CSS3 properties won't work in newer browsers either) but you can still play with them.</li>
+</ul>
+
+<h2>Handouts/Online Documents</h2>
+<ul>
+	<li><a href="http://www.w3schools.com/cssref/default.asp">W3School CSS Reference</a></li>
+</ul>
+
+<h2>All done?</h2>
+<p>Proceed to <a href="lesson2.html">Lesson 2</a>.</p>
+
+<footer role="contentinfo">
+Copyright &copy; 2005-2014 by University of Washington. Permission is granted to use these materials in whole or in part for educational, noncommercial purposes provided the source is acknowledged. This product was created with support from the National Institute on Disability and Rehabilitation Research of the U.S. Department of Education (grant #H133D010306), and is maintained with support from the National Science Foundation (grant #CNS-0540615). The contents do not necessarily represent the policies of the U.S. federal government, and you should not assume their endorsement.</footer>
+</div>
+</div>
+</body>
+</html>
