@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>WebD2: Special Types of Links</title>
+<!-- Hack to get IE to recognize  HTML5 elements-->
+<!-- See http://remysharp.com/2009/01/07/html5-enabling-script/comment-page-3/#allcomments-->
+<!--[if IE]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<link type="text/css" rel="stylesheet" href="../../../styles/webd2.css" media="screen">
+<link type="text/css" rel="stylesheet" href="../../../styles/webd2_print.css" media="print">
+</head>
+<body id="studentPage">
+<div id="wrapper">
+<div id="banner" role="banner">
+<div id="siteTitle">Web Design &amp; Development I</div>
+<div id="version">Version 2.0</div>
+<div id="subTitle">Student Version</div>
+</div>
+<nav role="navigation" aria-label="Main menu">
+<ul>
+<li><a href="../../../student/index.html">Home</a></li>
+<li><a href="../../../student/lessons.html">Lessons</a></li>
+<li><a href="../../../student/resources.html">Resources</a></li>
+<li id="btnPrev"><a href="../../../student/unit2/module4/lesson2.html">Previous</a></li>
+<li id="btnNext"><a href="../../../student/unit2/module5/index.html">Next</a></li>
+</ul>
+</nav>
+<div id="main" role="main">
+<div class="breadCrumbs" role="navigation" aria-label="Bread Crumbs"><a href="../index.html">UNIT 2</a> > <a href="index.html">MODULE 4</a></div>
+<h1>Lesson 3: Special Types of Links</h1>
+
+
+<h2>Overview</h2>
+<p>In this lesson you create two types of links that make web surfing even more convenient: a jump-to link and an email link. Jump-to links are typically used on very long pages, where users can benefit from having a link at the top of the page that allows them to jump to a certain section of the page without scrolling.</p>
+<p>This is particularly useful for some users with disabilities, who need to bypass the navigational links on a page. For example, suppose a user who is physically unable to use a mouse is trying to access a link on a website, but that link is in the main content of the page and there are dozens of navigational links above it. Using the tab key, it will take forever for this user to get to the link they're wanting to select. As the web designer, you can help by adding a same-page &quot;skip to main content&quot; link at the top of the page that jumps directly to the main content, bypassing the navigation menu.</p>
+<p>In this lesson, you will add a skip navigation link to your portfolio home page, thereby allowing users to skip directly to the main content of your website.</p>
+<p> You will also add an email link, which if clicked opens a blank, pre-addressed email message for users whose browsers and email software support it. Up to this point your email address on your portfoio is just text. You will make your email address a live link.</p>
+
+<h2>Learner Outcomes</h2>
+<p>At the completion of this exercise:</p>
+<ul>
+	<li>you will be able to set up a same-page link that allows users to skip to the main content of a web page.</li>
+	<li>you will be able to add an email link to a web page.</li>
+</ul>
+
+<h2>Activities</h2>
+<ol>
+  <li>Return to the <span class="filename">index.html</span> file of your portfolio.</li> 
+
+  <li>Find the <span class="element">&lt;main&gt;</span> element that you used to wrap the main content of your page in an earlier lesson. Add an <span class="attribute">id</span> attribute to that element. An <span class="attribute">id</span> is a unique identifier for a specific element on a web page. It enables you to easily access that specific element so you can stylize it with CSS or manipulate it with Javascript. You can also link to any element with an <span class="attribute">id</span> attribute. An <span class="attribute">id</span> can be any text you like, but it's best to assign text that describes the function of the element. Since this particular element contains the main content of the page, we'll give it an id of &quot;main&quot;. Here's how that should look like when you're finished:
+  
+  	<pre class="example">
+  	&lt;main id=&quot;main&quot;&gt;
+  	</pre>
+  </li>  
+	<li>Now that you have an <span class="attribute">id</span> attribute marking the start of the main content, you can add a link to the top of your document that jumps directly to that content. At the very top of your web page, just inside the &lt;body&gt; tag, add a new <span class="element">div</span> element that contains a same-page link, like this:
+
+		<pre class="example">
+    &lt;div&gt;
+      &lt;a href=&quot;#main&quot;&gt;Skip to main content&lt;/a&gt;
+    &lt;/div&gt;
+		</pre>
+	</li>
+	<li>Save, refresh, and test the new link. You should jump directly to the main content. If the page is short, you might not see any visible changes, but know that you have just made your page <em>much</em> easier to navigate for users with disabilities.</li>
+  <li>Next, locate your email on the page. Change the email address to an email link by coding it as follows:
+	<pre class="example">
+    &lt;a href=&quot;mailto:<span class="highlight">judy@ohs.edu</span>&quot;&gt;<span class="highlight">judy@ohs.edu</span>&lt;/a&gt;
+	</pre>
+	</li>
+	<li>Save. Refresh your browser and try the link. If your browser and email software support this functionality, a blank email window should pop up with the email address already entered on the <em>To:</em> line. Note that some users' technology won't support this feature. Also, email addresses that are coded this way can be automatically harvested by malicious programs, and will soon thereafter be inundated with spam. For both of these reasons, including email links on websites is no longer a recommended practice, but we've included it here nonetheless because there are still lots of these links out there on the Web, it's good to understand them.
+	</li>
+</ol>
+	
+  <h2>Resources/Online documents</h2>
+<ul>
+  <li><a href="../common_tags.html">Common HTML Tags</a></li>
+  <li><a href="http://www.w3schools.com/html5/html5_reference.asp">HTML5 Tag Reference</a> from W3Schools</li>
+  <li><a href="http://www.w3.org/TR/html5">HTML5 Draft Specification</a></li>
+</ul>
+
+<h2>All done?</h2>
+<p>Show your instructor your results before starting <a href="../module5/index.html">the next module</a>.
+</p>
+<footer role="contentinfo">
+Copyright &copy; 2005-2014 by University of Washington. Permission is granted to use these materials in whole or in part for educational, noncommercial purposes provided the source is acknowledged. This product was created with support from the National Institute on Disability and Rehabilitation Research of the U.S. Department of Education (grant #H133D010306), and is maintained with support from the National Science Foundation (grant #CNS-0540615). The contents do not necessarily represent the policies of the U.S. federal government, and you should not assume their endorsement.</footer>
+</div>
+</div>
+</body>
+</html>

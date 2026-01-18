@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>WebD2: Linking to Pages Within Your Website</title>
+<!-- Hack to get IE to recognize  HTML5 elements-->
+<!-- See http://remysharp.com/2009/01/07/html5-enabling-script/comment-page-3/#allcomments-->
+<!--[if IE]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<link type="text/css" rel="stylesheet" href="../../../styles/webd2.css" media="screen">
+<link type="text/css" rel="stylesheet" href="../../../styles/webd2_print.css" media="print">
+</head>
+<body id="studentPage">
+<div id="wrapper">
+<div id="banner" role="banner">
+<div id="siteTitle">Web Design &amp; Development I</div>
+<div id="version">Version 2.0</div>
+<div id="subTitle">Student Version</div>
+</div>
+<nav role="navigation" aria-label="Main menu">
+<ul>
+<li><a href="../../../student/index.html">Home</a></li>
+<li><a href="../../../student/lessons.html">Lessons</a></li>
+<li><a href="../../../student/resources.html">Resources</a></li>
+<li id="btnPrev"><a href="../../../student/unit2/module4/lesson1.html">Previous</a></li>
+<li id="btnNext"><a href="../../../student/unit2/module4/lesson3.html">Next</a></li>
+</ul>
+</nav>
+<div id="main" role="main">
+<div class="breadCrumbs" role="navigation" aria-label="Bread Crumbs"><a href="../index.html">UNIT 2</a> > <a href="index.html">MODULE 4</a></div>
+<h1>Lesson 2: Linking to Pages Within Your Website</h1>
+
+
+<h2>Overview</h2>
+<p>In the previous lesson you learned that a web address (URL) consists of various parts. You also created a link in your portfolio home page to your school's home page. This link used an <strong>absolute</strong> address (the full address to the school website). Now you will learn to make links to pages within your own website, using a <strong>relative address</strong>.</p>
+ <p>A relative address is one that refers only to a portion of the web address, rather than to the full address. For example, assume you are webmaster of the domain <span class="filename">mydomain.com</span>, and want to add a link from <span class="filename">http://www.mydomain.com/file1.html</span> to <span class="filename">http://www.mydomain.com/file2.html</span>. In file1.html, you don't need to link to the full address. You can simply link to the file name (<span class="filename">file2.html</span>), since both files are located in the same place.</p>
+<p>A relative address is an address that is <em>relative</em> to the location of the linking file.</p>   
+
+<h2>Learner Outcomes</h2>
+<p>At the completion of this exercise:</p>
+<ul>
+	<li>you will be able to create a relative link from one page to another within your website.</li>
+	<li>you will have converted a list of words into a functional navigation menu.</li>	
+</ul>
+
+<h2>Activities</h2>
+<ol>
+  <li>Return to <span class="filename">index.html</span> of your web portfolio.</li>
+  <li>In <a href="../module3/lesson2.html">an earlier lesson</a> you created an unordered list to serve as a navigation menu. To make that into a functional menu, convert the text of each item (Home, Accessibility, Usability, Graphics, Tools, and Javascript) into links that target your other portfolio web pages. Since these other pages are all in the same directory as the home page, you can use a <em>relative URL</em> - you don't need to spell out the full address. As an example, here's what the link to accessibility.html will look like:
+  <pre clas="example">
+  	&lt;li&gt;
+  	    &lt;a href=&quot;accessibility.html&quot;&gt;Accessibility&lt;/a&gt;
+  	&lt;/li&gt;
+  </pre>
+  </li>
+</ol>
+  
+<h2>Resources/Online Documents</h2>
+<ul>
+  <li><a href="../common_tags.html">Common HTML Tags</a></li>
+  <li><a href="http://www.w3schools.com/html5/html5_reference.asp">HTML5 Tag Reference</a> from W3Schools</li>
+  <li><a href="http://www.w3.org/TR/html5">HTML5 Draft Specification</a></li>
+</ul>
+  <h2>All done?</h2>
+<p>After you have saved the changes to <span class="filename">index.html</span>, open the file in your browser. Refresh your browser and test each of the new links to be sure they work. Show your instructor your results before starting <a href="lesson3.html">Lesson 3</a>.</p>
+
+<footer role="contentinfo">
+Copyright &copy; 2005-2014 by University of Washington. Permission is granted to use these materials in whole or in part for educational, noncommercial purposes provided the source is acknowledged. This product was created with support from the National Institute on Disability and Rehabilitation Research of the U.S. Department of Education (grant #H133D010306), and is maintained with support from the National Science Foundation (grant #CNS-0540615). The contents do not necessarily represent the policies of the U.S. federal government, and you should not assume their endorsement.</footer>
+</div>
+</div>
+</body>
+</html>

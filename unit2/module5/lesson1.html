@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>WebD2: Creating a Data Table</title>
+<!-- Hack to get IE to recognize  HTML5 elements-->
+<!-- See http://remysharp.com/2009/01/07/html5-enabling-script/comment-page-3/#allcomments-->
+<!--[if IE]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<link type="text/css" rel="stylesheet" href="../../../styles/webd2.css" media="screen">
+<link type="text/css" rel="stylesheet" href="../../../styles/webd2_print.css" media="print">
+</head>
+<body id="studentPage">
+<div id="wrapper">
+<div id="banner" role="banner">
+<div id="siteTitle">Web Design &amp; Development I</div>
+<div id="version">Version 2.0</div>
+<div id="subTitle">Student Version</div>
+</div>
+<nav role="navigation" aria-label="Main menu">
+<ul>
+<li><a href="../../../student/index.html">Home</a></li>
+<li><a href="../../../student/lessons.html">Lessons</a></li>
+<li><a href="../../../student/resources.html">Resources</a></li>
+<li id="btnPrev"><a href="../../../student/unit2/module5/index.html">Previous</a></li>
+<li id="btnNext"><a href="../../../student/unit2/module6/index.html">Next</a></li>
+</ul>
+</nav>
+<div id="main" role="main">
+<div class="breadCrumbs" role="navigation" aria-label="Bread Crumbs"><a href="../index.html">UNIT 2</a> > <a href="index.html">MODULE 5</a></div>
+<h1>Lesson 1: Creating a Data Table</h1>
+
+
+<h2>Overview</h2>
+<p>Tables were introduced to the web with the original purpose of displaying data in rows and columns. In time they came to be used for an additional purpose: page layout. This lesson will focus on their original purpose. Page layout will be explored later in this course.
+</p>
+<p>In this lesson you'll add a simple data table to your portfolio.</p>
+
+<h2>Learner Outcomes</h2>
+<p>At the completion of this exercise:</p>
+<ul>
+<li>you  will be able to create a simple data table that includes &lt;table&gt; &lt;caption&gt;, &lt;thead&gt;, &lt;tbody&gt;, &lt;tr&gt;, &lt;th&gt; and &lt;td&gt; elements as well as scope attributes.</li>
+</ul>
+
+<h2>How to Create an HTML Table</h2>
+	<ol>
+  	<li>HTML tables begin with <span class="element">&lt;table&gt;</span> and end with <span class="element">&lt;/table&gt;</span>.</li>  
+  <li>Inside the <span class="element">table</span> element, you can optionally include a <span class="element">caption</span> element, which contains a brief title or description of the table's content. Most browsers display the caption above the table.</li>
+  <li>Like HTML documents, tables include a head and body. In tables, these are specified using the <span class="element">&lt;thead&gt;</span> and <span class="element">&lt;tbody&gt;</span> elements respectively. These tags are optional, but they should be included on long tables. If long tables are printed and span multiple pages, browsers will repeat the content of the <span class="element">&lt;thead&gt;</span> element (usually the top row(s) of the table) at the top of every printed page.</li>
+	<li>Each row in a table begins and ends with <em>table row</em> (tr) elements: <span class="element">&lt;tr&gt;&lt;/tr&gt;</span></li>
+  <li>Each <em>cell</em> in the table begins and ends with either <em>table header</em> (th) elements or <em>table data</em> (td) elements, depending on what type of information the cell contains.
+	   <ul>
+  	   <li>If a cell contains headers, it begins and ends with th elements: <span class="element">&lt;th&gt;&lt;/th&gt;</span></li>
+    	 <li>If a cell contains data (not headers), it begins and ends with td elements: <span class="element">&lt;td&gt;&lt;/td&gt;</span></li>
+		</ul>
+	</li>
+	<li>Table header elements (<span class="element">th</span>) should also include a <span class="attribute">scope</span> attribute, which is either <span class="attribute">scope=&quot;row&quot;</span> or <span class="attribute">scope=&quot;col&quot;</span>. This instructs screen readers as to which headers apply to which cells. Screen readers read tables row by row from left to right, and without this extra markup blind users would have a difficult time figuring out which headers apply to the cell they're in.
+	</li>
+</ol>
+<p>Compare the following table with the code that was used to create it:</p>
+
+<style>
+#sampleTable table { 
+  margin: 0 auto;
+}
+#sampleTable caption { 
+	font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 1em;
+}
+#sampleTable th, #sampleTable td { 
+  padding: 1em; 
+}
+</style>
+
+<div id="sampleTable">
+	<table>
+		<caption>School Lunch Menu</caption>
+		<thead>
+			<tr>
+				<td>&nbsp;</td>
+				<th scope="col">Monday</th>
+				<th scope="col">Tuesday</th>
+				<th scope="col">Wednesday</th>
+				<th scope="col">Thursday</th>
+				<th scope="col">Friday</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<th scope="row">Carnivores</th>
+				<td>Sausage pizza</td>
+				<td>Corn dogs</td>
+				<td>Sloppy Joe</td>
+				<td>Beef taco</td>
+				<td>Chicken and dumplings</td>
+			</tr>
+			<tr>
+				<th scope="row">Herbivores</th>
+				<td>Veggie pizza</td>
+				<td>Veggie dogs</td>
+				<td>BBQ tempeh</td>
+				<td>Bean burrito</td>
+				<td>Tofu teriyaki</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+         
+<pre id="example">
+&lt;table&gt;
+  &lt;caption&gt;School Lunch Menu&lt;/caption&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&nbsp;&lt;/td&gt;
+      &lt;th scope=&quot;col&quot;&gt;Monday&lt;/th&gt;
+      &lt;th scope=&quot;col&quot;&gt;Tuesday&lt;/th&gt;
+      &lt;th scope=&quot;col&quot;&gt;Wednesday&lt;/th&gt;
+      &lt;th scope=&quot;col&quot;&gt;Thursday&lt;/th&gt;
+      &lt;th scope=&quot;col&quot;&gt;Friday&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th scope=&quot;row&quot;&gt;Carnivores&lt;/th&gt;
+      &lt;td&gt;Sausage pizza&lt;/td&gt;
+      &lt;td&gt;Corn dogs&lt;/td&gt;
+      &lt;td&gt;Sloppy Joe&lt;/td&gt;
+      &lt;td&gt;Beef taco&lt;/td&gt;
+      &lt;td&gt;Chicken and dumplings&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th scope=&quot;row&quot;&gt;Herbivores&lt;/th&gt;
+      &lt;td&gt;Veggie pizza&lt;/td&gt;
+      &lt;td&gt;Veggie dogs&lt;/td&gt;
+      &lt;td&gt;BBQ tempeh&lt;/td&gt;
+      &lt;td&gt;Bean burrito&lt;/td&gt;
+      &lt;td&gt;Tofu teriyaki&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+</pre>
+  
+<p>Not sure how the HTML table markup works? Ask your instructor to walk you through it. Be sure you understand the above markup before proceeding to the activity.</p>
+
+<h2>Activities</h2>
+
+<style>
+	img#tablePic { 
+		display: block;
+		border: 1px solid black;
+		margin: 1em auto;
+	}
+</style>
+
+<ol>
+	<li>Earlier in this course, in the lesson titled <a href="../../unit1/module3/lesson2.html">How People with Disabilities Access the Web</a>, you learned how certain web design strategies and techniques can create barriers for people with disabilities and others. In the current lesson, you will use an HTML table to create a web accessibility checklist that you can refer to later as you design websites, to assist you in ensuring that your web content doesn't needlessly exclude anyone.</li>
+	<li>Open the file <span class="filename">accessibility.html</span> that you created earlier in the course. At this point, this file should include nothing but &quot;bare bones&quot; HTML.</li>
+	<li>Use the following instructions to add a table to the body of your web page. Consult the above example table markup as a model. Note that the School Lunch Menu table has three rows and six columns, whereas the Web Accessibility Checklist will have two columns and seven rows. The table you're creating should look something like this: 
+		<img id="tablePic" src="../images/accessibility_table.gif" alt="Image showing a table with two columns and seven rows (including one header row), plus a caption at the top">
+	</li> 
+	<li>Save your work, and check it in your web browser to be sure it looks like you expect it to. If it doesn't, that's normal - tables can be tricky! It sometimes takes several trials to get all the tags just right. Don't worry about spacing between and within cells: We'll be addressing that in a future lesson.</li>
+</ol>	 
+
+<h3>Instructions for Creating Your Table</h3>
+
+<p>The caption of the table should be &quot;Web Accessibility Checklist&quot;</p>
+
+<p>The table should have two columns, with the following headers:</p>
+  
+<ol> 
+	<li>User characteristic</li>
+	<li>Accessible design tip</li>
+</ol>
+
+<p>In the first column (the column with header &quot;User characteristic&quot;), list the following user characteristics related to web accessibility, in the order in which they're presented below.</p>
+<ol>
+	<li>Unable to see</li>
+	<li>Unable to perceive colors</li>
+	<li>Unable to use mouse</li>
+	<li>Unable to hear</li>
+	<li>Prone to having seizures</li>
+	<li>Easily distractible</li>
+</ol>
+
+<p>In the second column (the column with header &quot;Accessible design tip&quot;), the following web design issues correspond with the same-numbered user characteristic from the first column.</p>
+<ol>
+  <li>Code all images with ALT text</li>
+  <li>Avoid using color alone to convey information</li>
+  <li>Be sure all website features can be accessed using keyboard</li>
+  <li>Add captions to multimedia</li>
+  <li>Avoid content that flashes</li>
+  <li>Keep the design simple</li>
+</ol>
+
+<h2>Resources/Online documents</h2>
+<ul>
+	<li><a href="http://www.noupe.com/design/data-tables-in-modern-web-design.html">Data Tables in Modern Web Design</a></li>
+  <li><a href="../common_tags.html">Common HTML Tags</a></li>
+  <li><a href="http://www.w3schools.com/html5/html5_reference.asp">HTML5 Tag Reference</a> from W3Schools</li>
+  <li><a href="http://www.w3.org/TR/html5">HTML5 Draft Specification</a></li>
+</ul>
+
+<h2>All done?</h2>
+  <p>Have your instructor view the code for your table and see how it looks in a browser. Then proceed to <a href="../module6/index.html">the next module</a>.</p>
+
+<footer role="contentinfo">
+Copyright &copy; 2005-2014 by University of Washington. Permission is granted to use these materials in whole or in part for educational, noncommercial purposes provided the source is acknowledged. This product was created with support from the National Institute on Disability and Rehabilitation Research of the U.S. Department of Education (grant #H133D010306), and is maintained with support from the National Science Foundation (grant #CNS-0540615). The contents do not necessarily represent the policies of the U.S. federal government, and you should not assume their endorsement.</footer>
+</div>
+</div>
+</body>
+</html>

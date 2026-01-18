@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>WebD2: Linking to External Internet Sites</title>
+<!-- Hack to get IE to recognize  HTML5 elements-->
+<!-- See http://remysharp.com/2009/01/07/html5-enabling-script/comment-page-3/#allcomments-->
+<!--[if IE]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<link type="text/css" rel="stylesheet" href="../../../styles/webd2.css" media="screen">
+<link type="text/css" rel="stylesheet" href="../../../styles/webd2_print.css" media="print">
+</head>
+<body id="studentPage">
+<div id="wrapper">
+<div id="banner" role="banner">
+<div id="siteTitle">Web Design &amp; Development I</div>
+<div id="version">Version 2.0</div>
+<div id="subTitle">Student Version</div>
+</div>
+<nav role="navigation" aria-label="Main menu">
+<ul>
+<li><a href="../../../student/index.html">Home</a></li>
+<li><a href="../../../student/lessons.html">Lessons</a></li>
+<li><a href="../../../student/resources.html">Resources</a></li>
+<li id="btnPrev"><a href="../../../student/unit2/module4/index.html">Previous</a></li>
+<li id="btnNext"><a href="../../../student/unit2/module4/lesson2.html">Next</a></li>
+</ul>
+</nav>
+<div id="main" role="main">
+<div class="breadCrumbs" role="navigation" aria-label="Bread Crumbs"><a href="../index.html">UNIT 2</a> > <a href="index.html">MODULE 4</a></div>
+<h1>Lesson 1: Linking to External Internet Sites</h1>
+
+
+<h2>Overview</h2>
+<p>The World Wide Web was built on the principal of <em>hypertext</em>. Prior to hypertext, documents were all standalone. They might refer to each other in text, but there was no direct connection between one document and another. With hypertext, readers were suddenly able to quickly jump from one document to another, which revolutionized the way we access information.</p>
+<p>Links to web pages refer to the address, or <strong>URL</strong> (Uniform Resource Locator), of the web page. URL's consist of various parts. For example, consider the following URL, which is the home page for this course curriculum:
+</p>
+
+<p><strong>http://www.washington.edu/accessit/webd2/student/index.html</strong></p>
+
+<p>This URL consists of four parts, separated by forward slash (/):</p>
+<ul>
+ <li><strong>http://</strong> - This is the <em>Internet protocol</em>, and tells the browser how to connect with the server hosting the URL. Most documents on the web begin with http://, but they might also begin with https://, ftp://, telnet://, or others. </li>
+ <li><strong>www.washington.edu</strong> - Domain name where the file is located.</li>
+ <li><strong>/accessit/webd2/student/</strong> - folder or directory where the file is located (in this example, the file  index.html is stored in a subdirectory three levels deep)</li>
+ <li><strong>index.html</strong> - the filename</li>
+</ul>
+
+<p>The file name <span class="filename">index.html</span> could optionally be omitted from the above example. When the server discovers that <em>student</em> is a directory rather than a file name, it would check the <em>student</em> directory for one of the standard home page file names, and in this case would find <span class="filename">index.html</span>.</p>
+
+<h3>Linking to a URL</h3>
+  
+	<p>Links are inserted into a document using the <strong>&lt;a&gt;</strong> tag which stands for &quot;anchor&quot;. This element by itself does nothing. Consider this HTML:</p>
+	
+<pre class="example">
+   &lt;a&gt;This is a link to nothing&lt;/a&gt;
+</pre>
+	
+	<p>At a minimum, the &lt;a&gt; elements requires an <span class="attribute">href</span> attribute, which defines the destination of the link.</p>
+
+	<p>When you link to external websites, you use an absolute path, as in the following example:</p>
+    <p>
+<pre class="example" style="margin-right:1em">
+   &lt;a href =&quot;http://www.somedomain.com/somedirectory/somefile.html&quot;&gt;This is the text that users click on&lt;/a&gt;
+</pre>
+
+	<p>Note that the destination path (contained within quotes) gives the full address to the target page, starting with &quot;http://&quot;. If you were to copy all the characters between the quotation marks and insert them into the address bar of a browser, the browser would open the website. This type of URL is referred to as an <strong>absolute URL</strong>. In the next lesson, you will learn about its opposite, the <strong>relative URL</strong>.</p>
+    
+<h2>Learner Outcomes</h2>
+
+<p>At the completion of this exercise:</p>
+<ul>
+	<li>you will be able to create a link to another web page on the Internet.</lif>
+</li>
+</ul>
+
+<h2>Activities</h2>
+<ol>
+  <li>Return to <span class="filename">index.html</span> in your web portfolio.</li>
+  <li>Locate the name of your school in the second <span class="element">div</span> element.</li>
+  <li>Change the name of your school into a link to your school's home page. Use the above example as a model.</li>  
+</ol>
+
+<h2>Resources/Online Documents</h2>
+<ul>
+  <li><a href="../common_tags.html">Common HTML Tags</a></li>
+  <li><a href="http://www.w3schools.com/html5/html5_reference.asp">HTML5 Tag Reference</a> from W3Schools</li>
+  <li><a href="http://www.w3.org/TR/html5">HTML5 Draft Specification</a></li>
+</ul>
+
+<h2>All done?</h2>
+<p>After you have saved the changes to <span class="filename">index.html</span>, open the file in your browser. Refresh your browser and test the link. Show your instructor your results before starting <a href="lesson2.html">Lesson 2</a>.</p>
+
+<footer role="contentinfo">
+Copyright &copy; 2005-2014 by University of Washington. Permission is granted to use these materials in whole or in part for educational, noncommercial purposes provided the source is acknowledged. This product was created with support from the National Institute on Disability and Rehabilitation Research of the U.S. Department of Education (grant #H133D010306), and is maintained with support from the National Science Foundation (grant #CNS-0540615). The contents do not necessarily represent the policies of the U.S. federal government, and you should not assume their endorsement.</footer>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>WebD2: Lists</title>
+<!-- Hack to get IE to recognize  HTML5 elements-->
+<!-- See http://remysharp.com/2009/01/07/html5-enabling-script/comment-page-3/#allcomments-->
+<!--[if IE]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<link type="text/css" rel="stylesheet" href="../../../styles/webd2.css" media="screen">
+<link type="text/css" rel="stylesheet" href="../../../styles/webd2_print.css" media="print">
+</head>
+<body id="studentPage">
+<div id="wrapper">
+<div id="banner" role="banner">
+<div id="siteTitle">Web Design &amp; Development I</div>
+<div id="version">Version 2.0</div>
+<div id="subTitle">Student Version</div>
+</div>
+<nav role="navigation" aria-label="Main menu">
+<ul>
+<li><a href="../../../student/index.html">Home</a></li>
+<li><a href="../../../student/lessons.html">Lessons</a></li>
+<li><a href="../../../student/resources.html">Resources</a></li>
+<li id="btnPrev"><a href="../../../student/unit2/module3/index.html">Previous</a></li>
+<li id="btnNext"><a href="../../../student/unit2/module3/lesson2.html">Next</a></li>
+</ul>
+</nav>
+<div id="main" role="main">
+<div class="breadCrumbs" role="navigation" aria-label="Bread Crumbs"><a href="../index.html">UNIT 2</a> > <a href="index.html">MODULE 3</a></div>
+<h1>Lesson 1: Lists</h1>
+
+
+<h2>Overview</h2>
+<p>Often when we consider the content of our web pages and ask &quot;What is this?&quot; the answer is: It's a list! News sites feature lists of today's top stories, sometimes organized by category. Music sites feature lists of artists or songs. Video sites feature lists of videos. Sports sights include lists of teams, lists of scores, and rankings.</p>
+
+<p>If it's a list, it should be marked up as a list. There are two common types of HTML lists, those in which the order matters, and those in which it doesn't. If the order matters (as in sports rankings), we use an <strong>ordered list</strong>, which in HTML is created with the <strong>&lt;ol&gt;</strong> element. By default, ordered lists are displayed by browsers with each list item numbered sequentially.</p>
+ 
+<p>If the order doesn't matter, we use an <strong>unordered list</strong>, which in HTML is created with the <strong>&lt;ul&gt;</strong> element. By default, unordered lists are displayed by browsers with a bullet in front of each list item .</p>
+
+<p>Although lists typically show up with either numbers or bullets, they don't always. Web authors have control over this with cascading style sheets (CSS). You'll learn more about this in Unit 3.</p>
+
+<p>Regardless of whether a list is ordered or unordered, the items in an HTML list are marked up with the &lt;li&gt; element (li stands for <em>list item</em>). These are container tags, so each item in the list must have an opening tag (&lt;li&gt;) and a closing tag (&lt;/li&gt;)</p>
+
+<p>In this lesson you will review web pages, looking for ordered and unordered lists. Then, you will create an unordered list of your own for organizing some of the content on your portfolio's home page.</p>
+
+<h2>Learner Outcomes</h2>
+
+<p>At the completion of this exercise:</p>
+<ul>
+	<li>you will be able to explain the difference between an ordered and unordered list.</li>
+	<li>you will be able to identify ordered and unordered lists when you see them on web pages.</li>
+	<li>you will be able to create a list using HTML.</li>
+</ul>
+
+<h2>Activities</h2>
+<ol>
+	<li>Browse the web, and try to find at least three ordered lists and three unordered lists. You don't need to view the source code for this activity - just try to find content that appears to be each of these types of lists. Remember that some lists won't necessarily show up with numbers or bullets, since these can be turned off or changed using CSS. Show your instructor what you found. 
+	</li>	
+  <li>Now return to <span class="filename">index.html</span> in your portfolio website. In <a href="../module2/lesson3.html">the previous lesson</a>, you added content to this page, which included two &lt;div&gt; elements that contain blocks of content, one with information about you, and one with information about your web design course. In that lesson you asked &quot;What is this?&quot; but that was probably before you started thinking about how many lists there are on the Web. Now when you ask that question related to the content inside your two &lt;div&gt; elements, you'll probably answer: It's a list! And indeed, you would be right! The first <span class="element">div</span> includes a list of information about you (e.g., your name, your email, etc.). The second <span class="element">div</span> includes a list of information about your school. Are these lists ordered or unordered?
+  </li>
+  <li>If you answered &quot;unordered&quot; to the previous question, you're right again!</li>
+  <li>Go ahead and modify the content of each of the two <span class="element">div</span> elements so the content is marked up as an unordered list. You will no longer need the &lt;br/&gt; elements since each list item will automatically appear on a new line.</li>  
+</ol>
+
+<h2>Resources/Online documents</h2>
+<ul>
+  <li><a href="../common_tags.html">Common HTML Tags</a></li>
+  <li><a href="http://www.w3schools.com/html5/html5_reference.asp">HTML5 Tag Reference</a> from W3Schools</li>
+  <li><a href="http://www.w3.org/TR/html5">HTML5 Draft Specification</a></li>
+</ul>
+
+<h2>All done?</h2>
+<p>After you have saved the changes to <span class="filename">index.html</span>, return to your browser and refresh to see the changes.  Do the items in each of the two <span class="element">div</span> elements now appear with bullets in front of them? Show your instructor your results before starting <a href="lesson2.html">Lesson 2</a>.</p>
+
+<footer role="contentinfo">
+Copyright &copy; 2005-2014 by University of Washington. Permission is granted to use these materials in whole or in part for educational, noncommercial purposes provided the source is acknowledged. This product was created with support from the National Institute on Disability and Rehabilitation Research of the U.S. Department of Education (grant #H133D010306), and is maintained with support from the National Science Foundation (grant #CNS-0540615). The contents do not necessarily represent the policies of the U.S. federal government, and you should not assume their endorsement.</footer>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>WebD2: Essential Tags</title>
+<!-- Hack to get IE to recognize  HTML5 elements-->
+<!-- See http://remysharp.com/2009/01/07/html5-enabling-script/comment-page-3/#allcomments-->
+<!--[if IE]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<link type="text/css" rel="stylesheet" href="../../../styles/webd2.css" media="screen">
+<link type="text/css" rel="stylesheet" href="../../../styles/webd2_print.css" media="print">
+</head>
+<body id="studentPage">
+<div id="wrapper">
+<div id="banner" role="banner">
+<div id="siteTitle">Web Design &amp; Development I</div>
+<div id="version">Version 2.0</div>
+<div id="subTitle">Student Version</div>
+</div>
+<nav role="navigation" aria-label="Main menu">
+<ul>
+<li><a href="../../../student/index.html">Home</a></li>
+<li><a href="../../../student/lessons.html">Lessons</a></li>
+<li><a href="../../../student/resources.html">Resources</a></li>
+<li id="btnPrev"><a href="../../../student/unit2/module2/lesson1.html">Previous</a></li>
+<li id="btnNext"><a href="../../../student/unit2/module2/lesson3.html">Next</a></li>
+</ul>
+</nav>
+<div id="main" role="main">
+<div class="breadCrumbs" role="navigation" aria-label="Bread Crumbs"><a href="../index.html">UNIT 2</a> > <a href="index.html">MODULE 2</a></div>
+<h1>Lesson 2: Essential Tags</h1>
+
+
+<h2>Overview</h2>
+<p>There are some basic tags you must add to every HTML document you create. In the previous unit, you created a new file called <span class="filename">index.html</span>. In the current lesson you will add a few basic required tags to this file, thereby beginning the construction of your portfolio. These basic tags provide a template for any web page.
+</p>
+
+<h2>Learner Outcomes</h2>
+<p>At the completion of this exercise:</p>
+<ul>
+	<li>you will have learned the basic tags required for all HTML documents and be able to create a blank HTML page with all of the essential tags in place.</li>
+</ul>
+
+<h2>Activities</h2>
+<ol>
+	<li>Open a text editor program and navigate to the &quot;portfolio&quot; folder you created in <a href="../module1/lesson1.html">the Pre-coding lesson</a>. Open the <span class="filename">index.html</span> file.</li>
+	<li>Type the following markup into your file. This is the basic HTML structure of a web page. Note that you'll personalize the highlighted text contained in the title tags.
+
+<pre id="example"> 
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;title&gt;Web Portfolio: <span class="highlight">Your Name</span>&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;!-- The content of your web page will go here --&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+    
+	<p>You may find it easier to read if you add extra blank lines as you see in the example above. Also, indenting content that is inside of other content helps you to see the relationship between all the parts of the page.</em> This is a standard practice for all markup, scripting, and programming languages. </p>
+    
+	<p><strong>Remember:</strong> Extra spaces and blank lines will be ignored when the HTML is displayed by a browser.</strong></p>
+    
+	<p>Let's now examine each of these tags:</p>
+
+	<ul style="list-style-type:none">
+ 		<li>The first line is the <strong>DOCTYPE</strong>. It specifies the version of HTML you are using. HTML5 has a very simple DOCTYPE. All prior versions of HTML and XHTML had much longer and complicated DOCTYPE statements, but they can easily be found by searching the web, and can be copied and pasted into your web page. The DOCTYPE statement is necessary because it tells the browser which version of HTML you're using, so the browser knows how to process your code. . A common mistake among web developers is neglecting to include a DOCTYPE statement. Without a DOCTYPE statement, browsers have to guess which version of HTML you're using, and sometimes they get it wrong.</li>
+  	<li><strong>&lt;html&gt;</strong> is typed before all the text in the document. This marks the beginning of the html document. It has a corresponding <strong>&lt;/html&gt;</strong> tag that marks the end of the document. The entire web page, other than the DOCTYPE statement, is wrapped between these two tags. </li>
+		<li><strong>&lt;head&gt;</strong> Web pages are divided into two main sections: the <em>head</em> and the <em>body</em>. The <em>head</em> provides information about the document, including the author, description, keywords, title, and other information. The <em>head</em> section is closed with the <strong>&lt;/head&gt;</strong> tag. In our &quot;bare bones&quot; document there are only two elements inside the <em>head</em>. They are: </li>
+		<li><strong>&lt;title&gt;</strong> You must give your document a title. This title doesn't actually appear within the web page, but appears in the title bar of the browser window. This is also the title of the page that will be displayed by default in search engine results or in user's Favorites. The title is closed with <strong>&lt;/title&gt;</strong></li>
+		<li><strong>&lt;meta&gt; </strong>is a tag that has many purposes, depending on what attribute it has. In our &quot;bare bones&quot; document, the attribute is <em>charset</em>, which is set to &quot;utf-8&quot;. This is a required tag, which tells the browser which character set the web page is encoded in. There are many possible character sets, but &quot;utf-8&quot; is an international character set that is one of the most common. The &lt;meta&gt; tag is not a container tag. Therefore, it has no corresponding closing tag. </li>
+		<li><strong>&lt;body&gt;</strong> The body section contains the contents of your document</li>
+		<li><strong>&lt;!-- Comment --&gt;</strong> Comments are intended solely for people reading the source code, and are not visible when someone views the web page in a browser. See the section below on <em>Comments In Your Code</em> for additional information about this feature.</li>
+	</ul>
+	</li>
+
+	<li>Save the <span class="filename">index.html</span> file. Now open this file in your browser. 
+      You will notice that the screen is blank. This is because you don't have any content yet in your body section. However, you should see your title displayed in browser's title bar, usually across the top of the browser window.</li>
+
+	<li>Return to the text editor and the <span class="filename">index.html</span> file. While you're creating files using the &quot;bare bones&quot; template, you should go ahead and create the other files that will comprise your website. Later in this course, you'll be adding content to each of these pages, but for now they'll be blank, just like the home page. Simply copy the code from <span class="filename">index.html</span> and paste it into the new pages. Each time you do this, change the &lt;title&gt; element to reflect the content of the new page. For example, change the title in graphics.html to something like &quot;Web Portfolio: <span class="highlight">Your Name</span>'s Graphics Page&quot;. Save each new file in your root folder with the following file names:
+			<ul style="list-style-type:none">    
+				<li>accessibility.html</li>
+				<li>graphics.html</li>
+				<li>javascript.html</li>
+				<li>usability.html</li>
+				<li>tools.html</li>
+				<li>video.html</li>
+			</ul>
+	</li>
+</ol>
+
+<h2>Comments In Your Code</h2>
+<p>The sample HTML code provided and described on this page includes the HTML markup for adding comments:</p> 
+<div class="example">&lt;!-- Your comment goes here --&gt;</div> 
+
+<p>All computer markup or programming languages provide some method for adding comments to your code. This includes all three of the languages taught in this course: HTML, Cascading Style Sheets (CSS), and JavaScript.  The actual method differs depending on the language, but the idea is always the same. Comments are notes to yourself, or to others who view your source code, that help to make the code easier to understand. The web browser simply ignores them, so they aren't actually displayed to users. Add comments liberally! Too many comments is better than too few. Here are the two primary purposes for adding comments to your code:</p>
+
+<ul>
+	<li><strong>Use comments to explain your code to <em>others</em>.</strong> Often, you will be creating web pages as a member of a team, and other team members may need to read and understand your code. Even if you're the only person working on a particular web page, there may be others later who need to read and understand your code.</li>
+	<li><strong>Use comments to explain your code to <em>yourself</em>.</strong> As you're learning new web design techniques, it can be very helpful to add reminders to yourself as to why you used a particular tag or group of tags.</li>
+</ul>
+
+<h2>Resources/Online Documents</h2>
+<ul>
+	<li><a href="../common_tags.html">Common HTML Tags</a></li>
+  <li><a href="http://www.w3.org/TR/html5">W3C HTML5 Specification</a></li>
+  <li><a href="http://www.w3schools.com/html5/html5_reference.asp">W3Schools HTML5 Reference</a></li>
+</ul>
+
+<h2>All done?</h2>
+  <p> For each page of your site, is the appropriate title displayed in the browser's title bar? After you have saved all your changes to <span class="filename">index.html</span> and the other pages, keep your browser and text editor open to the <span class="filename">index.html</span> file. Show your instructor your results before starting <a href="lesson3.html">Lesson 3</a>. 
+  </p>
+
+<footer role="contentinfo">
+Copyright &copy; 2005-2014 by University of Washington. Permission is granted to use these materials in whole or in part for educational, noncommercial purposes provided the source is acknowledged. This product was created with support from the National Institute on Disability and Rehabilitation Research of the U.S. Department of Education (grant #H133D010306), and is maintained with support from the National Science Foundation (grant #CNS-0540615). The contents do not necessarily represent the policies of the U.S. federal government, and you should not assume their endorsement.</footer>
+</div>
+</div>
+</body>
+</html>

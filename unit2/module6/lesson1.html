@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>WebD2: Adding video to web pages</title>
+<!-- Hack to get IE to recognize  HTML5 elements-->
+<!-- See http://remysharp.com/2009/01/07/html5-enabling-script/comment-page-3/#allcomments-->
+<!--[if IE]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<link type="text/css" rel="stylesheet" href="../../../styles/webd2.css" media="screen">
+<link type="text/css" rel="stylesheet" href="../../../styles/webd2_print.css" media="print">
+</head>
+<body id="studentPage">
+<div id="wrapper">
+<div id="banner" role="banner">
+<div id="siteTitle">Web Design &amp; Development I</div>
+<div id="version">Version 2.0</div>
+<div id="subTitle">Student Version</div>
+</div>
+<nav role="navigation" aria-label="Main menu">
+<ul>
+<li><a href="../../../student/index.html">Home</a></li>
+<li><a href="../../../student/lessons.html">Lessons</a></li>
+<li><a href="../../../student/resources.html">Resources</a></li>
+<li id="btnPrev"><a href="../../../student/unit2/module6/index.html">Previous</a></li>
+<li id="btnNext"><a href="../../../student/unit2/module6/lesson2.html">Next</a></li>
+</ul>
+</nav>
+<div id="main" role="main">
+<div class="breadCrumbs" role="navigation" aria-label="Bread Crumbs"><a href="../index.html">UNIT 2</a> > <a href="index.html">MODULE 6</a></div>
+<h1>Lesson 1: Adding video to web pages</h1>
+
+
+<h2>Overview</h2>
+<p>HTML5 introduced two new elements that make it easy to add media to web pages, <span class="element">&lt;audio&gt;</span> and <span class="element">&lt;video&gt;</span>. Prior to HTML5, web developers had to rely on browser plug-ins and extensions to add media to web pages, which added a layer of complexity and required users to install special software in order to play the media. 
+</p>
+
+<p>Adding audio and video to web pages is easy with HTML5. In the following activity, you will add a video to your portfolio site. To add video to a web page, you will need three files. The first two files are video files in two different formats. Two formats are needed because the companies who make the major web browsers have been unable to agree on which media formats to support. Microsoft (Internet Explorer) and Apple (Safari) were early supporters of the MP4 format, but Mozilla (Firefox) and Opera were uncomfortable with certain licensing restrictions of MP4 and instead decided to support other formats such as OGG and WebM. Google (Chrome) has been an early supporter of all of these formats. Firefox and Opera have finally agreed to support MP4, but that's a relatively new development. Until we can be reasonably sure that all Web users in the world have a current version of a browser that supports MP4, we have to provide our video in two formats.</p>
+
+<p>(NOTE:) This same issue affects audio as well. Internet Explorer and Safari have historically supported MP3, but in order for audio to play in Firefox and Opera the audio must also be provided in another format such as OGG. And again, Chrome supports all these formats.</p> 
+
+<p>The third file to include with your video is a still image file that serves as a placeholder (or "poster") until the user starts playing the video. This is optional, but it's nice to include since it gives the developer (You) control over what appears visibly on your page. Otherwise, the browser will typically show either a black rectangle or a single still frame from early in the video.</p>
+     
+ <h2>Activities</h2>
+
+<ol>
+	<li>Open the file <span class="filename">video.html</span> that you created earlier in the course. At this point, this file should include nothing but &quot;bare bones&quot; HTML.</li>
+	<li>Be sure the web page has a <strong>&lt;title&gt;</strong> element that is reflective of the purpose of this page (if you followed the instructions carefully in Unit 2, the title should be something like "Web Portfolio: <span class="highlight">Your Name</span>'s Video Page")</li>
+	<li>As you may have learned by now in earlier lessons, the title specified using the <span class="element">&lt;title&gt;</span> element does not 
+show up in the body of the document. So, it's a common practice to add this same title, or a similar one, to the body of the document as a main heading, like 
+this: 
+<div class="example">
+&lt;h1&gt;Web Portfolio: Video&lt;/h1&gt;
+</div>
+</li>	
+	<li>Beneath the main heading, add a short paragraph that introduces the video (just a sentence or two is fine). Remember to wrap your paragraph in opening and closing paragraph tags (<span class="element">&lt;p&gt;</span> and <span class="element">&lt;/p&gt;</span>)</li> 
+	<li>Beneath the paragraph, use the following instructions to add a video to the body of your web page. Ask your instructor for the URLs for the two video files and one still poster image.</li> 
+	<li>When finished, save your work, and check it in multiple browsers to be sure it plays. It's important to check it in as many browsers as possible, including at least one browser that supports MP4 (Internet Explorer or Safari) and one that supports WebM (Firefox or Opera).</li>
+	<li>After you have your video playing in multiple browsers, play with each, and discuss this experience with your class. How does the video controller differ in each browser? Which do you like best, and why? Try tabbing to the video player and operating the controls without a mouse, just using the keyboard. Can you do so? Which browser offers the best user experience for keyboard users?</li>
+</ol>	 
+
+<h3>Instructions for Adding video</h3>
+
+<ol>
+  <li>Start with an opening and closing video tag (<span class="element">&lt;video&gt;</span> and <span class="element">&lt;/video&gt;</span>)</li>
+  <li>Add the following attributes to the opening <span class="element">&lt;video&gt;</span> tag:
+    <dl>
+      <dt>controls</dt>
+      <dd>This attribute is just the word <em>controls</em> by itself (it has no value). This tells the browser to display its built-in player controls. If you omit this attribute, you can build your own controls using JavaScript (you'll have an opportunity to do this in Unit 5).</dd>
+      <dt>poster="<span class="filename">path_to_your_poster_image.jpg</span>"</dt>
+      <dd>This attribute provides a still image for the browser to display before the user plays the video. It can be any image file format that browsers support, such as JPG or PNG.</dd>
+      <dt>preload="auto"</dt>
+      <dd>This attribute tells the browser to preload as much of the video as is necessary to start playing when the user presses play. Instead of "auto", this could be set to "none" so the video doesn't start loading <em>until</em> the user requests it. Since downloading video can cost money for users on mobile phones, setting this to "none" would be respectful of those users, but would also take longer for the video to start playing.</dd>
+    </dl>
+  </li>
+  <li>Inside the opening and closing video tags, add two <span class="element">&lt;source&gt;</span> elements, one for each video file format. Each of these elements should have an opening and closing tag (<span class="element">&lt;source&gt;</span> and <span class="element">&lt;/source&gt;</span>)</li>
+  <li>Add the following attributes to each of the opening <span class="element">&lt;source&gt;</span> tags:
+    <dl>
+      <dt>src="<span class="filename">path_to_your_video_file</span>"</dt>
+      <dd>This attribute tells the browsers where to find the video file. This attribute will be different for each of your <span class="element">&lt;source&gt;</span> elements: One will point to the MP4 file, and the other will point to the WebM file.</dd>
+      <dt>type="<span class="filename">type_of_video_file</span>"</dt> 
+      <dd>This attribute tells browsers the video's file type. You might think browsers could figure this out by looking at the extension. However, that isn't necessarily reliable as some files might not <em>have</em> an extension. Most browsers could figure out the file type anyway by analyzing the file itself, but that takes time&mdash;it's much more efficient if you just tell the browser what type of file it is. Every file type that's used on the web has a standard type definition that browsers recognize. These are sometimes called MIME Types, and you can find a <a href="http://www.freeformatter.com/mime-types-list.html">complete list of all  MIME Types</a> in various places on the Internet. Since your videos are available in MP4 and WebM formats, the type that you need to specify in this attribute for each of your source elements is <strong>"video/mp4"</strong> for the MP4 source and <strong>"video/webm"</strong> for the WebM source.</dd>
+    </dl>
+  </li>
+</ol>
+
+<h2>All done?</h2>
+  <p>Proceed to <a href="lesson2.html">the next lesson</a>.</p>
+
+<footer role="contentinfo">
+Copyright &copy; 2005-2014 by University of Washington. Permission is granted to use these materials in whole or in part for educational, noncommercial purposes provided the source is acknowledged. This product was created with support from the National Institute on Disability and Rehabilitation Research of the U.S. Department of Education (grant #H133D010306), and is maintained with support from the National Science Foundation (grant #CNS-0540615). The contents do not necessarily represent the policies of the U.S. federal government, and you should not assume their endorsement.</footer>
+</div>
+</div>
+</body>
+</html>

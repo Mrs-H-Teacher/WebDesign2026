@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>WebD2: Common Tags</title>
+<!-- Hack to get IE to recognize  HTML5 elements-->
+<!-- See http://remysharp.com/2009/01/07/html5-enabling-script/comment-page-3/#allcomments-->
+<!--[if IE]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<link type="text/css" rel="stylesheet" href="../../../styles/webd2.css" media="screen">
+<link type="text/css" rel="stylesheet" href="../../../styles/webd2_print.css" media="print">
+</head>
+<body id="studentPage">
+<div id="wrapper">
+<div id="banner" role="banner">
+<div id="siteTitle">Web Design &amp; Development I</div>
+<div id="version">Version 2.0</div>
+<div id="subTitle">Student Version</div>
+</div>
+<nav role="navigation" aria-label="Main menu">
+<ul>
+<li><a href="../../../student/index.html">Home</a></li>
+<li><a href="../../../student/lessons.html">Lessons</a></li>
+<li><a href="../../../student/resources.html">Resources</a></li>
+<li id="btnPrev"><a href="../../../student/unit2/module2/lesson2.html">Previous</a></li>
+<li id="btnNext"><a href="../../../student/unit2/module3/index.html">Next</a></li>
+</ul>
+</nav>
+<div id="main" role="main">
+<div class="breadCrumbs" role="navigation" aria-label="Bread Crumbs"><a href="../index.html">UNIT 2</a> > <a href="index.html">MODULE 2</a></div>
+<h1>Lesson 3: Common Tags</h1>
+
+
+<h2>Overview</h2>
+<p>Now that the foundation is laid for the portfolio home page, we can begin to add the content. In this lesson you will learn to use some of the more commonly used tags. </p>
+
+<h2>Learner Outcomes</h2>
+<p>At the completion of this exercise:</p>
+<ul>
+  <li>you will be able to use some common tags for adding content to a web page including &lt;h1&gt;, &lt;h2&gt;, &lt;h3&gt;, &lt;p&gt;, and &lt;div&gt; </li>
+  <li>You will be able to apply the concepts of nesting and assigning attributes to tags.</li>
+  <li>You will be able to properly utilize headings and paragraphs to structure content on a web page</li>
+</ul>
+
+<h2>Activities</h2>
+<ol>
+  <li>Return to <span class="filename">index.html</span> in the text editor.</li>
+  <li>Review the outline of your home page that you sketched in the <a href="../module1/lesson1.html">Pre-coding Lesson</a> of this unit. The outline should include:
+  	<ul>
+			<li>A main heading that reads &quot;Web Portfolio&quot; </li>
+  		<li>A block of text containing information about you. At a minimum this should include your name and email address.</li>
+  		<li>A block of text containing information about the course. This might include information such as the name of the course, teacher, section, school, and year.</li>
+  		<li>A paragraph that provides an overview of the content of your portfolio.</li>
+ 			<li>A sub-heading for each of the remaining units of this curriculum (Unit 2 through 7). </li>
+  		<li>Some placeholder content beneath each sub-heading (something like &quot;This section will be completed soon.&quot;)</li>
+		</ul>
+	</li>
+  <li>Now your task is to translate that outline into HTML code. To do so, consider each piece of content, and ask &quot;What is this?&quot; Try to answer that question with an HTML tag. Is it a heading? Is it a subheading? Is it a paragraph? The more your work with HTML, the easier it will be to figure out which tags are most appropriate for a given piece of content. </li>
+  <li>Begin with the main heading of the page, &quot;Web Portfolio&quot;. What is that? It's the main heading of the page. In HTML terms, it's an <strong>&lt;h1&gt;</strong>. To mark up your heading as an <strong>&lt;h1&gt;</strong>, simply place the cursor on a blank line directly below the body tag, <strong>&lt;body&gt;</strong>, and enter this: 
+
+    <p><strong>&lt;h1&gt;</strong>Web Portfolio<strong>&lt;/h1&gt;</strong>.<br />
+      <br />
+      The <strong>&lt;h1&gt;</strong> tag marks the main heading within an HTML document. Browsers typically display this heading in a larger font than all other headings and text, although its appearance can be changed using CSS (more on that in Unit 3). </p>
+    <p>When finished, save, then refresh your browser to see your work. If you did everything correctly, you should see your heading at the top of your web page. </p>
+  </li>
+
+<li>Next, markup the two blocks of content, the one with information about the class and the one with information about you. What are these? They're not headings. They're not paragraphs. In fact, they're just blocks of related text for which there really isn't a direct matching HTML tag. For blocks of related content, the best choice is the <strong>&lt;div&gt;</strong> element. So, wrap each of your two blocks in <strong>&lt;div&gt;</strong> and <strong>&lt;/div&gt;</strong>. Since each of these blocks of text contains more than one item, we'll probably want each item to appear on a line by itself, so we'll want to use a <strong>&lt;br/&gt;</strong> tag to force a line break. Here's an example:<br />
+  <br />
+<pre class="example">
+&lt;div&gt;
+Judy Jetson&lt;br/&gt;
+judy@ohs.edu
+&lt;/div&gt;  
+</pre> 
+ Make one <strong>&lt;div&gt;</strong> for each of your blocks of text. Then, refresh your browser and check. 
+</li>
+<li>The remaining content from your sketch included an overview paragraph, a sub-heading for each unit 2 through 7, and some text beneath each sub-heading to serve as a placeholder until you're ready to add more content. Since each unit is a sub-heading, the appropriate HTML markup would be <strong>&lt;h2&gt;&lt;/h2&gt;</strong>. And the text that follows each heading  is a paragraph (paragraphs don't have to be more than one sentence), so that should be marked up with <strong>&lt;p&gt;&lt;/p&gt;</strong>. Here's what the markup for Unit 2 would look like:
+  <p>
+    <strong>&lt;h2&gt;</strong>Unit 2<strong>&lt;/h2&gt;</strong><br />
+    <strong>&lt;p&gt;</strong>This section will include links to my work for this unit, once completed.<strong>&lt;/p&gt;</strong></p>
+  <p>After you have added the Unit 2 content to your web page, save and refresh your browser to check your work. If all is well, copy and paste this same content for the remaining units (but remember to change the Unit number after pasting).</p>
+</li>
+<li>Finally, take all the content you added in the previous step (everything from the overview paragraph down to the final paragraph under Unit 7) and wrap it in a <span class="element">&lt;main&gt;</span> element. The opening <span class="element">&lt;main&gt;</span> tag should precede the overview paragraph, and the closing <span class="element">&lt;/main&gt;</span> tag should be at the bottom of your document, just before the closing <span class="element">&lt;/body&gt;</span> tag. The purpose of the <span class="element">&lt;main&gt;</span> element is to provide a container for all the main content of the page. This enables screen reader users to jump directly to the main content, bypassing all the other stuff. Plus it will come in handy later (in Unit 3) when we start to stylize the page using CSS.
+</li>
+</ol>
+
+<h2>Resources/Online documents</h2>
+<ul>
+  <li><a href="../common_tags.html">Common HTML Tags</a></li>
+  <li><a href="http://www.w3schools.com/html5/html5_reference.asp">HTML5 Tag Reference</a> from W3Schools</li>
+  <li><a href="http://www.w3.org/TR/html5">HTML5 Draft Specification</a></li>
+</ul>
+
+<h2>All done?</h2>
+<p>After you have saved the changes to <span class="filename">index.html</span>, return to your browser 
+and refresh to see your changes. Are all your heading and subheadings displayed? Show your instructor your results before starting <a href="../module3/index.html">the next module</a>.</p>
+<footer role="contentinfo">
+Copyright &copy; 2005-2014 by University of Washington. Permission is granted to use these materials in whole or in part for educational, noncommercial purposes provided the source is acknowledged. This product was created with support from the National Institute on Disability and Rehabilitation Research of the U.S. Department of Education (grant #H133D010306), and is maintained with support from the National Science Foundation (grant #CNS-0540615). The contents do not necessarily represent the policies of the U.S. federal government, and you should not assume their endorsement.</footer>
+</div>
+</div>
+</body>
+</html>
