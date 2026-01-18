@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>WebD2: Web Graphics Basics</title>
+<!-- Hack to get IE to recognize  HTML5 elements-->
+<!-- See http://remysharp.com/2009/01/07/html5-enabling-script/comment-page-3/#allcomments-->
+<!--[if IE]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<link type="text/css" rel="stylesheet" href="../../../styles/webd2.css" media="screen">
+<link type="text/css" rel="stylesheet" href="../../../styles/webd2_print.css" media="print">
+</head>
+<body>
+<div id="wrapper">
+<div id="banner" role="banner">
+<div id="siteTitle">Web Design &amp; Development I</div>
+<div id="version">Version 2.0</div>
+</div>
+<nav role="navigation" aria-label="Main menu">
+<ul>
+<li><a href="../../../instructor/index.html">Home</a></li>
+<li><a href="../../../instructor/requirements.html">Requirements</a></li>
+<li><a href="../../../instructor/resources.html">Resources</a></li>
+<li><a href="../../../instructor/outline.html">Outline</a></li>
+</ul>
+</nav>
+<div id="main" role="main">
+<h1>Web Graphics Basics</h1>
+
+
+  <h2>Pixels</h2>
+  <p>Computer based images are comprised of thousands of tiny dots of color called 
+    pixels. These are the small dots you see if you put your face too close to 
+    your television or computer screen. Each digital image is comprised of thousands 
+    or millions of individual pixels, each with its own color. When these groups 
+    of pixels are viewed as a whole, we see the entire image. Most computer monitors 
+    have display sizes of 800x600 pixels, 1024x768 pixels, or 1280x1024 pixels. 
+  </p>
+  <h2>Resolution</h2>
+  <p>Resolution indicates the number of pixels that are displayed per inch for 
+    an image (or pixels per centimeter). Most computer monitors display at resolutions 
+    of 72 pixels per inch or 96 pixels per inch. If an image is 72 pixels wide, 
+    then it will display as 1 inch big on a monitor that is set to a resolution 
+    of 72 pixels/inch. It is important to remember that for computer graphics, 
+    a higher resolution (pixels/inch) does not mean a higher quality image. What 
+    is important is the total size, in pixels, of the image.</p>
+  <p><br />
+    Graphics for print and graphics for display on computer monitors use different 
+    resolutions. While monitors are constrained by the 72 or 96 pixel per inch 
+    limitation, standard deskjet printers currently print in the range of 4800x1200 
+    dpi (dots per inch) and pictures in magazines typically print at a resolution 
+    of 150 dpi. Unlike computer graphics, with images for print, a higher resolution 
+    will yield a higher quality image. Therefore, if you intend to print an image, 
+    you want to use a higher resolution than you would for a web graphic to achieve 
+a higher quality print.</p>
+  <p>&nbsp;</p>
+  <p>So, if you are scanning an image for use on a web page, what resolution should 
+    you use? For display on a computer monitor, scanning an image at a higher 
+    resolution will simply yield an image that displays larger on the screen, 
+    since more total pixels are captured. For example, a 3 inch by 3 inch picture 
+    scanned at a resolution of 72 pixels per inch will be 216 pixels wide and 
+    216 pixels high and display as a 3 inch by 3 inch picture when displayed on 
+    the computer monitor. A 3 inch by 3 inch picture scanned at a resolution of 
+    144 pixels per inch will be 432 pixels wide and 432 pixels high and display 
+    as a 6 inch by 6 inch picture when displayed on most computer monitors. </p>
+  <p>&nbsp;</p>
+  <p>Therefore, the answer to the question of what resolution to scan images at 
+    really depends on the size of the original picture and how big you want the 
+    image to appear on the web page. Think about the total number of pixels you 
+    are capturing instead of the pixels per inch. It is important to remember, 
+    though, that it never hurts to capture an image onto the computer that is 
+    larger than you need it (this is true for digital camera settings as well). 
+    You can always use a graphics program to reduce the size of an image or crop 
+    it without losing quality. If you try to make it larger using a graphics program, 
+    however, the image will lose quality. A smaller image means that the image 
+    contains fewer pixels, and a larger image has more pixels. You can always 
+    throw away pixels that you have, but you can't add pixels that you don't have!</p>
+  <h2>Graphics and File Size</h2>
+  <p>Web designers are always caught in a constant compromise between image quality 
+    and file size. Generally speaking, the higher the quality of the image, the 
+    greater the file size will be. Also, the larger the image, the larger the 
+    file size will be.</p>
+  <p><br />
+    It is important to consider the file size of images when using them on a web 
+    page. Images with large file sizes take longer to load. Long load times can 
+    be an annoyance to your audience and may render pages essentially unusable 
+for those with slow Internet connections.</p>
+  <h2>Graphic File Types</h2>
+  <p>There are many different file types associated with graphics, however, only 
+    a few types are suitable for web use. The most widely supported web image 
+    formats are jpeg, gif, and png. The type of image dictates which image format 
+    is best to use. </p>
+  <p><br />
+    <em>JPEG</em> (Joint Photographic Experts Group) &#8211; The jpeg image format 
+    allows up to 16 million colors and is the best choice for image with many 
+    colors or color gradations (especially photographs). Jpeg is a &#8220;lossy&#8221; 
+    format which means that each time the image is saved and compressed, image 
+    information is lost and quality is degraded. Jpeg images allow for various 
+    levels of compression. Low compression means high image quality, but large 
+file size. High compression means lower image quality, but smaller file size.</p>
+  <p><br />
+    <em>GIF</em> (Graphic Information Format) Gif is a &#8220;lossless&#8221; 
+    image format, meaning that the quality of the image is not degraded through 
+    compression. The limitation of gif images is that the color palette includes 
+    only 256 colors. Therefore, the gif format is a good choice for simpler graphics 
+    with a smaller number of solid colors. The gif format also allows for transparent 
+    backgrounds, which allows the background color of the web page to show behind 
+the graphic.</p>
+  <p><br />
+    <em>PNG</em> (Progressive Network Graphics) PNG is a newer image format that 
+    provides a combination of many features of both jpeg and gif. The PNG format 
+    allows for use of millions of colors as well as providing the ability to have 
+    transparent backgrounds. The one drawback to PNG&#8217;s is that the format 
+    is not supported by all web browsers, particularly older browsers.<br />
+&nbsp; </p>
+  <p><em>Native file formats</em> &#8211; Native file formats are the formats 
+    that the graphics editing programs use to save the graphic project files in. 
+    The native file formats are larger in file size and contain all of the information 
+    that allows the image to be edited. Examples of native file formats are .psd 
+    for Photoshop and .png for Fireworks.<br />
+&nbsp; </p>
+  <p> <em>Other file formats</em> &#8211; Computer graphics may also be present 
+    in a number of other different formats such as .bmp, .tiff, and .eps. These 
+    formats have their particular uses, such as for print graphics, but are not 
+    suitable for display on the web. To use one of these types of files on the 
+    web, open it in your graphics program and then save it as either a jpeg, gif, 
+    or png.<br />
+</p>
+
+<footer role="contentinfo">
+Copyright &copy; 2005-2014 by University of Washington. Permission is granted to use these materials in whole or in part for educational, noncommercial purposes provided the source is acknowledged. This product was created with support from the National Institute on Disability and Rehabilitation Research of the U.S. Department of Education (grant #H133D010306), and is maintained with support from the National Science Foundation (grant #CNS-0540615). The contents do not necessarily represent the policies of the U.S. federal government, and you should not assume their endorsement.</footer>
+</div>
+</div>
+</body>
+</html>

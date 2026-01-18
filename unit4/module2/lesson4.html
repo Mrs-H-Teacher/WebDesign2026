@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>WebD2: Adding Images to Your Web Page</title>
+<!-- Hack to get IE to recognize  HTML5 elements-->
+<!-- See http://remysharp.com/2009/01/07/html5-enabling-script/comment-page-3/#allcomments-->
+<!--[if IE]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<link type="text/css" rel="stylesheet" href="../../../styles/webd2.css" media="screen">
+<link type="text/css" rel="stylesheet" href="../../../styles/webd2_print.css" media="print">
+</head>
+<body id="studentPage">
+<div id="wrapper">
+<div id="banner" role="banner">
+<div id="siteTitle">Web Design &amp; Development I</div>
+<div id="version">Version 2.0</div>
+<div id="subTitle">Student Version</div>
+</div>
+<nav role="navigation" aria-label="Main menu">
+<ul>
+<li><a href="../../../student/index.html">Home</a></li>
+<li><a href="../../../student/lessons.html">Lessons</a></li>
+<li><a href="../../../student/resources.html">Resources</a></li>
+<li id="btnPrev"><a href="../../../student/unit4/module2/lesson3.html">Previous</a></li>
+<li id="btnNext"><a href="../../../student/unit4/module3/index.html">Next</a></li>
+</ul>
+</nav>
+<div id="main" role="main">
+<div class="breadCrumbs" role="navigation" aria-label="Bread Crumbs"><a href="../index.html">UNIT 4</a> > <a href="index.html">MODULE 2</a></div>
+<h1>Lesson 4: Adding Images to Your Web Page</h1>
+
+
+<h2>Overview</h2>
+<p>In this lesson you will use the images you created in <a href="lesson3.html">the previous lesson</a> along with
+basic HTML skills from <a href="../../unit2/index.html">Unit
+2</a> to create a mini web photo album.</p>
+<h2>Learner Outcomes</h2>
+<p>At the completion of this exercise, you will be able to:</p>
+<ul>
+	<li>utilize images created in a graphics program in an HTML page.</li>
+	<li>use thumbnail images to link to a larger image.</li>
+	<li>use the ALT attribute when adding images to a page.</li>
+</ul>
+
+<h2>Activities</h2>
+<ol>
+<li>Now it is finally time to add the images you created in the
+previous lesson to an actual web page. Using your text editor open the
+<span class="filename">graphics.html</span> file. You will be using this page to display the graphics you
+complete in this lesson. Head this section of the document "Web Photo
+Album" and give it an <span class="attribute">id</span> of "photoalbum", like this:
+<div class="example">
+&lt;h2 id="photoalbum"&gt;Web Photo Album&lt;/h2&gt;
+</div>
+</li>
+<li>Next, add each of your thumbnail images to the
+page using the <strong>&lt;img&gt;</strong>
+element. Be sure to include the following attributes for each image:
+	<ul>
+		<li><strong>src="<span class="highlight">location
+of the image</span></strong> - This can be either an
+absolute address (full URL include http://) or a relative address, such
+as "images/myImage.jpg"</li>
+<li><strong>alt="<span class="highlight">some
+alternate text</span>"</strong> - Alternate text is text
+that briefly describes the image for users who aren't able to see it.
+Too much detail is overkill - just try to make sure that people who
+can't see the images have access to whatever is being communicated.</li>
+<li><strong>width="<span class="highlight">image
+width in pixels</span>"</strong> and<br>
+<strong>height="<span class="highlight">image
+height in pixels</span>"</strong> - If you provide image
+width and height, browsers will reserve a place for the images while
+they download. Otherwise the layout might change shape as images
+gradually appear, which can be distracting for users.</li>
+	</ul>
+</li>
+<li>Once you have added the images, the next step is to create
+a link from each thumbnail image to the larger, viewable image. See if
+you can remember how to do this from what you learned in Unit 2.
+</li>
+<li>Once you are completed, your photo album should look something like the example below. 
+If you need help, we've also provided the html code
+for the example album</li>
+</ol>
+
+<h4>Sample Web Photo Album</h4>
+<div style="margin-left:1em">
+<a href="../pix/photo1.jpg"><img src="../pix/photo1_tmb.jpg" alt="hiking into an alpine lake" style="border: medium none ;" height="72" width="72"></a>
+<a href="../pix/photo2.jpg"><img src="../pix/photo2_tmb.jpg" alt="kayaking in Puget Sound" style="border: medium none ;" height="72" width="72"></a>
+<a href="../pix/photo3.jpg"><img src="../pix/photo3_tmb.jpg" alt="Lake Diablo" style="border: medium none ;" height="72" width="72"></a>
+</div>
+
+<h4>Sample Code</h4>
+<pre id="example">&lt;div&gt;
+
+  &lt;a href="images/photo1.jpg"&gt;
+    &lt;img src="images/photo1_tmb.jpg"width="72" height="72" style="border:none" 
+         alt="hiking into an alpine lake" /&gt;
+  &lt;/a&gt;
+
+  &lt;a href="images/photo2.jpg"&gt;
+    &lt;img src="images/photo2_tmb.jpg" width="72" height="72" style="border:none" 
+         alt="kayaking in Puget Sound" /&gt;
+  &lt;/a&gt;
+
+  &lt;a href="images/photo3.jpg"&gt;
+    &lt;img src="images/photo3_tmb.jpg" width="72" height="72" style="border:none" 
+         alt="Lake Diablo" /&gt;
+  &lt;/a&gt;
+  
+&lt;/div&gt;</pre>
+
+<p>Now that you've successfully added the images to the web
+page, try to format your photo album so that there is a brief
+description of the photo, or caption, next to each picture. Remember
+the layout techniques you learned in Unit 3 and try to come up with a
+solution that allows you to do this.</p>
+<p>Experiment with different methods until you find the one
+you like best. Share your results with the class and compare it to what
+other students came up with.</p>
+<p>Wait until you're finished to compare your results to our <a href="css_album.html">example CSS picture album</a>.</p>
+
+<h2>All done?</h2>
+<p>Make sure to save your web page. You will be adding more
+projects to it in future lessons. When you are finished, proceed to the <a href="../module3/index.html">next module</a>.</p>
+
+<footer role="contentinfo">
+Copyright &copy; 2005-2014 by University of Washington. Permission is granted to use these materials in whole or in part for educational, noncommercial purposes provided the source is acknowledged. This product was created with support from the National Institute on Disability and Rehabilitation Research of the U.S. Department of Education (grant #H133D010306), and is maintained with support from the National Science Foundation (grant #CNS-0540615). The contents do not necessarily represent the policies of the U.S. federal government, and you should not assume their endorsement.</footer>
+</div>
+</div>
+</body>
+</html>

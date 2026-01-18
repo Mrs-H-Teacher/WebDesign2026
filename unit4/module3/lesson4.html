@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>WebD2: Creating a Favicon</title>
+<!-- Hack to get IE to recognize  HTML5 elements-->
+<!-- See http://remysharp.com/2009/01/07/html5-enabling-script/comment-page-3/#allcomments-->
+<!--[if IE]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<link type="text/css" rel="stylesheet" href="../../../styles/webd2.css" media="screen">
+<link type="text/css" rel="stylesheet" href="../../../styles/webd2_print.css" media="print">
+</head>
+<body id="studentPage">
+<div id="wrapper">
+<div id="banner" role="banner">
+<div id="siteTitle">Web Design &amp; Development I</div>
+<div id="version">Version 2.0</div>
+<div id="subTitle">Student Version</div>
+</div>
+<nav role="navigation" aria-label="Main menu">
+<ul>
+<li><a href="../../../student/index.html">Home</a></li>
+<li><a href="../../../student/lessons.html">Lessons</a></li>
+<li><a href="../../../student/resources.html">Resources</a></li>
+<li id="btnPrev"><a href="../../../student/unit4/module3/lesson3.html">Previous</a></li>
+<li id="btnNext"><a href="../../../student/unit4/module4/index.html">Next</a></li>
+</ul>
+</nav>
+<div id="main" role="main">
+<div class="breadCrumbs" role="navigation" aria-label="Bread Crumbs"><a href="../index.html">UNIT 4</a> > <a href="index.html">MODULE 3</a></div>
+<h1>Lesson 4: Creating a Favicon</h1>
+
+
+<h2>Overview</h2>
+<p> In this lesson, you will learn what a favicon is and how to
+create one in a graphics editing program. &nbsp;You will then learn
+how to insert the appropriate html to the &lt;head&gt; section of your page to add the favicon to your site.</p>
+
+<h2>Learner Outcomes</h2>
+<p>At the completion of this exercise, you will be able to:</p>
+<ol>
+	<li>utilize a graphics editing program to create a favicon image.</li>
+	<li>adjust the settings for a favicon image so that it is the appropriate pixel size and file format.</li>
+	<li>use the &lt;link&gt; element in the &lt;head&gt; section of your page to add the favicon to your site</li>
+</ol>
+
+<h2>What is a favicon?</h2>
+<p>Have you ever noticed the tiny icon appearing on the left side
+of the address bar in your browser next to the URL? &nbsp;</p>
+<p><img style="width: 453px; height: 62px;" alt="favicon example" src="../pix/faviconexample.jpg"></p>
+<p>You might also find this decorative icons, called a favorite
+icon or favicon for short, in your browser's favorites list or
+displayed on tabs. &nbsp;While not a requirement for any web site,
+favicons do add an extra touch of personalization that allow you to
+help brand your site and differentiate it from others.
+&nbsp;Favicon images are small in size, only 16 pixels in height by
+16 pixels in width, so there is not much space for complex designs.
+&nbsp;Still, a good favicon that is clean, simple and easily
+identifiable can provide a good visual indicator for visitors
+navigating to your site through their tabs or bookmarks.</p>
+
+<h2>How can you create a favicon?</h2>
+<p>It is possible to create a favicon in just about any graphics
+program. &nbsp;There are also a number of online services that
+allow you to create favicon images as well. &nbsp;The challenge
+with creating favicons is that you only have a 16 x 16 pixel space to
+work with, which can make it difficult to get your image exactly how
+you want it. &nbsp;In order to design your icon, you will need to
+either zoom in very close so you can see each pixel or start with a
+larger image and then reduce it down in size. The image below shows
+what the favicon for this site looks like when zoomed in to 1000%.
+&nbsp;</p>
+<p><img style="width: 500px; height: 172px;" alt="favicon zoom" src="../pix/favicon_zoom.jpg"> </p>
+
+<p>Originally, favicon images needed to use the .ico format. This is still the most reliable format, but not all graphics software is able to export to .ico. If your software does not support .ico, you can instead use .png, .gif, or .jpg files and your favicon will work in <em>most</em> modern browsers, the lone exception being Internet Explorer, which only supports .ico format as of IE9.</p>
+
+<h2>How do you add the favicon to your site?</h2>
+
+<p>By default, browsers will look for a file titled "favicon.ico" in the root
+directory of your web site to be used as a favicon. &nbsp;If you
+use a different filename or have your favicon stored somewhere other than the root directory, you will need to specify a link to the file in the
+<span class="element">&lt;head&gt;</span> section of your page. Below is an
+example of the html code that you would use to link your favicon image
+to your page, assuming you've saved your graphic as a .png file named <span class="filename">favicon.png</span> in the <span class="filename">images</span> folder:</p>
+<div class="example">&lt;link rel="shortcut icon" href="images/favicon.png"&gt;</div>
+
+<h2>Activities</h2>
+
+<h3>Create a favicon in for your site</h3>
+
+<ol><li>To start off, create a new document in your graphics program
+and set the size to 200 x 200 pixels. &nbsp;Even though the final
+favicon image will only be 16 x 16 pixels in size, it is easier to
+design your icon at a larger size and then rescale it to the
+appropriate dimensions.</li>
+<li>Use the drawing tools in the graphics software to create the image you would like to use for your favicon. &nbsp;You can import
+a picture to use, but remember, the quality will be very low when you
+reduce the size and it may not be recognizable. &nbsp;As a general
+rule, simple graphics work best.</li>
+<li>Once you have your design finished, adjust the image size property in your graphics software
+setting the dimensions to 16 x 16 pixels. &nbsp;If the option is there,
+make sure you choose to resample the image so that your graphics
+software attempts to preserve the image as best as possible in the
+smaller size.
+<p><img style="width: 430px; height: 380px;" alt="Image Size dialog box, with width and height being set to 16 pixels each" src="../pix/resize_image.jpg"></p>
+</li>
+<li>Once the image has been resized, save the image as an .ico file if your graphics software allows. Otherwise, save it as a .png file. Name your graphic <span class="filename">favicon.ico</span> or <span class="filename">favicon.png</span> depending on which file format you selected.</li>
+
+<li>Move the favicon image to the <span class="filename">images</span> folder of your site.</li>
+
+<li>Open <span class="filename">index.html</span>, and use the <span class="element">&lt;link&gt;</span> element to add the favicon to your home page, like this: 
+<div class="example">&lt;link rel="shortcut icon" href="images/favicon.ico"&gt;</div>
+</li>
+<li>Once you are done, go to your page and refresh the browser. &nbsp;Your favicon
+image should appear! If you don't see it, you may need to clear
+your browser's image cache and then restart the browser to load the new
+favicon image. Note that if you were unable to save the file as .ico, your favicon will not show up in Internet Explorer&mdash;you'll need to view it in another browser. If you want it to work in all browsers, there are free tools and services available for converting .png files to .ico, such as <a href="http://www.convertico.com/">convertico.com</a></li>
+<li>Once you've confirmed that it works on the home page, add this same <span class="element">&lt;link&gt;</span> tag to each of the HTML pages in your portfolio site.</li>
+</ol>
+
+<h2>All done?</h2>
+<p>Share your work with your instructor. Then proceed to <a href="../module4/index.html">the next module</a>.</p>
+
+<footer role="contentinfo">
+Copyright &copy; 2005-2014 by University of Washington. Permission is granted to use these materials in whole or in part for educational, noncommercial purposes provided the source is acknowledged. This product was created with support from the National Institute on Disability and Rehabilitation Research of the U.S. Department of Education (grant #H133D010306), and is maintained with support from the National Science Foundation (grant #CNS-0540615). The contents do not necessarily represent the policies of the U.S. federal government, and you should not assume their endorsement.</footer>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>WebD2: Background Images</title>
+<!-- Hack to get IE to recognize  HTML5 elements-->
+<!-- See http://remysharp.com/2009/01/07/html5-enabling-script/comment-page-3/#allcomments-->
+<!--[if IE]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<link type="text/css" rel="stylesheet" href="../../../styles/webd2.css" media="screen">
+<link type="text/css" rel="stylesheet" href="../../../styles/webd2_print.css" media="print">
+</head>
+<body id="studentPage">
+<div id="wrapper">
+<div id="banner" role="banner">
+<div id="siteTitle">Web Design &amp; Development I</div>
+<div id="version">Version 2.0</div>
+<div id="subTitle">Student Version</div>
+</div>
+<nav role="navigation" aria-label="Main menu">
+<ul>
+<li><a href="../../../student/index.html">Home</a></li>
+<li><a href="../../../student/lessons.html">Lessons</a></li>
+<li><a href="../../../student/resources.html">Resources</a></li>
+<li id="btnPrev"><a href="../../../student/unit4/module4/lesson2.html">Previous</a></li>
+<li id="btnNext"><a href="../../../student/unit4/module5/index.html">Next</a></li>
+</ul>
+</nav>
+<div id="main" role="main">
+<div class="breadCrumbs" role="navigation" aria-label="Bread Crumbs"><a href="../index.html">UNIT 4</a> > <a href="index.html">MODULE 4</a></div>
+<h1>Lesson 3: Background Images</h1>
+
+
+<h2>Overview</h2>
+<p> In this lesson, you will learn how to use background images as a
+way to further customize the design of your web site. You will
+explore at two types of background images, tiled images and large size
+images, and learn how to use CSS to apply both types as the background
+for a web page.</p>
+
+<h2>Learner Outcomes</h2>
+<p>At the completion of this exercise, you will be able to:</p>
+
+<ol>
+  <li>utilize the CSS background-image property to apply a background image to an element on the page.</li>
+	<li>utilize the CSS position, repeat, size and attachment properties of the background image to control how the image is displayed.</li>
+	<li>design or locate background images, both tiled and large size, for use as web backgrounds.</li>
+</ol>
+
+<h2>Adding a Background Image using CSS</h2>
+<p>In the earlier lesson on <a href="../../unit3/module2/lesson2.html">Applying Color in CSS</a>, you used the <span class="property">background-color</span> property to implement a color scheme for your portfolio page. In addition
+to modifying the background color of any element, you can also define an image to be used as a background using the <span class="property">background-image</span> property.&nbsp; While you can accomplish some very nice designs using just colors, sometimes you may want the added design options and flexibility that using images can provide.</p>
+
+<p>The following example shows how to apply the <span class="property">background-image</span> property:</p>
+
+<pre class="example"> 
+body { 
+  background-image: url(http://www.yoursite.com/yourimageurl); 
+}
+</pre>
+
+<p>
+Once a background image has been defined, there are a number of ways that you can modify how that image is displayed.</p>
+
+<h3>Background Repeat</h3>
+<p>
+The <span class="property">background-repeat</span> property specifies whether the background image
+will repeatedly display until it fills up the entire area of the
+element the background is being applied to or if the background image
+will be displayed only once.&nbsp; You can choose for the background
+image to repeat along the x axis (horizontally) by defining repeat-x or
+for the image to repeat along the y access (vertically) by defining
+repeat-y.&nbsp; If you do not want the background image to repeat, you
+can define no-repeat.&nbsp; The default setting if you do not define
+this property is for the image to repeat both horizontally and
+vertically.&nbsp; Go to the <a href="http://www.w3schools.com/cssref/playit.asp?filename=playcss_background-repeat" target="_blank">W3C Schools page on background repeat</a> to see how
+the different options for setting <span class="property">background-repeat</span> can be applied.
+
+</p>
+<h3>Background Attachment</h3>
+<p>
+The <span class="property">background-attachment</span> property specifies whether the background
+image will scroll along with the rest of the elements on the page when
+the user slides the scroll-bar in the browser or whether the image will
+stay fixed to the page.&nbsp; The <span class="property">background-attachment</span> property can
+either be set to scroll or fixed.
+</p>
+<h3>Background Position</h3>
+<p>
+The <span class="property">background-position</span> property specifies the initial position where
+the background image will be placed inside of the element it is the
+background for.&nbsp; You can set both the horizontal and vertical
+position.&nbsp; Options for setting the horizontal position are left,
+right and center.&nbsp; Options for setting the vertical position are
+top, bottom and center.&nbsp; Go to the <a href="http://www.w3schools.com/cssref/playit.asp?filename=playcss_background-position" target="_blank">W3C Schools page on background position</a> to see how
+the different options for setting <span class="property">background-position</span> can be applied.
+</p>
+
+<h3>Background Size</h3>
+<p>
+In CSS 3.0 it is now possible to set the <span class="property">background-size</span>
+of the image
+as well.&nbsp;&nbsp; The options for setting background size are
+length, percentage, cover and contain.&nbsp; This becomes especially
+helpful when using large size web background images where you want to
+stretch the image to fill up the entire area of the element.&nbsp; Go
+to the <a href="http://www.w3schools.com/cssref/playit.asp?filename=playcss_background-size&amp;preval=contain" target="_blank">W3C Schools page on background size</a> to see how the
+different options for setting background-size can be applied.
+</p>
+
+<h2>Tiled Background Images</h2>
+<p>
+A tiled background image is a small size image that is designed so that
+it can repeat seamlessly both horizontally and vertically.&nbsp; When
+using a tiled background image, the actual image may only be 75px in
+size, but when it is repeated both horizontally and vertically it
+appears to be a single large image that fills the entire area.&nbsp;
+Below is an example of an image designed to be used as a tiled
+background.</p>
+
+
+<img style="width: 100px; height: 100px;" alt="green tiled image" src="../pix/green-tile.jpg"><br>
+
+<p>
+CC-BY image from <a href="http://www.flickr.com/photos/webtreatsetc/" target="_blank">webtreats</a></p>
+
+<p>
+This image can then be repeated in both the x and y directions to cover
+a larger area.&nbsp; The background below is made up of the single
+100px by 100px image that is shown above.</p>
+
+
+<div style="background: transparent url(../pix/green-tile.jpg) repeat scroll 0% 50%; height: 300px; width: 500px; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial;">&nbsp;<br>
+<br>
+<br>
+<br>
+<br>
+</div>
+<br>
+
+<p>When creating tiled background images of your own, it is important to make sure
+that the edges will align seamlessly when tiled.&nbsp; This can be difficult
+when designing your own tiled backgrounds.&nbsp; The image below looks
+like it could be used as a tiled background, but when it is repeated,
+if you look closely you can see the seams between the images.</p>
+<p>
+Original image CC-BY from of <a href="http://www.flickr.com/photos/webtreatsetc/">webtreats</a></p>
+
+
+<img style="width: 100px; height: 102px;" alt="pink-tile" src="../pix/pink-tile.jpg"><br>
+<p>
+Here, the image above is used as a tiled background.&nbsp; If you look closely, you'll notice the edges don't align perfectly.</p>
+
+<div style="background: transparent url(../pix/pink-tile.jpg) repeat scroll 0% 50%; height: 300px; width: 500px; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial;">&nbsp;</div>
+
+<br>
+<h2><span style="font-weight: bold;"></span>Large Size Background Images</h2>
+<p>A
+large size background image is different from a tiled background in
+that the technique makes use of a single, large size image that is not
+repeated. Large size background images may either be stretched to fit
+the entire area of the page or just be used to frame the content
+area.&nbsp; If the image doesn't take up the entire area of the page,
+it is important that the edge of the background image blends in with
+the background color of the page so it appears seamless. &nbsp;
+Photographs and large graphics can both make
+excellent large size background images.&nbsp; To see some examples of
+how large size background images can be used, go to your search engine
+of preference and enter the query "large web background."&nbsp; Look
+for some example pages and notice the ways in which the large
+background images are used.</p>
+<p>When using a large size background
+image, it is important to consider the file size of the image you are
+using.&nbsp; Be sure to optimize any images
+that you use and try to keep the overall file size of any image files
+as low as possible.</p>
+<p>It is also important when using a large
+size background to test how it looks on multiple monitors and at
+multiple browser window sizes.&nbsp; An image that fills up the entire
+screen on a 13 inch monitor may not fill up the entire area on a 24
+inch monitor.&nbsp; Also, when you are designing, make sure to resize
+your browser window and test to see if the background image still
+displays properly in
+relation to the rest of the elements on the page.</p>
+<h2>Considerations<br>
+</h2>
+
+<p>When considering whether to use a background image, it is important
+to
+think about how it will impact the overall design of the page.&nbsp;
+
+Make sure the
+background image doesn't cause the page to look too busy or distract
+attention away from the main area of the page where you would like the
+viewer to focus their attention.&nbsp; In addition, you should be thinking
+about how a
+background image affects
+the performance and accessibility of a site.&nbsp; Images can
+have large file sizes and particularly when using a large size
+background image, the overall bandwidth needed to view your page and speed of download should always be a consideration. <br>
+</p>
+
+<h2>Activities</h2>
+<p>For the activities, you will try applying both a tiled image background and a large image background. After you have
+tried them both, you can pick the one you like best and use that for your portfolio page.</p>
+
+<h3>Part 1: Create a Tiled Background Image</h3>
+
+<ol>
+<li>Go online and search for an image that can be used as a tiled web background. Remember what you learned in the earlier lesson on <a href="../module2/lesson2.html">Acquiring Images for Web Graphics</a>. Here are a few good options: 
+	<ul>
+		<li><a href="http://www.flickr.com/search/?q=&amp;l=cc&amp;ct=0&amp;mt=all&amp;adv=1">Flickr Creative Commons</a> has some excellent background images. Enter "web background" into the search field and see what you find. Once you have found an image you like, click on it and then from the "actions" menu select "view all sizes." For a tiled image, you can pick one of the smaller sizes: thumbnail, square or small. Download the image to your computer and make sure to note the license and creator so you can provide proper attribution.</li>
+		<li>Use an online background generator. There are several great tools available. For a list see SingleFunction.com's review of <a href="http://singlefunction.com/15-online-background-generators/">15 Online Background Generators</a>.</li>
+		<li>Create your own background image, suitable for tiling. There are many good online tutorials that can help guide you through the process. Just enter "creating tiled background" into the search engine of your choice.</li>
+	</ul> 
+</li>
+<li>After you have downloaded or created a background image, add it to your portfolio's <span class="filename">images</span> folder. Then, in your external CSS file, add the background image to your site by applying the <span class="property">background-image</span> property to the <span class="element">body</span> element. Your CSS should look similar to this example:
+<pre class="example">
+body { 
+  background-image: url('../images/tiledimage.gif'); 
+}
+</pre>
+<strong>IMPORTANT!</strong> The path to the background image must be relative to the CSS file, <em>not</em> the HTML file. 
+</li>
+</ol>
+
+<h3>Part 2: Create a Large Image Background</h3>
+<ol>
+	<li>Follow the same steps as in the proceeding section to download or create a large background image. There is no hard rule about image size, but it should be large enough to scale upwards without too much loss of resolution. However, keep in mind that users have a variety of screen resolutions, so if the image is more than 800 pixels wide some users may only see a portion of the image.
+	</li>
+  <li>Once you have your large background image ready, save it to your portfolio site's <span class="filename">images</span> folder. Then modify the <span class="property">background-image</span> property that you added in the previous section so that it points to the new file. Refresh your page in the browser to see the new background. Depending on the resolution of your monitor, you will likely see the background image repeated, both horizontally and vertically, which may look a little funky. The following additional properties can be used to control how the background image is displayed: 
+  		<ul>
+				<li><span class="property">background-repeat</span> - possible values include <em>repeat-x</em> (repeats horizontally along the x axis), <em>repeat-y</em> (repeats vertically along the y axis), and <em>no-repeat</em>.</li>  		
+				<li><span class="property">background-size</span> - possible values include <em>cover</em> (image is scaled so that its shorter side fills the entire container), and <em>contain</em> (image is scaled to be as large as possible with the entire image still fitting within the container). <strong>Note:</strong> This is a CSS3 property, and is not supported by older browsers, particularly Internet Explorer prior to version 9.</li>
+  		</ul> 
+			Try playing around with various values of each of these properties to see their effect. When finished experimenting, decide on a background (either tiled or large) that you would like to keep on your portfolio site.
+	</li>    
+</ol>
+
+<h2>Resources/Online Documents</h2>
+<ul>
+	<li><a href="http://www.assault.it/2008/06/23/repeating-seamless-background-image-tutorial/">Repeating Seamless Background Image Tutorial</a></li>
+	<li><a href="http://webdesignerwall.com/tutorials/how-to-css-large-background">How To:&nbsp; CSS Large Background<br></a></li>
+</ul>
+<h2>All done?</h2>
+<p>Proceed to the <a href="../module5/index.html">next module</a>.</p>
+
+<footer role="contentinfo">
+Copyright &copy; 2005-2014 by University of Washington. Permission is granted to use these materials in whole or in part for educational, noncommercial purposes provided the source is acknowledged. This product was created with support from the National Institute on Disability and Rehabilitation Research of the U.S. Department of Education (grant #H133D010306), and is maintained with support from the National Science Foundation (grant #CNS-0540615). The contents do not necessarily represent the policies of the U.S. federal government, and you should not assume their endorsement.</footer>
+</div>
+</div>
+</body>
+</html>
