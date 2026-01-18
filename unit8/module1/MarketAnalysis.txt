@@ -1,0 +1,51 @@
+Market Analysis 
+
+Directions: A quality web site effectively communicates someone’s message to an audience. Replying to the questions on this Market Analysis will give you a chance to consider how best to communicate your client’s message. First, some terms need defining: 1. the client refers to the person you have arranged to make a web site for, 2. the customer is the visitor that will access the site you build to get information.  
+
+Profile of the Client’s Company or Organization: 
+
+1. Company or organization name:
+
+2. Products or services performed: 
+
+3. URL (if client already has a site): 
+
+4. Client’s mission statement (brief paragraph summarizing their mission, i.e., what they do and for whom and why): 
+
+5. Client's goals in having a website: 
+
+6. Draw a sketch of the company or organization logo: 
+
+Customer profile: 
+
+1. Predominant Gender: ____ % male, ____% female 
+
+2. Age (Check all ranges that apply): 
+--- 12 and under 
+--- 13 - 18 
+--- 19 - 29 
+--- 30 - 59 
+--- 60 and over
+3. How would you characterize the level of education that the average customer has attained? Check as many as apply. 
+--- Attending high school
+--- High school graduate
+--- Received vocational or technical certification
+--- B.A. or B.S.
+--- Masters degree 
+--- PhD
+
+4. On a 10-point scale related to income, what income level typifies the average customer who would use this site? 
+
+To assist with the above question, consider the following definitions for points 1, 5, and 10 on the scale: 
+1 - Customers that may or may not have computers in the home let alone an internet connection, no disposable income, only willing to buy if it is a necessity and a bargain
+5 - Customers with modem connections (possibly high speed connections), possibly more than one computer, can afford to buy the products but only after comparison shopping
+10 - Customers with fast speed connections, likely more than one computer, can afford to buy the products even on impulse
+
+5. What other types of web sites would also interest the typical customers visiting this site (consider hobbies, sports, organizations)? 
+
+6. What expectations will they have before they arrive at your site? In other words, what do they hope to find at your site? 
+
+7. What types of gimmicks (give-a-ways, games, galleries, etc) would attract this person? 
+
+8. List the search terms that would most likely attract the target consumer via a web search (include at least a dozen). 
+
