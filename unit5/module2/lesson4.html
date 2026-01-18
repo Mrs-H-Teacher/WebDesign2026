@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>WebD2: Building a JavaScript Clock Part 2</title>
+<!-- Hack to get IE to recognize  HTML5 elements-->
+<!-- See http://remysharp.com/2009/01/07/html5-enabling-script/comment-page-3/#allcomments-->
+<!--[if IE]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<link type="text/css" rel="stylesheet" href="../../../styles/webd2.css" media="screen">
+<link type="text/css" rel="stylesheet" href="../../../styles/webd2_print.css" media="print">
+</head>
+<body id="studentPage">
+<div id="wrapper">
+<div id="banner" role="banner">
+<div id="siteTitle">Web Design &amp; Development I</div>
+<div id="version">Version 2.0</div>
+<div id="subTitle">Student Version</div>
+</div>
+<nav role="navigation" aria-label="Main menu">
+<ul>
+<li><a href="../../../student/index.html">Home</a></li>
+<li><a href="../../../student/lessons.html">Lessons</a></li>
+<li><a href="../../../student/resources.html">Resources</a></li>
+<li id="btnPrev"><a href="../../../student/unit5/module2/lesson3.html">Previous</a></li>
+<li id="btnNext"><a href="../../../student/unit5/module2/lesson5.html">Next</a></li>
+</ul>
+</nav>
+<div id="main" role="main">
+<div class="breadCrumbs" role="navigation" aria-label="Bread Crumbs"><a href="../index.html">UNIT 5</a> > <a href="index.html">MODULE 2</a></div>
+<h1>Lesson 4: Building a JavaScript Clock Part 2</h1>
+
+
+<h2>Overview</h2> 
+<p>In the previous lesson, you used JavaScript to add a clock that displays the current time on your web page. In this lesson, you will enhance your clock so that it looks better and has better functionality.</p>
+
+<h2>Learner Outcomes</h2>
+<p>At the completion of this exercise:</p>
+<ul>
+  <li>you will have learned to use if/then/else loops in Javascript.</li>
+  <li>you will have learned to apply basic math and logic to creating a functional JavaScript program.</li>
+  <li>you will have used the <b>setInterval()</b> method to repeatedly execute a JavaScript function at regular intervals.</li>
+  <li>you will have applied CSS to stylize content that was created with JavaScript.</li>
+</ul>
+
+<h2>Building Applications: The Design Phase</h2>
+
+<p>Consider the clock that you created in the previous lesson. How could it be improved? Without peeking at the next section, make a list of features that would make this clock better. Don't worry about <em>how</em> to make the improvements. Just imagine all possibilities for now.</p>
+
+<p>In the world of software development and web design, this process is known as the <span class="term">design phase</span>. Since you already have a product (your clock), you are essentially brainstorming ideas on how this product can be improved (your next generation product, Clock 2.0). Every idea is a good idea during this phase. Then, once you have a long list of desired features, you begin the process of prioritizing that list and identifying which features are currently possible, given your skill set, available resources, and timeline.</p>
+
+<h2>Activities</h2>
+
+<p>Here's a list of features that you'll be adding to your clock in this lesson:</p>
+<ol>
+	<li>Convert 24-hour time to 12-hour time, and add AM or PM.</li>
+	<li>Add a leading zero to minutes and seconds if they're less than 10.</li>
+	<li>Add functionality that makes the clock continue to update as the time changes.</li>
+	<li>Stylize the clock so it looks more like a clock.</li>
+</ol>
+<p>Were any of these items on your feature list? If there are additional items on your feature list, we won't be covering those in this lesson, but that doesn't mean you can't implement them on your own. As you learn more about JavaScript, you will gradually develop the skills to make many of the features on your wish list do-able.</p>
+
+<h3>Features #1 and 2: A 12-hour Clock with Leading Zeros</h3>
+
+<p>Depending on what time of day you created and tested your clock, you may or may not have noticed that the hours are expressed using the 24-hour clock, and that none of the numbers have leading zeros if their values are less than 10. For example, <b>11:04:09 pm</b> is displayed as: <b>23:4:9</b>.</p>
+<p>To change this, you need to add a few new commands to your updateTime() function. Add the following code, <em>after</em> you have defined the hours, minutes, and seconds variables, but <em>before</em> you splice them back together to make the new currentTime variable:</p> 
+
+<pre class="example">
+  // add leading zero's to minutes and seconds
+  if (minutes &lt; 10) { 
+    minutes = '0' + minutes;
+  }
+  if (seconds &lt; 10) { 
+    seconds = '0' + seconds;
+  }				
+
+  // get time of day (am or pm) 
+  if (hours &gt;= 12 && hours &lt; 24) { 
+    var timeOfDay = 'pm';
+  }
+  else { 
+    var timeOfDay = 'am'; 
+  }
+				
+  // convert hours from 24-hour time to 12-hour time
+  if (hours &gt; 12) { 
+    hours = hours - 12;
+  }
+</pre>	
+
+<p>With this new code, you are using if/then/else loops, a common feature of most programming languages. If/then/else loops process logic like this: <b>If</b> the specified condition is true, <b>then</b> do something, <b>else</b> do something else.</p>
+
+<p>In the first new loop, you're doing this: If the value of <b>minutes</b> is less than 10, then redefine <b>minutes</b> so that it has a 0 in front of it. In the second new loop, you're doing the same thing, but with seconds.</p>
+
+<p>In the third new loop, you're doing this: If the value of <b>hours</b> is greater than or equal to 12 <em>and</em> it's <em>not</em> 24, then the time of day is "pm". Otherwise, it's "am". You had to add the second if condition ("and it's <em>not</em> 24") because if you didn't, the function would think 24 o'clock (midnight) is pm, but it's actually 12am.</p>
+
+<p>In the final loop, you convert hours to 12-hour time by subtracting 12 from any value that's greater than 12 (i.e., 12 o'clock or higher)</p>
+
+<p>The only other step that's necessary to complete this feature is to add the new timeOfDay variable when you splice together all the parts. That revised command should look like this:</p>
+
+<div class="example">
+  var currentTime = hours + ':' + minutes + ':' + seconds + '&nbsp;&nbsp;' + timeOfDay; 
+</div>
+
+<p>Test this new functionality to be sure it's working. To test different times of day, you can set new values to the hours, minutes, or seconds variables <em>after</em> the point in which they're currently defined. For example if you add the following lines, you can test how your clock with display 12:00 midnight (should be "am"), plus you can check to be sure leading zeros are being added properly to minutes and seconds:</p>
+
+<pre class="example">
+  hours = 24;
+  minutes = 7;
+  seconds = 3;
+</pre>
+
+<p>Once your clock is working, proceed to the next feature.</p>
+
+<h3>Feature #3: Continually update time</h3>
+
+<p>So far, the clock you've created only displays the time when the web page is loaded. Fortunately, it's actually easy to modify our clock so it continually updates the time. We just need to call the updateTime() function every second. To do that, you can change the <span class="attribute">onload</span> attribute on your <span class="element">&lt;body&gt;</span> element so that it uses the <b>setInterval()</b> method, like this:</p>
+
+<div class="example">
+  &lt;body onload="setInterval('updateTime()',1000)"&gt;
+</div>
+
+<p>With this change to the <span class="attribute">onload</span> attribute, the <b>setInterval()</b> method will run the updateTime() function every 1000 milliseconds (i.e., every second).</p>
+
+<p>Once your clock is working, proceed to the next feature.</p>
+
+<h3>Feature #4: Better-looking clock</h3>
+
+<p>To make your clock look more like a clock, you don't need JavaScript. JavaScript is all about behavior and functionality. To change presentation and style of an element, use CSS.</p>
+
+<p>Add a new <span class="element">&lt;style&gt;</span> section to the head of your web page, and create a style declaration for div#clock, like this:</p>
+
+<pre class="example">
+  &lt;style&gt;
+    div#clock { 
+      /* your style declarations go here */
+    }
+  &lt;/style&gt;
+</pre> 
+
+<p>Alternatively, you could add the new style declarations to your external CSS file. However, since you're only going to display a clock on the current web page, not every page on the site, it's arguably better to define the style in the one place it's going to be used.</p>
+<p>Try playing around with different CSS properties to see what effect they have on the appearance of your clock. Here are some suggestions for properties you might try:</p>
+<ul>
+	<li>margin</li>
+	<li>padding</li>
+	<li>border</li>
+	<li>font-size</li>
+	<li>font-family</li>
+	<li>font-weight</li>
+	<li>color</li>
+	<li>background-color</li>
+</ul>
+
+<p>If you need more ideas about CSS you can try, refer to the <a href="http://www.w3schools.com/cssref">W3Schools CSS Reference</a>. For a refresher on the basics of CSS, see <a href="../../unit3/index.html">Unit 3</a> of this curriculum.</p>
+
+<h2>All done?</h2>
+  <p>Share your web page with your instructor. Then, if all is well, proceed to <a href="lesson5.html">the next lesson</a>.</p>
+
+<footer role="contentinfo">
+Copyright &copy; 2005-2014 by University of Washington. Permission is granted to use these materials in whole or in part for educational, noncommercial purposes provided the source is acknowledged. This product was created with support from the National Institute on Disability and Rehabilitation Research of the U.S. Department of Education (grant #H133D010306), and is maintained with support from the National Science Foundation (grant #CNS-0540615). The contents do not necessarily represent the policies of the U.S. federal government, and you should not assume their endorsement.</footer>
+</div>
+</div>
+</body>
+</html>

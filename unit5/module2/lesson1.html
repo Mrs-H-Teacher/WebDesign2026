@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>WebD2: Using JavaScript to Show an Alert</title>
+<!-- Hack to get IE to recognize  HTML5 elements-->
+<!-- See http://remysharp.com/2009/01/07/html5-enabling-script/comment-page-3/#allcomments-->
+<!--[if IE]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<link type="text/css" rel="stylesheet" href="../../../styles/webd2.css" media="screen">
+<link type="text/css" rel="stylesheet" href="../../../styles/webd2_print.css" media="print">
+</head>
+<body id="studentPage">
+<div id="wrapper">
+<div id="banner" role="banner">
+<div id="siteTitle">Web Design &amp; Development I</div>
+<div id="version">Version 2.0</div>
+<div id="subTitle">Student Version</div>
+</div>
+<nav role="navigation" aria-label="Main menu">
+<ul>
+<li><a href="../../../student/index.html">Home</a></li>
+<li><a href="../../../student/lessons.html">Lessons</a></li>
+<li><a href="../../../student/resources.html">Resources</a></li>
+<li id="btnPrev"><a href="../../../student/unit5/module2/index.html">Previous</a></li>
+<li id="btnNext"><a href="../../../student/unit5/module2/lesson2.html">Next</a></li>
+</ul>
+</nav>
+<div id="main" role="main">
+<div class="breadCrumbs" role="navigation" aria-label="Bread Crumbs"><a href="../index.html">UNIT 5</a> > <a href="index.html">MODULE 2</a></div>
+<h1>Lesson 1: Using JavaScript to Show an Alert</h1>
+
+
+<h2>Overview</h2> 
+<p>In this lesson, you will use JavaScript to display an alert after the web page has loaded. 
+</p>
+
+<h2>Learner Outcomes</h2>
+<p>At the completion of this exercise, you will have learned:</p>
+<ol>
+	<li>how a client-side script fits within the context of an HTML page. </li>
+	<li>some basic Javascript syntax.</li>
+</ol>
+
+<h2>Activities</h2>
+
+<p>Each of the activities in this module will involve writing JavaScript code. You will start by writing a simple script, then gradually build upon that script, adding more functionality to it in subsequent lessons.</p>
+
+<p>Start by opening your portfolio file <span class="filename">javascript.html</span> using your preferred text editor.</p>
+ 
+<p>Add the following JavaScript code to the <span class="element">&lt;head&gt;</span> section of your web page:</p>
+
+<pre class="example">
+  &lt;script&gt;
+  function showAlert() { 
+    alert ("Hello world!");
+  }
+  &lt;/script&gt;
+</pre>
+
+<p>This is a very simple function. Notice that it looks a lot like the PHP showTop() and showBottom() functions that were explained in the <a href="../module1/beyondhtml.html">Beyond HTML</a> document that you studied in the previous lesson. Most programming or scripting languages are similar to one another, including PHP and JavaScript, but there are subtle differences in their <span class="term">syntax</span> (the rules of how the code must be written). One useful function that's native to JavaScript is the <span class="command">alert()</span> function. This function will display text in a dialog box that pops up on the screen.</p>
+
+<p>Before this function can work, we must first call the showAlert() function. JavaScript functions are called in response to <span class="term">events</span>. When the page loads, or when a user clicks on, hovers over, or tabs to a specific link, these are all events. We can instruct JavaScript to watch for these events, and if or when they occur, execute the specified function.</p>
+
+<p>For example, let's say we want to execute the showAlert() function after the body of the web page is fully loaded. One way to do that is to add the <span class="attribute">onload</span> attribute to the <span class="element">&lt;body&gt;</span> element of our web page, like this:</p>
+
+<div class="example">
+  &lt;body onload="showAlert()"&gt;
+</div>
+
+<p>Try adding the above to your web page, then load the page and see if it works. If it doesn't, you probably have a bug. Be sure you typed everything exactly as it appears, including capitalization and punctuation. Programming languages can be very picky about seemingly small mistakes. (The next lesson will talk more about debugging). Once you have it working, move on to the next section. 
+</p>
+
+<h3>Variables</h3> 
+
+<p>As mentioned in <a href="../module1/beyondhtml.html">Beyond HTML</a>, a <span class="term">variable</span> in a programming or scripting language is a symbolic name that represents a value. In our earlier PHP example, we used the variable <b>$thisPage</b> to control certain features in the showTop() function. In PHP, variable names must start with a <b>$</b>, but that isn't the case in JavaScript. Take a look at the following example, which uses a variable named <b>myText</b> to customize the text that's displayed in the alert box.</p>
+	
+<pre class="example">
+  &lt;script&gt;
+  function showAlert() { 
+    var myText = "This can be whatever text you like!";
+    alert (myText);
+  }
+  &lt;/script&gt;
+</pre>
+
+<p>Try modifying your showAlert() script with your own custom alert message. Then test it to be sure it works.</p>	
+
+<h3>Using the <em>onclick</em> event</h3>
+
+<p>So far in this lesson, we have called the showAlert() function when the body of the web page is loaded. However, we could trigger it using other events instead. For example, we might to display the alert only if a user clicks on a button. Try this:</p>
+
+<ol>
+	<li>Remove the <span class="attribute">onload=&quot;showAlert()&quot;</span> attribute from the <span class="element">&lt;body&gt;</span> element.</li>
+	<li>Add the following HTML <span class="element">&lt;button&gt;</span> element anywhere within the body of your web page:
+<div class="example">
+  &lt;button onclick="showAlert()"&gt;Show alert&lt;/button&gt; 
+</div>
+	</li>
+</ol>
+<p>This new code adds a button to your web page. The button includes the <span class="attribute">onclick</span> attribute, which causes the showAlert() to be called when a user clicks the button. The <em>onclick</em> event also works for keyboard users. If a user navigates to the button using the tab key, then presses enter, that too will trigger the alert.</p>
+
+<p>After you have added the button, add a new <span class="element">&lt;style&gt;</span> element to the head section of your page, and add a new style for the button element. Use CSS pseudo-classes (:hover, :focus, and :active) to make the button change its appearance when users hover over it with a mouse or tab to it with keyboard. Here's an example style sheet:</p>
+
+<pre class="example">
+  button { 
+    font-size: 1.1em;
+    background-color: #EBF5FF;
+    color: #4312AE;
+    border: 2px solid black;
+    box-shadow: 4px 4px 4px #999999;
+  }
+  button:hover, button:focus, button:active { 
+    /* swap colors */
+    color: #EBF5FF;
+    background-color: #4312AE;
+    cursor: pointer; /* displays a hand */
+  }
+</pre>
+  
+<p>Note that the above example includes the <span class="property">box-shadow</span> property, which is CSS3 and isn't supported by all browsers, particularly older versions of browsers. Also, in this lesson you're adding CSS directly to the <span class="filename">javascript.html</span> file, rather than to your external CSS file, since this is the only page within your site that will have an HTML button element. However, if there's a chance you might add buttons to other pages (even though they're not required in this curriculum), or if you prefer keeping all your CSS together in one place, you could add the button style to your external CSS file instead.</li>
+</p>
+
+<p>After adding the new button, try clicking on it. If all is well, hovering over the button should trigger a change in style, and clicking the button hould trigger the alert, which should display your custom text. Now try it without a mouse to be sure it's working for keyboard users too (use the tab key to navigate to the button, then press Enter).</p>
+
+<h2>All done?</h2>
+
+<p>Share your web page, complete with Javascript enhancement, with your instructor. If everything's working, proceed to <a href="lesson2.html">Lesson 2</a>.</p>
+
+<footer role="contentinfo">
+Copyright &copy; 2005-2014 by University of Washington. Permission is granted to use these materials in whole or in part for educational, noncommercial purposes provided the source is acknowledged. This product was created with support from the National Institute on Disability and Rehabilitation Research of the U.S. Department of Education (grant #H133D010306), and is maintained with support from the National Science Foundation (grant #CNS-0540615). The contents do not necessarily represent the policies of the U.S. federal government, and you should not assume their endorsement.</footer>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>WebD2: Javascript Errors and Debugging</title>
+<!-- Hack to get IE to recognize  HTML5 elements-->
+<!-- See http://remysharp.com/2009/01/07/html5-enabling-script/comment-page-3/#allcomments-->
+<!--[if IE]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<link type="text/css" rel="stylesheet" href="../../../styles/webd2.css" media="screen">
+<link type="text/css" rel="stylesheet" href="../../../styles/webd2_print.css" media="print">
+</head>
+<body id="studentPage">
+<div id="wrapper">
+<div id="banner" role="banner">
+<div id="siteTitle">Web Design &amp; Development I</div>
+<div id="version">Version 2.0</div>
+<div id="subTitle">Student Version</div>
+</div>
+<nav role="navigation" aria-label="Main menu">
+<ul>
+<li><a href="../../../student/index.html">Home</a></li>
+<li><a href="../../../student/lessons.html">Lessons</a></li>
+<li><a href="../../../student/resources.html">Resources</a></li>
+<li id="btnPrev"><a href="../../../student/unit5/module2/lesson1.html">Previous</a></li>
+<li id="btnNext"><a href="../../../student/unit5/module2/lesson3.html">Next</a></li>
+</ul>
+</nav>
+<div id="main" role="main">
+<div class="breadCrumbs" role="navigation" aria-label="Bread Crumbs"><a href="../index.html">UNIT 5</a> > <a href="index.html">MODULE 2</a></div>
+<h1>Lesson 2: Javascript Errors and Debugging</h1>
+
+
+<h2>Overview</h2> 
+<p>In this assignment, you will add some simple Javascript to one of your
+  existing web pages. </p>
+
+<h2>Learner Outcomes</h2>
+<p>At the completion of this exercise:</p>
+<ul>
+  <li>you will be able to tell when Javascript has triggered an error in your web browser</li>
+  <li>you  will have gained practice understanding Javascript error messages and applying them toward correcting errors in Javascript code.</li>
+</ul>
+
+<h2>Finding Bugs in JavaScript</h2>
+<p>If your JavaScript doesn't work as you expected it to, that might mean you have a bug in your code. 
+<img src="../images/bug.gif" width="40" height="30" alt="tiny image of a bug">
+</p>
+<p>Typos are a common source of bugs in JavaScript. If your script isn't working, check the following:</p>
+<ul>
+	<li><strong>Missing punctuation.</strong> Be sure every opening bracket has an accompanying closing bracket.</li>
+	<li><strong>Unclosed character string.</strong> Whenever you're working with text in JavaScript (for example, when you displayed text in an alert box in the previous lesson), that text must be enclosed in quotation marks. You can use either single quotation marks ('...') or double quotation marks ("...") but be sure every opening quotation mark is closed at the end of the string of characters.</li>
+	<li><strong>Misspelled variable.</strong> JavaScript is case-sensitive. In the example in the previous lesson, you created a variable called <b>myText</b>. That isn't the same as <b>MyText</b>; one has a lower-case M, the other does not. If you define a variable called myText, then try to execute the command <span class="command">alert(MyText)</span> the script would fail because <b>MyText</b> doesn't exist.</li>
+</ul>
+
+<p><span class="term">Debugging</span> is the art of finding bugs in your code, and fixing them.</p>
+
+<h2>Debugging using Alert</h3>
+
+<p>The <span class="command">alert()</span> function can be very useful for debugging code. In the previous lesson, you created a showAlert() function, and added a link to your web page that triggers that function. If you click the link and nothing happens, what went wrong? It could be that there's a bug in the function, or it could be that the function was never triggered because there's something wrong with the link. To test whether there's something wrong with the function, you could add one or more <span class="command">alert()</span> commands in strategic places, like this:</p>
+
+<pre class="example">
+  &lt;script&gt;
+  <b>alert ('Javascript is working');</b>
+
+  function showAlert() { 
+    <b>alert ('function showAlert was called');</b>
+    var myText = "This can be whatever text you like!";
+    alert (myText);
+  }
+  &lt;/script&gt;
+</pre>
+
+<p>Notice that the first <span class="command">alert()</span> is outside the showAlert() function. Any JavaScript that is not contained within a function will be executed automatically when the page loads, without waiting for any events to occur. If this alert is triggered, you know that JavaScript is enabled in your browser. If it isn't triggered, your browser either doesn't support JavaScript (not likely these days), or JavaScript is disabled (check your browser's settings or preferences).</p>
+<p>The second <span class="command">alert()</span> is inside the showAlert() function, but it's the very first command in that function. So if this alert is displayed when you click the link, you know the link is working, so any problems you're experiencing are happening elsewhere in the function. If this alert isn't displayed when you click the link, you know the showAlert() function is never being called. Therefore, there's probably something wrong with the link.</p>
+<p>Using <span class="command">alert()</span> can be very helpful for isolating the source of a problem in your script, but you need to be cautious about overusing this technique. Too many alert boxes can be really annoying, especially for your user. The best use of alert boxes is to use them sparingly while you're testing and debugging your script, then remove them once everything seems to be working.</p>
+
+<h2>Debugging Using Browser Tools</h2>
+
+<p>Some browsers show an icon indicating when a JavaScript error has occurred on the page. For example, some versions of  Internet Explorer, if debugging is enabled, will show an icon like this in the lower left corner of the browser:</p>
+<div class="image">
+	<img src="../images/IEJavaScriptErrorIcon.jpg" width="82" height="54" alt="IE error icon, a black exclamation point in a yellow triangle">
+</div>
+
+<p>If you click on that icon, a dialog will appear that gives you more detail about the bug. Learning to understand these error messages is an advanced skill, but sometimes they can be helpful even for novices, and typically they provide a line number which may help you to isolate the problem.</p>
+
+<h2>Activities</h2>
+<p>Below are a few variations on the code you wrote in the previous lesson. Each of these variations has a bug. Can you identify the bug in each of these examples? Look closely, and when you're finished, see your instructor for the correct answers.</p>
+ 
+<h3>Buggy Example #1</h3> 
+
+<pre class="example">
+  &lt;script&gt;
+  function showAlert() { 
+    var myText = "Hello world";
+    alert (mytext);
+  }
+  &lt;/script&gt;
+</pre>
+
+<h3>Buggy Example #2</h3> 
+
+<pre class="example">
+  &lt;script&gt;
+  function showAlert() { 
+    var myText = "Hello world;
+    alert (myText);
+  }
+  &lt;/script&gt;
+</pre>
+
+
+<h3>Buggy Example #3</h3> 
+
+<pre class="example">
+  &lt;script&gt;
+  funcion showAlert() { 
+    var myText = "Hello world";
+    alert (myText);
+  }
+  &lt;/script&gt;
+</pre>
+
+<p>Now, get to know how your browser reports errors (if at all). Try messing up the JavaScript code in your <span class="filename">javascript.html</span> page, using the errors from the above examples. With each example, what effect does the error have? Does your browser display an error icon or otherwise give you any indication that an error has occurred? If not, this feature is probably disabled in your browser and would need to be turned on in your browser's settings or preferences.</p>
+
+<p>Also, most browsers today have debugging tools available, either built into the browser, or available for free as downloadable plug-ins. These tools typically include a <span class="term">Console</span> tab that displays script errors if they occur; and a <span class="term">Script</span> tab that allows you to step through your script line by line in order to identify problems. Using these tools is an advanced topic and is beyond the scope of this curriculum, but they're worth a look, and if you're comfortable with them they can be very helpful as you create more and more sophisticated web pages. Here are the developer/debugger tools that are available in several of the most popular browsers, and the steps for accessing them:</p>
+
+<ul>
+	<li><b>Firefox:</b> Download and install the <a href="http://getfirebug.com/">Firebug</a> extension.</li>
+	<li><b>Chrome:</b> Press Ctrl+Shift+J (Cmd+Option+J on Mac) to bring up Developer Tools.</li>
+	<li><b>Internet Explorer 8 and higher:</b> Hit F12 to access Developer Tools (or select "F12 Developer Tools" from the Tools menu)</li>
+	<li><b>Opera:</b> Tools->Advanced->Error Console.</li>
+	<li><b>Safari:</b> In Preferences > Advanced, check the "Show Develop menu in menu bar". Then, the menu bar will include a "Develop" option which has many features including Error Console, Web Inspector, JavaScript Profiler, etc).</li>
+</ul>
+
+<h2>All done?</h2>
+  <p>Restore your web page to its original state (with no JavaScript errors) then proceed to the <a href="lesson3.html">next lesson</a>.</p>
+
+<footer role="contentinfo">
+Copyright &copy; 2005-2014 by University of Washington. Permission is granted to use these materials in whole or in part for educational, noncommercial purposes provided the source is acknowledged. This product was created with support from the National Institute on Disability and Rehabilitation Research of the U.S. Department of Education (grant #H133D010306), and is maintained with support from the National Science Foundation (grant #CNS-0540615). The contents do not necessarily represent the policies of the U.S. federal government, and you should not assume their endorsement.</footer>
+</div>
+</div>
+</body>
+</html>

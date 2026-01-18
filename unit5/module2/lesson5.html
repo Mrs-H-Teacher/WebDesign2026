@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>WebD2: Using Javascript to Hide and Show Content</title>
+<!-- Hack to get IE to recognize  HTML5 elements-->
+<!-- See http://remysharp.com/2009/01/07/html5-enabling-script/comment-page-3/#allcomments-->
+<!--[if IE]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<link type="text/css" rel="stylesheet" href="../../../styles/webd2.css" media="screen">
+<link type="text/css" rel="stylesheet" href="../../../styles/webd2_print.css" media="print">
+</head>
+<body id="studentPage">
+<div id="wrapper">
+<div id="banner" role="banner">
+<div id="siteTitle">Web Design &amp; Development I</div>
+<div id="version">Version 2.0</div>
+<div id="subTitle">Student Version</div>
+</div>
+<nav role="navigation" aria-label="Main menu">
+<ul>
+<li><a href="../../../student/index.html">Home</a></li>
+<li><a href="../../../student/lessons.html">Lessons</a></li>
+<li><a href="../../../student/resources.html">Resources</a></li>
+<li id="btnPrev"><a href="../../../student/unit5/module2/lesson4.html">Previous</a></li>
+<li id="btnNext"><a href="../../../student/unit5/module2/lesson6.html">Next</a></li>
+</ul>
+</nav>
+<div id="main" role="main">
+<div class="breadCrumbs" role="navigation" aria-label="Bread Crumbs"><a href="../index.html">UNIT 5</a> > <a href="index.html">MODULE 2</a></div>
+<h1>Lesson 5: Using Javascript to Hide and Show Content</h1>
+
+
+<h2>Overview</h2> 
+<p>One way that JavaScript is commonly used is to hide or display content based on user behavior. For example, a user may select an option when filling out an on-line form, and their selection might cause other related form fields to appear. In this lesson, you will use CSS and Javascript to show and hide the clock that you've created.</p>
+
+<h2>Learner Outcomes</h2>
+<p>At the completion of this exercise:</p>
+<ul>
+	<li>you will be able to use CSS to hide and display content.</li>
+	<li>you will be able to use JavaScript to change and HTML element's CSS properties.</li> 
+</ul>
+
+<h2>Activities</h2>
+
+<p>It's common practice on today's web to hide content from users until it's needed. In this lesson, you will hide your clock, then add a link that if clicked, will display the clock.</p>
+
+<p>Open <span class="filename">javascript.html</span> in both your text editor and web browser. Go to the style sheet that you created for div#clock in the previous lesson. Add the following property to the style sheet:</p>
+
+<div class="example">display: none;</div>
+
+<p>Now refresh your page in your browser. What happened? If everything worked properly, your clock should no longer be visible. This is one of several ways to hide content using CSS. To make the element visible again, you will change this property to:</p>
+
+<div class="example">display: block;</div>
+
+<p>However, in this case we want to make the element visible only if the user specifically requests it. So we'll have to change the style dynamically, using JavaScript, triggered by an <em>onclick</em> event.</p>
+
+<p>First, add the element that you want the user to click:</p>
+
+<div class="example">
+  &lt;button onclick="toggleClock()" id="clockButton"&gt;Show clock&lt;/button&gt; 
+</div>
+
+<p>Note that this button is essentially the same as the one you created in <a href="lesson1.html">Lesson 1</a> to show the alert. There's one important difference though. This button has an <span class="attribute">id</span> attribute. That's so you can access it easily using JavaScript (you'll see why in a moment).</p>
+
+<p>Now that you have a button that, when clicked, calls the <b>toggleClock()</b> function, you need to create a <b>toggleClock()</b> function. Here's that function - just add it to the existing script section in the head of your web page:</p>
+
+<pre class="example">
+  function toggleClock() { 
+    // get the clock 
+    var myClock = document.getElementById('clock');
+
+    // get the current value of the clock's display property 
+    var displaySetting = myClock.style.display;
+
+    // also get the clock button, so we can change what it says 
+    var clockButton = document.getElementById('clockButton');
+				
+    // now toggle the clock and the button text, depending on current state
+    if (displaySetting == 'block') { 
+      // clock is visible. hide it
+      myClock.style.display = 'none';
+      // change button text
+      clockButton.innerHTML = 'Show clock';
+    }
+    else { 
+      // clock is hidden. show it 
+      myClock.style.display = 'block';
+      // change button text
+      clockButton.innerHTML = 'Hide clock';
+    }
+  }  
+</pre>
+
+<p>In this new toggleClock() function, your are using JavaScript to retrieve the clock element, get the current value of its <b>display</b> style, then checking it. If the display is currently set to "block", the clock is visible, so you change the display to "none", which hides the clock. If the clock is already hidden, you change the display to "block" to make it visible again. While you're switching the clock's display back and forth from "block" to "none", you're also changing the text (innerHTML) on the clock button, so that alternates between "Show clock" and "Hide clock", depending on the current display state of the clock.</p>
+
+
+<h2>All done?</h2>
+  <p>Test your web page, and make sure you can show and hide the clock with the new button. Also make sure the button text changes from "Show clock" to "Hide clock" as appropriate. Share your web page with your instructor. If all is well, proceed to <a href="../module3/index.html">the next lesson</a>.</p>
+
+<footer role="contentinfo">
+Copyright &copy; 2005-2014 by University of Washington. Permission is granted to use these materials in whole or in part for educational, noncommercial purposes provided the source is acknowledged. This product was created with support from the National Institute on Disability and Rehabilitation Research of the U.S. Department of Education (grant #H133D010306), and is maintained with support from the National Science Foundation (grant #CNS-0540615). The contents do not necessarily represent the policies of the U.S. federal government, and you should not assume their endorsement.</footer>
+</div>
+</div>
+</body>
+</html>

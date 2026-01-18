@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>WebD2: Building a JavaScript Clock Part 1</title>
+<!-- Hack to get IE to recognize  HTML5 elements-->
+<!-- See http://remysharp.com/2009/01/07/html5-enabling-script/comment-page-3/#allcomments-->
+<!--[if IE]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<link type="text/css" rel="stylesheet" href="../../../styles/webd2.css" media="screen">
+<link type="text/css" rel="stylesheet" href="../../../styles/webd2_print.css" media="print">
+</head>
+<body id="studentPage">
+<div id="wrapper">
+<div id="banner" role="banner">
+<div id="siteTitle">Web Design &amp; Development I</div>
+<div id="version">Version 2.0</div>
+<div id="subTitle">Student Version</div>
+</div>
+<nav role="navigation" aria-label="Main menu">
+<ul>
+<li><a href="../../../student/index.html">Home</a></li>
+<li><a href="../../../student/lessons.html">Lessons</a></li>
+<li><a href="../../../student/resources.html">Resources</a></li>
+<li id="btnPrev"><a href="../../../student/unit5/module2/lesson2.html">Previous</a></li>
+<li id="btnNext"><a href="../../../student/unit5/module2/lesson4.html">Next</a></li>
+</ul>
+</nav>
+<div id="main" role="main">
+<div class="breadCrumbs" role="navigation" aria-label="Bread Crumbs"><a href="../index.html">UNIT 5</a> > <a href="index.html">MODULE 2</a></div>
+<h1>Lesson 3: Building a JavaScript Clock Part 1</h1>
+
+
+<h2>Overview</h2> 
+
+<p>In this assignment, you will add some simple Javascript to one of your
+  existing web pages. </p>
+
+<h2>Learner Outcomes</h2>
+<p>At the completion of this exercise:</p>
+<ul>
+  <li>you will be able to use a built-in JavaScript object to retrieve data.</li>
+  <li>you will be able to use the HTML Document Object Model (DOM) to get an HTML object from a web page.</li>
+  <li>you will be able to assemble multiple parts into a character string using Javascript.</li>
+  <li>you will be able to change the content of a web page using JavaScript.</li>
+</ul>
+
+<h2>Activities</h2>
+
+<p>In this lesson, you will add a digital clock to your web page. In doing so, you will learn a variety of new JavaScript techniques. Start by opening <span class="filename">javascript.html</span> in both your text editor and a web browser.</p>
+	
+<p>First, you need to create a container in the body of your web page that Javascript will write to, like this:</p>
+
+<div class="example">&lt;div id=&quot;clock&quot;&gt;&lt;/div&gt;</div>
+
+<p>This div is empty for now, but with JavaScript, you can get the current time, then write it to this new div. JavaScript will access the div by it's <span class="attribute">id</span> attribute. In previous lessons you used the  <span class="attribute">id</span> attribute to link to specific targets within a web page and to stylize individual elements differently than other elements of the same type using CSS. In this lesson, the element's id is used to help JavaScript retrieve an element and manipulate it. Clearly the  <span class="attribute">id</span> attribute is very versatile and important!</p>
+
+<p>After, you've created the empty div, you need to create a JavaScript function to get the current time and write it to the empty div. Here's that function (add it to the head section of your web page; it's ok to place it inside the <span class="element">&lt;script&gt;</span> tag that already exists, either before or after your showAlert() function):</p>
+	
+<pre class="example">
+  function updateTime() { 
+
+  	// get all parts of the current time
+    var now = new Date();
+    var hours = now.getHours();
+    var minutes = now.getMinutes();
+    var seconds = now.getSeconds();
+
+    // splice them together into a character string named "currentTime"
+    var currentTime = hours + ':' + minutes + ':' + seconds;    
+    
+    // get the clock div 
+    var myClock = document.getElementById('clock');
+    
+    // write the currentTime string to the clock div
+    myClock.innerHTML = currentTime;
+  }
+</pre>	
+
+<p>In this function, the first thing you're doing is creating a new variable called <b>now</b> and assigning a new Date object to that variable. JavaScript is an <span class="term">object-oriented programming</span> (OOP) language. In OOP, an <span class="term">object</span> is a data structure that combines properties and methods together. JavaScript include built-in objects, but you can also create your own. The Date object is one of the built-in objects. Its methods include getHours(), getMinutes(), and getSeconds(), among others. So, in the function you're adding to your web page, you can get the current hours, minutes, and seconds from the <b>now</b> variable you've created, since <b>now</b> is a JavaScript Date object.</p>
+
+<p>After your have retrieved all the information you need from the JavaScript Date object, the next thing you're doing is splicing them together into a character string, which you're assigning to a variable named <b>currentTime</b>. In order to splice parts together, you just add them together using the plus sign (+). Some of the parts are variables (hours, minutes, and seconds) and some of the parts are new characters (semicolons that are used to separate the different parts). It's easy to make mistakes when typing a long multi-part string like this, so be careful to include all those plus signs and quotation marks!</p>
+
+<p>The next step is to retrieve the empty clock div from your web page. One of JavaScript's built in objects is the <b>document</b> object. This is very handy way of allowing programming and scripting languages to access and manipulate the content of web pages, and is known to as the <span class="term">Document Object Model</span> (DOM). The <b>document</b> object includes a getElementById() method, which you're using in this case to get the element from your web page that has an id of "clock".</p>
+
+<p>The final step in the updateTime() function is to add the value of your <b>currentTime</b> variable to the clock div that you just retrieved.</p>
+
+<p>Now that you've added this function to your web page, you need to call it. Since you probably want the time to be displayed automatically when the page is loaded, you can call it using an <span class="attribute">onload</span> event attached to the <span class="element">&lt;body&gt;</span> element, just like you did in <a href="lesson1.html">Lesson 1</a>:</p>
+
+<div class="example">
+  &lt;body onload="updateTime()"&gt;
+</div>
+
+<h2>Comments In JavaScript</h2>
+
+<p>In the above JavaScript function, you probably noticed several lines that started with two forward slashes (<span class="element">//</span>). This is one of the ways that comments can be added to JavaScript code. Comments can appear on a line by themselves, as they do in this example, or they can appear on the end of any line of code.</p>
+<p>JavaScript also supports comments enclosed within <span class="element">/*</span> and <span class="element">*/</span>, like the ones used in CSS.</p>
+<p>Here is a summary of all the different methods you've learned for adding comments to your code:</p>
+     <pre class="example">
+  &lt;!-- This is a comment in HTML. --&gt;
+
+  &lt;!-- HTML comments can be "inline" (added to an existing line of code)  
+       or they can span multiple lines, like this one (called "block comments") --&gt; 
+       
+  /* This is an "inline" comment in CSS or JavaScript */ 
+  
+  /* This is a "block" comment in CSS or JavaScript (it spans multiple lines). 
+     This syntax is the same as in a variety of programming languages, including: 
+     C, C++, C#, Objective-C
+     PHP 
+     Java  
+  */
+     
+  // This is an in-line comment in JavaScript
+  // This too is used in a variety of programming languages, but NOT in CSS</pre> 
+
+<h2>Resources</h2>
+<p>In this lesson you used the <b>Date</b> object that's built in to JavaScript. You also used the HTML <b>Document Object Model</b> (DOM). If you're wondering what other built-in objects are available, or if you're wondering how you would know what properties are methods are available for a particular object, you can get answers to these questions by consulting a Javascript or DOM reference guide, such as this one from W3Schools:</p>
+<ul>
+	<li><a href="http://www.w3schools.com/jsref/">W3Schools JavaScript and HTML DOM Reference</a></li>
+</ul>
+
+<h2>All done?</h2>
+  <p>Check your web page in your browser. If all went well, you should see the current time after the page loads. If not, you have an opportunity to practice the debugging skills that you learned in <a href="lesson2.html">the previous lesson</a>. Once your clock is working, you might be thinking of ways it could be improved, both visually and functionally. You'll be doing that in <a href="lesson4.html">the next lesson</a>.</p>
+
+<footer role="contentinfo">
+Copyright &copy; 2005-2014 by University of Washington. Permission is granted to use these materials in whole or in part for educational, noncommercial purposes provided the source is acknowledged. This product was created with support from the National Institute on Disability and Rehabilitation Research of the U.S. Department of Education (grant #H133D010306), and is maintained with support from the National Science Foundation (grant #CNS-0540615). The contents do not necessarily represent the policies of the U.S. federal government, and you should not assume their endorsement.</footer>
+</div>
+</div>
+</body>
+</html>
