@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>WebD2: Website Publishing Tools</title>
+<!-- Hack to get IE to recognize  HTML5 elements-->
+<!-- See http://remysharp.com/2009/01/07/html5-enabling-script/comment-page-3/#allcomments-->
+<!--[if IE]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<link type="text/css" rel="stylesheet" href="../../../styles/webd2.css" media="screen">
+<link type="text/css" rel="stylesheet" href="../../../styles/webd2_print.css" media="print">
+</head>
+<body id="studentPage">
+<div id="wrapper">
+<div id="banner" role="banner">
+<div id="siteTitle">Web Design &amp; Development I</div>
+<div id="version">Version 2.0</div>
+<div id="subTitle">Student Version</div>
+</div>
+<nav role="navigation" aria-label="Main menu">
+<ul>
+<li><a href="../../../student/index.html">Home</a></li>
+<li><a href="../../../student/lessons.html">Lessons</a></li>
+<li><a href="../../../student/resources.html">Resources</a></li>
+<li id="btnPrev"><a href="../../../student/unit7/module2/lesson1.html">Previous</a></li>
+<li id="btnNext"><a href="../../../student/unit7/module3/index.html">Next</a></li>
+</ul>
+</nav>
+<div id="main" role="main">
+<div class="breadCrumbs" role="navigation" aria-label="Bread Crumbs"><a href="../index.html">UNIT 7</a> > <a href="index.html">MODULE 2</a></div>
+<h1>Lesson 2: Website Publishing Tools</h1>
+
+
+<h2>Overview</h2>
+<p>Throughout this course, you've learned to create websites, and in the previous lesson you learned how to get those websites onto the World Wide Web. This is all useful knowledge and having skills in this area can be a great asset that potential employers will view favorably. But the landscape of the Web is changing rapidly. Millions of people worldwide have something they'd like to publish on the Web, about themselves, their interests, or their business or organization. Most of these people don't have the skills that you now have, and are not able to create their own web pages from scratch. A growing variety of products and services have risen to address this need. Content management systems, blogging software, wikis, and website publishing tools all provide back-end technology that lets users focus on content. These tools take the content that users submit, and publish that content on a web page. Users don't have to know anything about HTML. This lesson explores a variety of these tools.</p>
+
+<h2>Learner Outcomes</h2>
+<p>At the completion of this exercise, you will:</p>
+<ul>
+  <li>be able to describe the differences between content management systems, blogging software, wikis, and website publishing tools.</li>
+</ul>
+
+
+<h2>Content Management Systems</h2>
+<p>A <span class="term">content management system</span> (CMS) is a system by which users can enter and upload content (text, images, audio, video, etc.) and have that content published on the Web. CMS's support multiple users working collaboratively, so many people can work collaboratively on authoring content for a particular site. An important feature of these systems is version control, so as users create or edit content, multiple backup versions of that content are saved so users can revert back to an earlier version if they mess up.
+</p>
+<p>The content entered by authors is stored in a database, and is ultimately published to a <span class="term">template</span> using server-side scripting, which you learned about in <a href="../../unit5/module1/lesson1.html">an earlier lesson</a>. You also learned about templates in this course, and used a template in creating your portfolio site. Each page in your site has the same core HTML structure - the only thing different between pages is the content you added. CMS's work the same way, except authors' content is added to the template automatically after they save and publish it. This method of publishing can be great for Web standards - if a template conforms to standards (i.e., uses valid HTML, valid CSS, and is fully accessible) then every page published within that template is likely to conform to standards as well.</p> 
+
+<p>Three of the most popular CMS's are <a href="http://drupal.org/">Drupal</a>, <a href="http://www.joomla.org/">Joomla</a>, and <a href="http://wordpress.org/">WordPress</a>.</p>
+
+<h2>Blogging Software</h2>
+<p>Blogging software is a type of CMS that was specifically designed to support <span class="term">blogs</span> (short for "Web log"), personal Web-based journals published on the Web by individuals or small groups of authors. Individual entries, or "posts", are typically listed chronologically, can be tagged or otherwise grouped by topic, and visitors are able to add comments to them.
+</p>
+<p>The CMS WordPress originated as blogging software, and still serves that function today although as its feature set has grown it's become a viable option for serving websites too. WordPress software is free and open source, and can be downloaded from <a href="http://wordpress.org/">wordpress.org</a> and installed on a web server. WordPress boasts about its <a href="http://codex.wordpress.org/Installing_WordPress">Famous 5-Minute Install</a>. Alternatively, you can use <a href="http://wordpress.com/">wordpress.com</a>, a site that hosts your WordPress blogs for you, so you don't need to worry about the technical details and can simply focus on content.</p>
+<p>Other popular blogging tools include <a href="http://www.movabletype.com/">Movable Type</a>, <a href="http://www.typepad.com/">TypePad</a>, and Google's <a href="http://www.blogger.com/">Blogger</a>.</p>
+
+<h2>Wikis</h2>
+<p>Wikis are designed for collaborative authoring. Users can add, modify, or delete content right from their web browser. The most famous wiki is <a href="http://www.wikipedia.org/">Wikipedia</a>, which is built using <a href="http://www.mediawiki.org">MediaWiki</a> wiki software. Wiki software is a CMS that specializes in the sort of multi-user collaborative web-based authoring that defines a wiki. Many wiki software packages use a simplified markup language, intended to be easier for the masses to learn than HTML. For example, here are a few examples of how to markup text in MediaWiki:</p>
+
+<ul>
+	<li>To add an <span class="element">&lt;h2&gt;</span> heading, use two equal signs on either side of the heading, like this: 
+		<div class="example">==This is a Level 2 Heading==</div>
+	</li>
+	<li>To add a heading at a deeper level, just increase the number of equal signs to reflect the heading level, like this: 
+		<div class="example">===This is a Level 3 Heading===</div>
+	</li>
+	<li>To add an item to an unordered list, just add a * in front of the item, like this:
+		<div class="example">* This is an item in an unordered list</div>
+	</li>
+	<li>Use apostrophes (') to make content italicized or bold (two apostrophes for italics, three for bold, and four for both), like this: 
+		<div class="example">This sentence includes ''italicized text'' and '''bold text'''.</div>
+	</li>	
+</ul>
+
+<p>There are more tags listed on the <a href="http://en.wikipedia.org/wiki/Wikipedia:Cheatsheet">Wikipedia Cheatsheet</a>.  Users enter content using this simple markup language, and it's converted to HTML before being displayed.</p>
+
+<p>Some wiki software provides users with an on-line rich text editor that includes buttons for marking up text, so users don't have to learn a markup language at all. There are dozens of choices when it comes to wiki software. See the <a href="http://en.wikipedia.org/wiki/Comparison_of_wiki_software">Comparison of Wiki software</a> on Wikipedia for more detail.</p>
+
+<h2>Website Publishing Tools</h2>
+<p>Blogging and wiki software have specific use cases for which they were designed. There are also online tools available that focus specifically on creating a website much like the portfolio site you've created in this course. Two of the most popular tools in this category are those provided by Web giants Google and Yahoo. <a href="http://sites.google.com">Google Sites</a> promotes its service as "a free and easy way to create and share web pages". <a href="http://webhosting.yahoo.com/ps/sb/index.php">Yahoo! SiteBuilder</a> provides a similar tool and service, marketed specifically at small businesses.</p>
+
+<h2>Implications for Careers in Web Design and Development</h2>
+<p>With a growing variety of CMS's available so people and organizations can create and manage websites without knowing anything about HTML, does that mean everything you've learned in this course has been a waste of time? <strong>Not at all!</strong> Each of the tools and services described in the lesson ultimately delivers content to the browser in HTML, stylized with CSS, with behavior added using JavaScript. As long as there's a World Wide Web, these technologies will likely be at the heart of that Web. What the current trends do suggest though is that if you're interested in pursuing a career in web design and development, a good next step will be to learn more about these tools, and the server-side scripting languages that were used to build them. There's currently a huge market for (a) people who know how to install and manage a CMS behind the scenes, and (b) people who can do server-side scripting to build tools like these, or to extend their capabilities with plug-ins, add-ons, or modules.</p>
+
+<p>Wikipedia's <a href="http://en.wikipedia.org/wiki/List_of_content_management_systems">List of Content Management Systems</a> is organized by <span class="term">platform</span>, which is the programming or scripting language that was used to develop the system.</p>
+
+<h2>Activities</h2>
+<p>Now that you've acquired an understanding of how websites are built and have developed skills in creating sites from scratch, consider what you'd like to do with your knowledge and skills. Would you like to further that knowledge by learning more HTML, CSS, and JavaScript? Would you like to embrace the new directions the Web is headed and learn more about how CMS's work? Would you like to learn one or more server-side scripting languages? If so, which ones? Would you like to take just the knowledge and skills you've acquired in this course and apply them toward creating a website for a real world client? If this is you're answer, you're in luck! You will now have an opportunity to do exactly that in <a href="../../unit8/index.html">Unit 8</a>. But first, you still have <a href="../module3/index.html">one more lesson</a> in the current unit.</p>
+
+<footer role="contentinfo">
+Copyright &copy; 2005-2014 by University of Washington. Permission is granted to use these materials in whole or in part for educational, noncommercial purposes provided the source is acknowledged. This product was created with support from the National Institute on Disability and Rehabilitation Research of the U.S. Department of Education (grant #H133D010306), and is maintained with support from the National Science Foundation (grant #CNS-0540615). The contents do not necessarily represent the policies of the U.S. federal government, and you should not assume their endorsement.</footer>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>WebD2: Website Hosting Services</title>
+<!-- Hack to get IE to recognize  HTML5 elements-->
+<!-- See http://remysharp.com/2009/01/07/html5-enabling-script/comment-page-3/#allcomments-->
+<!--[if IE]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<link type="text/css" rel="stylesheet" href="../../../styles/webd2.css" media="screen">
+<link type="text/css" rel="stylesheet" href="../../../styles/webd2_print.css" media="print">
+</head>
+<body id="studentPage">
+<div id="wrapper">
+<div id="banner" role="banner">
+<div id="siteTitle">Web Design &amp; Development I</div>
+<div id="version">Version 2.0</div>
+<div id="subTitle">Student Version</div>
+</div>
+<nav role="navigation" aria-label="Main menu">
+<ul>
+<li><a href="../../../student/index.html">Home</a></li>
+<li><a href="../../../student/lessons.html">Lessons</a></li>
+<li><a href="../../../student/resources.html">Resources</a></li>
+<li id="btnPrev"><a href="../../../student/unit7/module2/index.html">Previous</a></li>
+<li id="btnNext"><a href="../../../student/unit7/module2/lesson2.html">Next</a></li>
+</ul>
+</nav>
+<div id="main" role="main">
+<div class="breadCrumbs" role="navigation" aria-label="Bread Crumbs"><a href="../index.html">UNIT 7</a> > <a href="index.html">MODULE 2</a></div>
+<h1>Lesson 1: Website Hosting Services</h1>
+
+
+<h2>Overview</h2>
+<p>Almost all organizations today, and many individuals, have their own websites. Throughout this course you have learned the technical details of how websites are created, but how do sites actually get on the World Wide Web? This lesson will explore this question.</p>
+
+<h2>Learner Outcomes</h2>
+<p>At the completion of this exercise, you will:</p>
+<ul>
+  <li>be able to answer the question &quot;How do websites get on the Web?&quot;</li>
+  <li>be able to help a friend, family member, or client shop for a web service provider.</li>
+</ul>
+
+<h2>How Websites get on the Web</h2>
+
+<p>Before we answer the question of how websites get on the World Wide Web, let's take a step back and look at how the Web works:</p>
+
+<ul>
+	<li>First, it's important to understand that the Internet is <em>not</em> the Web. Sometimes people use the terms interchangeably, but they're different. The Internet is a global system of interconnected computer networks. A variety of services are provided over the Internet. The Web is one of them, but there are others too, such as email, file sharing, and voice over IP.</li>
+	<li>Web resources are stored on, and transmitted by, <span class="term">web servers</span>, computers running software specifically designed for this purpose.</li>
+	<li>The address of a resource on a web server is its Uniform Resource Locator (URL) (for example, the URL for the current file is http://www.washington.edu/accessit/webd2/student/unit7/module2/lesson1.html).</li>
+	<li>A <span class="term">web client</span> or <span class="term">user agent</span> is the tool an individual uses to access content on the Web. Common examples are web browsers, media players, and web-enabled mobile apps. When a user enters a URL into their browser or other web client, that client looks up the URL, and sends a request to the web server hosting that resource. The web server checks to be sure the resource exists and confirms that the client has  permission to access it. If all is well, the server delivers the requested resource to the client, and the client <span class="term">renders</span> the resource for the user.</li>	
+</ul>
+
+<p>To get your website on the Web, you need a web server. You could build your own. There are many tutorials online that explain how to do that, and <a href="http://news.netcraft.com/archives/2012/01/03/january-2012-web-server-survey.html">the world's most popular web server software</a> is free (<a href="http://httpd.apache.org/">Apache HTTP Server</a>).</p>
+
+<p>However, managing a web server is a serious undertaking, requiring technical skills, time, and dedication. For individuals and organizations who don't have adequate technical skills or time to manage their own web server, <span class="term">web hosting services</span> do this for a fee. They typically have various options available, with prices varying depending on the amount of storage space, amount of monthly bandwidth, and other features. Many Internet service providers also provide free web hosting services to their clients.</p>
+
+<p>Another player in the web hosting market is Amazon.com, which launched <a href="http://aws.amazon.com/what-is-aws/">Amazon Web Services</a> in 2006 to allow the general public to store content on its vast global network of data centers, which otherwise were using only about 10% of their capacity at any one time. Cost to the user is very low. In fact many of their services are free for the first 5GB of data storage and 15GB of bandwidth. Costs scale upwards from there based on usage.</p> 
+
+<h2>Activities</h2>
+
+<p>Imagine you have a small local not-for-profit organization as a client. You're designing and developing their website, and they'd like you to help them find a web service provider. Here are their criteria:</p>
+<ol>
+	<li><strong>Affordable</strong>. They don't have a large budget to spend on web hosting, but at the same time they're not willing to sacrifice quality.</li>
+	<li><strong>Reliable</strong> Their clients depend on their site being up and running 24/7. They need a provider with a proven track-record of reliable service with minimal down-time.</li>
+	<li><strong>Good customer service</strong> They hope they will have minimal need to contact customer service, but when the need arises, they expect to receive a quick, courteous response. They don't understand web jargon, and prefer working with a web service provider who is capable of communicating in an easy-to-understand non-technical manner.</li>
+	<li><strong>Technical requirements</strong> In addition to website hosting, they will need a database for storing information about their clients, and in the future they might want to stream videos on their site. Therefore they need a web hosting provider who provides these services.</li>
+</ol>
+<p>To find a web service provider for your client, follow these steps:</p>
+
+<ol>
+	<li>Go to <a href="http://webhostinggeeks.com/">webhostinggeeks.com</a> and review their list of Top 10 Web Hosting providers. Go to the home pages of each of the top 10 companies to evaluate the services they provide and whether you think they would be a good fit for your client.</li>
+	<li>Back on the Top 10 list, follow the links to read a few of the customer reviews for each provider.</li>
+	<li>Take notes as you explore, using your client's criteria as a rubric.</li>
+	<li>Select three providers that you would recommend to your client, and rank them from 1 to 3. Now select three that you would <em>not</em> recommend. Be prepared to defend your choices.</li>
+	<li>Now consider the services offered by <a href="http://aws.amazon.com/">Amazon Web Services</a> (AWS), and consider whether you would recommend AWS instead of your other top three choices. Whether you like or don't like AWS, be prepared to defend that choice.</li>
+</ol>
+
+<p>As a class, discuss your choices of a web service provider. Compare your top 3 choices and bottom 3 choices with those of other students in your class. Defend your choices and try to persuade your classmates to choose the companies that you feel are best for your client.</p>
+<p>Finally, take a vote. The web service provider with the most votes wins.</p>
+
+<h2>All done?</h2>
+<p>Proceed to <a href="lesson2.html">the next lesson</a>.</p>
+
+<footer role="contentinfo">
+Copyright &copy; 2005-2014 by University of Washington. Permission is granted to use these materials in whole or in part for educational, noncommercial purposes provided the source is acknowledged. This product was created with support from the National Institute on Disability and Rehabilitation Research of the U.S. Department of Education (grant #H133D010306), and is maintained with support from the National Science Foundation (grant #CNS-0540615). The contents do not necessarily represent the policies of the U.S. federal government, and you should not assume their endorsement.</footer>
+</div>
+</div>
+</body>
+</html>
