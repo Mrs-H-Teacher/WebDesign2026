@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>WebD2: The Role of ID and Class in CSS</title>
+<!-- Hack to get IE to recognize  HTML5 elements-->
+<!-- See http://remysharp.com/2009/01/07/html5-enabling-script/comment-page-3/#allcomments-->
+<!--[if IE]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<link type="text/css" rel="stylesheet" href="../../styles/webd2.css" media="screen">
+<link type="text/css" rel="stylesheet" href="../../styles/webd2_print.css" media="print">
+</head>
+<body id="instructorPage">
+<div id="wrapper">
+<div id="banner" role="banner">
+<div id="siteTitle">Web Design &amp; Development I</div>
+<div id="version">Version 2.0</div>
+<div id="subTitle">Instructor Version</div>
+</div>
+<nav role="navigation" aria-label="Main menu">
+<ul>
+<li><a href="../../instructor/index.html">Home</a></li>
+<li><a href="../../instructor/requirements.html">Requirements</a></li>
+<li><a href="../../instructor/resources.html">Resources</a></li>
+<li><a href="../../instructor/outline.html">Outline</a></li>
+<li id="btnPrev"><a href="../../instructor/unit3/module4.html">Previous</a></li>
+<li id="btnNext"><a href="../../instructor/unit3/module6.html">Next</a></li>
+</ul>
+</nav>
+<div id="main" role="main">
+<div class="breadCrumbs" role="navigation" aria-label="Bread Crumbs"><a href="index.html">UNIT 3</a></div>
+<h1>Module 5: The Role of ID and Class in CSS</h1>
+
+         
+<h2>Overview</h2>
+<p>In this module, students will learn to stylize a group of elements using <em>class</em> and individual elements using <em>id</em>. By now, it is likely that some students have already discovered the need for these techniques. If that's the case, this module provides an opportunity to refer back to those scenarios so students can directly apply the content from these lessons to the needs they've already identified and expressed.</p>
+
+<h2>Lesson 1: Understanding ID and Class in CSS</h2>
+
+<ul>
+  <li class="timeEstimate">Estimated time required: 60 - 90 minutes</li>
+  <li><a href="../../student/unit3/module5/lesson1.html">Link to student Lesson 1 page</a>
+  </li>
+</ul>
+
+<h3>Tips for Delivering This Lesson</h3> 
+<ul>
+	<li>One of the activities in this lesson asks students to review the various <span class="element">&lt;div&gt;</span> elements they have on their home page. This activity is a good opportunity to stop, wait and ensure that all students have the correct number and order of <span class="element">&lt;div&gt;</span> elements.</li>
+	<li>After students add <span class="attribute">id</span> and <span class="attribute">class</span> attributes to select elements on their home page, the activities include a reminder that students need to do this on their other pages too. This warrants an additional verbal prompt. If students miss this step now they will waste time later having to go back and do it.</li>
+	</li>
+</ul>
+
+<h3>Example Output</h3>
+  <p>When this lesson is complete, students will have added  <span class="attribute">id</span> and <span class="attribute">class</span> attributes to their <a href="../examples/unit3/module5/lesson1/index.html">index.html</a> file.</p>
+  
+<h2>Lesson 2: Applying ID and Class in CSS</h2>
+
+<ul>
+  <li class="timeEstimate">Estimated time required: 90+ minutes</li>
+  <li><a href="../../student/unit3/module5/lesson2.html">Link to student Lesson 2 page</a>
+  </li>
+</ul>
+
+<h3>Tips for Delivering This Lesson</h3> 
+<ul>
+	<li>There are many opportunities for things to go wrong in this and the previous lesson. We strongly suggest that you use the example pages to show students an example of how the new styles change the appearance of the various div elements.
+	</li>
+</ul>
+
+<h3>Example Output</h3>
+  <p>When this lesson is complete, students will have modified their <a href="../examples/unit3/module5/lesson2/styles/mystyle.css">external CSS file</a> using id and class selectors. The results should be visible throughout their portfolio site, including their <a href="../examples/unit3/module5/lesson2/index.html">index.html</a> file.</p>
+  
+<h2>Lesson 3: Pseudo-class Selectors in CSS</h2>
+
+<ul>
+  <li class="timeEstimate">Estimated time required: 60 - 90 minutes</li>
+  <li><a href="../../student/unit3/module5/lesson3.html">Link to student Lesson 3 page</a>
+  </li>
+</ul>
+
+<h3>Tips for Delivering This Lesson</h3> 
+<ul>
+	<li>The coding and terminology used in this lesson is a bit abstract for many students. However, it's really very simple to implement and results in web pages that <em>come to life</em> as users interact with them. Try to help students see beyond the abstract coding and terminology and recognize the simplicity.</li>
+	<li>To help students appreciate how pseudo-classes are used, it can be helpful to review a few real-world websites. Ask students to go to a few websites (either sites you assign or sites they choose) and hover over links with a mouse. Most sites these days use the <span class="code">:hover</span> pseudo-class to create subtle style changes on mouseover. Encourage students to check links within the main body of the web page, rather than navigation menus, as the latter often include other effects (such as dropdown menus) that are triggered with advanced techniques using JavaScript.</li>
+	<li>Unfortunately the <span class="code">:focus</span> psuedo-class is less common on real-world web pages. This is arguably even more important than <span class="code">:hover</span> because it helps non-mousers to tell where they are as they're navigating through a web page using the tab key. Students should be encouraged to use both <span class="code">:hover</span> <em>and</em> <span class="code">:focus</span> when creating websites as doing so will help to make the Web more accessible to all users, including those who aren't using mice.</li>
+</ul>
+
+<h3>Example Output</h3>
+  <p>When this lesson is complete, students will have added pseudo-class selectors to their <a href="../examples/unit3/module5/lesson3/styles/mystyle.css">external CSS file</a> (:hover, :focus, and :first-letter). The results should be visible in their <a href="../examples/unit3/module5/lesson3/index.html">index.html</a> file.</p>
+   
+<footer role="contentinfo">
+Copyright &copy; 2005-2014 by University of Washington. Permission is granted to use these materials in whole or in part for educational, noncommercial purposes provided the source is acknowledged. This product was created with support from the National Institute on Disability and Rehabilitation Research of the U.S. Department of Education (grant #H133D010306), and is maintained with support from the National Science Foundation (grant #CNS-0540615). The contents do not necessarily represent the policies of the U.S. federal government, and you should not assume their endorsement.</footer>
+</div>
+</div>
+</body>
+</html>
