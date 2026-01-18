@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>WebD2: JavaScript</title>
+<!-- Hack to get IE to recognize  HTML5 elements-->
+<!-- See http://remysharp.com/2009/01/07/html5-enabling-script/comment-page-3/#allcomments-->
+<!--[if IE]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<link type="text/css" rel="stylesheet" href="../../styles/webd2.css" media="screen">
+<link type="text/css" rel="stylesheet" href="../../styles/webd2_print.css" media="print">
+</head>
+<body id="instructorPage">
+<div id="wrapper">
+<div id="banner" role="banner">
+<div id="siteTitle">Web Design &amp; Development I</div>
+<div id="version">Version 2.0</div>
+<div id="subTitle">Instructor Version</div>
+</div>
+<nav role="navigation" aria-label="Main menu">
+<ul>
+<li><a href="../../instructor/index.html">Home</a></li>
+<li><a href="../../instructor/requirements.html">Requirements</a></li>
+<li><a href="../../instructor/resources.html">Resources</a></li>
+<li><a href="../../instructor/outline.html">Outline</a></li>
+<li id="btnPrev"><a href="../../instructor/unit5/module1.html">Previous</a></li>
+<li id="btnNext"><a href="../../instructor/unit5/module3.html">Next</a></li>
+</ul>
+</nav>
+<div id="main" role="main">
+<div class="breadCrumbs" role="navigation" aria-label="Bread Crumbs"><a href="index.html">UNIT 5</a></div>
+<h1>Module 2: JavaScript</h1>
+
+
+<h2>Overview</h2>
+<p>This module gives students an opportunity to do some hands-on client-side scripting using JavaScript. 
+Each lesson builds on previous lessons, and end in the end students will have created a functioning clock with buttons that enable users to toggle its display on and off. This can be challenging for some students, but much of the activities can be accomplished by copying and pasting code, then patiently troubleshooting if things don't work as expected.</p> 
+
+<h2>Lesson 1: Using JavaScript to Show an Alert</h2> 
+
+<ul>
+  <li class="timeEstimate">Estimated time required: 90+ minutes</li>
+  <li><a href="../../student/unit5/module2/lesson1.html">Link to student Lesson 1 page</a>
+
+  </li>
+</ul>
+
+<h3>Tips for Delivering This Lesson</h3> 
+<ul>
+  <li>The Javascript function that's created in this lesson is named 
+    showAlert (with an upper case &quot;A&quot;). Students often learn about 
+    case sensitivity in this lesson, and about attending to detail.</li>
+  <li>Often, this and other JavaScript activities don't work the first time. This is actually a good thing, as it forces students to think logically about how it's supposed to work, and what might cause it to fail. Often the problems are very simple typo's like a misspelled function name or incorrect punctuation. We recommend providing varying degrees of assistance to students. Students who have the aptitude to think logically through the troubleshooting process on their own should be encouraged to do so, or perhaps some carefully worded hints will help them to find the solution. There's nothing quite as intrinsically rewarding as that <em>Aha!</em> moment when a student finally figures out their coding problem. If students are less coding-savvy, they may require more extensive assistance.</li>  
+  <li>This lesson calls for students to add an attribute to the &lt;body&gt; element. It's common for students to add an additional &lt;body&gt; element rather than build upon the one that's already there. When that happens, it might be time to pause and review the basics: One head, one body, opening and closing HTML tags, the difference between elements and attributes, and finally the relationship between HTML elements and JavaScript. It's important for students to understand the big picture.</li>
+</ul>
+
+<h3>Example Output</h3>
+  <p>When this lesson is complete, students will have added an alert to <a href="../examples/unit5/module2/lesson1/javascript.html">javascript.html</a>, plus a link that triggers the alert.</p>
+
+<h2>Lesson 2: Javascript Errors and Debugging</h2> 
+
+<ul>
+  <li class="timeEstimate">Estimated time required: 60 - 90 minutes</li>
+  <li><a href="../../student/unit5/module2/lesson2.html">Link to student Lesson 2 page</a>
+  </li>
+</ul>
+
+<h3>Answer Key For Buggy Examples</h3>
+<p>This lesson includes three buggy examples, and students are asked to identify the bugs. Here are the correct answers:</p>
+<ol>
+	<li>Misspelled variable on line 4. The letter T in "mytext" needs to be capitalized.</li>
+	<li>Unclosed character string on line 3. The closing quotation mark is missing.</li>
+	<li>Spelling error on line 2. The word "function" is misspelled.</li>
+</ol>
+
+
+<h2>Lesson 3: Building a JavaScript Clock Part 1</h2> 
+
+<ul>
+  <li class="timeEstimate">Estimated time required: 90+ minutes</li>
+  <li><a href="../../student/unit5/module2/lesson3.html">Link to student Lesson 3 page</a>
+
+  </li>
+</ul>
+
+<h3>Tips for Delivering This Lesson</h3> 
+<ul>
+ <li>This is the first of three lessons in which students begin to build an interactive clock. This can be challenging for many introductory students. You may wish to make these lessons optional or extra credit.</li>
+ <li>Be sure you understand the activities yourself, as this will help you to provide support to students.</li>
+ <li>Each of the lessons can be successfully completed by simply copying and pasting the example code provided. However, students must follow instructions very closely, and if ultimately their script doesn't work as expected, they'll need to understand how all the parts work together in order to figure out what might fail.</li>
+ <li>Encourage students to practice the debugging skills they learned in the previous lesson. For example, is the <strong>updateTime()</strong> function being called when the page loads? They can find out by adding an alert() as the first line of that function, and commenting out everything else in that function. If the alert doesn't appear when the page loads, then the function isn't being called. Why not? This sort of logical thinking can help students to isolate the problem, and can help them to understand the relationship between all the parts.</li>
+ <li>Troubleshooting is an art that's developed and perfected over time. Introductory students can benefit from observing others who are good at it. If there's a common problem that many students are experiencing, it can be helpful to work as a class through the process of troubleshooting, while projecting an example website. If there are one or more advanced students who are good at troubleshooting, they could possibly be invited to lead that discussion.</li>
+ <li>The example portfolio site that accompanies this curriculum includes each of the JavaScript lessons, and all are known to be working correctly. Studying the example code, and comparing that to code that isn't working, might help in identifying particularly challenging bugs.</li>
+</ul>
+
+<h3>Example Output</h3>
+  <p>When this lesson is complete, students will have added a clock to <a href="../examples/unit5/module2/lesson3/javascript.html">javascript.html</a>. It doesn't tick away the seconds yet&mdash;it simply displays the current time when the page loads. This clock will be improved in subsequent lessons.</p>
+
+
+<h2>Lesson 4: Building a JavaScript Clock Part 2</h2> 
+
+<ul>
+  <li class="timeEstimate">Estimated time required: 90+ minutes</li>
+  <li><a href="../../student/unit5/module2/lesson4.html">Link to student Lesson 4 page</a>
+
+  </li>
+</ul>
+
+<h3>Tips for Delivering This Lesson</h3> 
+<ul>
+	<li>Like the previously lesson, this lesson can be completed simply by copying and pasting code. This should actually be encouraged since it helps to reduce the possibility of typo's, and sharing code is a common practice among Web developers.</li>
+	<li>Even though students can complete this lesson by copying and pasting code, it's important that they have an understanding of the different parts and how they all relate to one another. Some code will need to be <em>added</em> to existing code, and other code is intended to <em>replace</em> existing code. This is all spelled out in the lesson, but students will need to be following instructions closely, and <em>thinking</em> as they copy and paste.</li>
+	<li>This lesson provides an opportunity to revisit CSS, as students can stylize the clock they've created. This is important for a couple of reasons. It helps to tie the various parts of the course together, reinforcing the relationships between HTML, CSS, and JavaScript. It also might provide a breath of fresh air for students if they're struggling with JavaScript but were more comfortable with CSS. Even though this module primarily focuses on JavaScript, students should be encouraged to spend some time playing with CSS and see what kind of interesting designs they can come up with. Perhaps the class could produce a gallery of digital clocks showcasing the various designs.</li>
+</ul>
+
+<h3>Example Output</h3>
+  <p>When this lesson is complete, students will have used CSS to enhance their clock in <a href="../examples/unit5/module2/lesson4/javascript.html">javascript.html</a>, plus added functionality to keep it ticking.</p>
+
+
+<h2>Lesson 5: Using Javascript to Hide and Show Content</h2> 
+
+<ul>
+  <li class="timeEstimate">Estimated time required: 90+ minutes</li>
+  <li><a href="../../student/unit5/module2/lesson5.html">Link to student Lesson 5 page</a>
+
+  </li>
+</ul>
+
+<h3>Tips for Delivering This Lesson</h3> 
+<ul>
+	<li>Dynamically showing and hiding content is one of the most common purposes served by JavaScript on today's Web. If students continue on with web design and development after this course, this lesson will have given students a valuable skill that they will certainly prove to be useful in their future.</li>
+	<li>Throughout this course students have been encouraged to consider accessibility as they've added new content to their sites. This lesson provides an opportunity to revisit that. Dynamic content poses unique challenges for some users, especially those who are blind. Imagine a blind user who is navigating through a website using a screen reader, and they arrive at a button. They click on that button and this results to new content being displayed elsewhere on the screen. Do they know the new content has appeared? If so, how can they read the new content, without losing their current place on the page? Historically, these have been problems with no solution. Dynamic content was simply not accessible to blind users. However, the W3C has been busy working on a new specification known as <a href="http://www.w3.org/TR/wai-aria/">Accessible Rich Internet Applications</a> (ARIA) that introduces new attributes that can be added to HTML elements. These new attributes are designed to communicate the roles, states, and properties of dynamic elements, making them accessible to assistive technology users. Understanding how ARIA works is beyond the scope of this curriculum, but students should be encouraged to think about and discuss this issue.</li>
+</ul>
+
+<h2>Lesson 6: Building a Custom Video Player</h2> 
+
+<ul>
+  <li class="timeEstimate">Estimated time required: 90+ minutes</li>
+  <li><a href="../../student/unit5/module2/lesson6.html">Link to student Lesson 6 page</a>
+
+  </li>
+</ul>
+
+<h3>Tips for Delivering This Lesson</h3> 
+<ul>
+  <li>This is a fun lesson to wrap up the Javascript module. The JavaScript code can be copied and pasted into student's pages, but things can still go wrong. If it does, encourage students to use debugging techniques such as those learned in Lesson 2 to try to isolate the problem.</li>
+  <li>Be sure the video plays in the built-in browser (originally added to students' portfolio site in Unit 2) <em>before</em> starting this lesson. If the video with the built-in player doesn't play, the custom JavaScript player won't work either so the original problems need to be fixed first.</li>
+  <li>For advanced students, consider issuing challenges to them for ways to improve the player. One possibility would be to combine the Play and Pause buttons into one button that does both. Originally this would be a Play button, but after a user clicks it and the video starts playing, the button could change to a Pause button. This could be done with some fairly simple changes. First, they should add <span class="attribute">id="playpause"</span> to the play button in HTML. Second, they could remove the Pause button. Third, they could make the following changes to the JavaScript code (changes are marked with NEW in the comments): 
+<pre class="example">
+// create a few global variables to be used later 
+// NEW: added two variables on the end
+var video, speed, volume, playing, playButton;
+      
+function init() { 
+  // initialize the player 
+  // first, get the media element and assign it to the video variable
+  video = document.getElementById('myvideo');      
+
+  // get the current playbackRate from the HTML5 media API 
+  // range is 0 to very fast, with 1 being normal playback 
+  speed = video.playbackRate;         
+
+  // volume range is 0 to 1 
+  // set it in the middle so we have room to move it with our buttons
+  volume = 0.5;
+  video.volume = volume; 
+        
+  // NEW: set playing to false 
+  playing = false; 
+        
+  // NEW: assign the playpause button to a variable so we can access it later
+  playButton = document.getElementById('playpause');
+}
+             
+function play() {  
+  // NEW: pause if playing; play if not playing     
+  if (playing) {
+    video.pause(); 
+    // change text of button back to 'Play' 
+    playButton.innerHTML = 'Play';
+    // reset playing
+    playing = false;
+  }
+  else { // video is not playing
+    video.play(); 
+    // change text of button to 'Pause' 
+    playButton.innerHTML = 'Pause';
+    // reset playing
+    playing = true;
+  }
+}
+
+// remaining functions not changed, so not shown here... 
+</pre>
+  </li>
+</ul>
+
+<h3>Example Output</h3>
+  <p>When this lesson is complete, students will have modified their <a href="../examples/unit5/module2/lesson6/video.html">video.html</a> page so it now includes a custom video player.</p>
+
+
+<footer role="contentinfo">
+Copyright &copy; 2005-2014 by University of Washington. Permission is granted to use these materials in whole or in part for educational, noncommercial purposes provided the source is acknowledged. This product was created with support from the National Institute on Disability and Rehabilitation Research of the U.S. Department of Education (grant #H133D010306), and is maintained with support from the National Science Foundation (grant #CNS-0540615). The contents do not necessarily represent the policies of the U.S. federal government, and you should not assume their endorsement.</footer>
+</div>
+</div>
+</body>
+</html>
